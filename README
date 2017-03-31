@@ -1,0 +1,4 @@
+debian rootfs for arm, mainly using debootstrap to generate rootfs
+ref link:
+https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/
+https://blog.lazy-evaluation.net/posts/linux/debian-armhf-bootstrap.html
