@@ -1,0 +1,3 @@
+default: default rootfs, no any change
+minimal: min rootfs for working right, just basic setting
+xfce4: installed general software and desktop
