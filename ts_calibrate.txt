@@ -1,0 +1,23 @@
+http://forums.debian.net/viewtopic.php?f=7&t=116628
+
+[SOLVED] Laptop Touchscreen Calibration Debian Wheezy
+Postby jjjrrr » 2014-08-07 19:54
+
+First of all, thank you all for the contributions to this site! Today is my time to make a small contribution and hopefully help some folks as well.
+
+The solution explained below is suited for laptops/tablets/etc. that have a touchscreen which is recognized by the operational system (accept inputs) but is not well calibrated (ex.: you touch the middle of the screen but the cursor is 3 inches off to the left, etc.). I will use some example values in red - those should be changed to your own values based on your system.
+
+1) Install xinput; sudo apt-get install xinput
+2) lets discover what is the id number of your touchscreen. run xinput list and look for it (it should be a number, ex.: 11) - from now on I will use "11" (in red) as the id number for my touchscreen as an example, keep in mind though that you should find your own value and use that.
+3) find out what the OS thinks about your x-y ranges - run xinput list 11 and take note of the axis ranges (ex: x is between 0 and 4000, y is between 0 and 4000 etc. - I will use those values as an example)
+4) lets find out what the OS thinks about the starting points for your screen (ex: is x=0 in the left or right of the screen, etc.) . Run xinput test 11 and touch the extremities of the screen to see where x,y start and end. Example: you may find out that the upper left corner of your screen is the origin point because you get the smaller values there. After you are done testing press ctrl+c to escape. I will use the left upper corner as a starting point as an example, you should use your own values.
+5) Now the calibration itself. It involves a little of trial and error, but should be fairly quick: using the previously found ranges on step 3 as a starting point, run xinput set-prop 11 "Evdev Axis Calibration" 0 4000 0 4000. Now, start with one border of your screen. Touch the leftmost point of your screen and see how off the cursor is (say 2 inches to the right); then run again the calibration and change the min x value slightly (ex: xinput set-prop 11 "Evedev Axis Calibration" 200 4000 0 4000, and touch the same point again and check again how off the cursor is (say 1 inch, you are making progress!). repeat the process until you have perfect alignment, and then repeat the calibration for all x-min x-max y-min y-max values. Voila! your screen is calibrated. Note: I once noticed that the calibration "crashes" sometimes and does not update the values, if that happens just close and reopen the terminal. 
+6) Make the calibration permanent: last step, go to /etc/X11/xorg.conf.d/ (create the directory if it does not exist) as root and create a file called 99-calibration.conf and add the following code to the file:
+
+Section "InputClass"
+Identifier "calibration"
+MatchProduct "Touchscreen name"
+Option "Calibration" "200 4000 0 4000"
+EndSection
+
+Save the file and reboot. And it's done!
