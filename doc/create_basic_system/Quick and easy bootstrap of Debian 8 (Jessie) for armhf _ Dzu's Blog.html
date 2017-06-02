@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://blog.lazy-evaluation.net/posts/linux/debian-armhf-bootstrap.html -->
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>Quick and easy bootstrap of Debian 8 (Jessie) for armhf | Dzu's Blog</title>
+<link href="./Quick and easy bootstrap of Debian 8 (Jessie) for armhf _ Dzu&#39;s Blog_files/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.lazy-evaluation.net/rss.xml">
+<link rel="canonical" href="https://blog.lazy-evaluation.net/posts/linux/debian-armhf-bootstrap.html">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="flattr:id" content="glp26w">
+<meta name="author" content="Detlev Zundel">
+<meta property="og:site_name" content="Dzu&#39;s Blog">
+<meta property="og:title" content="Quick and easy bootstrap of Debian 8 (Jessie) for armhf">
+<meta property="og:url" content="https://blog.lazy-evaluation.net/posts/linux/debian-armhf-bootstrap.html">
+<meta property="og:description" content="We all know the vast amount of software packages available for Debian
+so when I could not quickly find a required package for a test on a
+socfpga board, I wondered how much effort it would be to boots">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-08-25T19:38:00+02:00">
+<meta property="article:tag" content="arm">
+<meta property="article:tag" content="debian">
+<meta property="article:tag" content="linux">
+<script type="text/javascript" async="" defer="" src="./Quick and easy bootstrap of Debian 8 (Jessie) for armhf _ Dzu&#39;s Blog_files/piwik.js.download"></script><script async="" src="./Quick and easy bootstrap of Debian 8 (Jessie) for armhf _ Dzu&#39;s Blog_files/embed.js.download"></script><script async="" src="./Quick and easy bootstrap of Debian 8 (Jessie) for armhf _ Dzu&#39;s Blog_files/count.js.download"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.1c973af76c6535955110c0c9d8551865.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.8edffe1405dcc2d5eb5ee9d96a2866d1.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.8d07a4869c3ec17ee1881ae6bd353027.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"></head>
+<body style="">
+    <section class="social"><ul>
+<li><a href="https://blog.lazy-evaluation.net/index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="https://blog.lazy-evaluation.net/archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="https://blog.lazy-evaluation.net/categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="https://blog.lazy-evaluation.net/rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://blog.lazy-evaluation.net/stories/about-me.html" title="About me"><i class="icon-user"></i></a></li>
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+    <div class="post">
+    
+    <h1 class="p-name entry-title" itemprop="headline name">Quick and easy bootstrap of Debian 8 (Jessie) for armhf</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2015-08-25T19:38:00+02:00" title="2015-08-25 19:38">2 years ago</time>
+            
+
+            
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://blog.lazy-evaluation.net/posts/linux/debian-armhf-bootstrap.rst" id="sourcelink">Source</a>
+
+            </div>
+            
+        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags&nbsp;:&nbsp;
+           <li><a class="tag p-category" href="https://blog.lazy-evaluation.net/categories/arm.html" rel="tag">arm</a></li>
+           <li><a class="tag p-category" href="https://blog.lazy-evaluation.net/categories/debian.html" rel="tag">debian</a></li>
+           <li><a class="tag p-category" href="https://blog.lazy-evaluation.net/categories/linux.html" rel="tag">linux</a></li>
+        </ul>
+</div>
+
+        </div>
+        <div class="body">
+            <div>
+<p>We all know the vast amount of software packages available for Debian
+so when I could not quickly find a required package for a test on a
+socfpga board, I wondered how much effort it would be to bootstrap a
+<a class="reference external" href="https://www.debian.org/releases/jessie/">Debian Jessie</a> root
+file system that can also be used over NFS.  As it turns out it took
+barely half an hour and worked exceptionally well.</p>
+<div class="figure">
+<img alt="Debian Jessie" src="./Quick and easy bootstrap of Debian 8 (Jessie) for armhf _ Dzu&#39;s Blog_files/jessie_debian.png" style="width: 400px;">
+</div>
+<!-- TEASER_END -->
+<p>The key to bootstrap a Debian system is of course <tt class="docutils literal">debootstrap</tt> and
+getting this on a Ubuntu system is a no-brainer:</p>
+<pre class="literal-block">sudo apt-get install debootstrap
+</pre>
+<p>As I remember that a boostrap usually involves doing some initial
+steps in a <tt class="docutils literal">chroot</tt>, I wasn't sure how feasible it would be to do
+this for a different target architecture.  With the help of <tt class="docutils literal">qemu</tt>
+it turned out to be trivial, but let's take it one step after the
+other.  Start out with downloading and installing the base system:</p>
+<pre class="literal-block">[dzu@harry tmp]$ sudo debootstrap --foreign --arch=armhf jessie jessie-armhf
+I: Keyring file not available at /usr/share/keyrings/debian-archive-keyring.gpg; switching to https mirror https://mirrors.kernel.org/debian
+I: Retrieving Release
+I: Retrieving Packages
+I: Validating Packages
+I: Resolving dependencies of required packages...
+...
+I: Extracting mount...
+I: Extracting util-linux...
+I: Extracting liblzma5...
+I: Extracting zlib1g...
+[dzu@harry tmp]$
+</pre>
+<p>Note the <tt class="docutils literal"><span class="pre">--foreign</span></tt> option that prevents debootstrap from running
+the second stage as this needs to be run in a chroot and thus cannot
+run without further magic on our Intel development machine.  Let's try
+it anyway and see what happens:</p>
+<pre class="literal-block">[dzu@harry tmp]$ sudo chroot jessie-armhf/
+chroot: failed to run command ‘/bin/bash’: No such file or directory
+[dzu@harry tmp]$ file jessie-armhf/bin/bash
+jessie-armhf/bin/bash: ELF 32-bit LSB  executable, ARM, EABI5 version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=1a8601b954c83a01d91298d0f2f8f61ca033ebdd, stripped
+[dzu@harry tmp]$
+</pre>
+<p>Thanks to the amazing <a class="reference external" href="http://wiki.qemu.org/Main_Page">QEMU project</a>, we can make this work anyway.
+Just install the following package:</p>
+<pre class="literal-block">[dzu@harry tmp]$ sudo apt-get install qemu-user-static
+</pre>
+<p>There is a nice Debian wiki page on <a class="reference external" href="https://wiki.debian.org/QemuUserEmulation">QEMU user emulation</a> explaining in more
+detail on what is going on here, but effectively the package
+installation has registered several emulators for non-Intel ELF file
+formats.  It's easy to see this also for the arm case:</p>
+<pre class="literal-block">[dzu@harry tmp]$ sudo update-binfmts --display
+...
+qemu-arm (enabled):
+     package = qemu-user-static
+        type = magic
+      offset = 0
+       magic = \x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00
+        mask = \xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff
+ interpreter = /usr/bin/qemu-arm-static
+    detector =
+...
+[dzu@harry tmp]$
+</pre>
+<p>We want to use this inside the chroot, so we have to copy it there.
+As the second stage bootstrap also needs network access, we also copy
+the DNS setup from the host system:</p>
+<pre class="literal-block">[dzu@harry tmp]$ sudo cp /usr/bin/qemu-arm-static jessie-armhf/usr/bin/
+[dzu@harry tmp]$ sudo cp /etc/resolv.conf jessie-armhf/etc/
+[dzu@harry tmp]$
+</pre>
+<p>That's all there is to it, so now we can enter the (emulated) chroot
+and do the second stage bootstrap.  Don't forget to define a password
+for root - the example clears it:</p>
+<pre class="literal-block">[dzu@harry tmp]$ sudo chroot jessie-armhf/
+I have no name!@harry:/# /debootstrap/debootstrap --second-stage
+I: Keyring file not available at /usr/share/keyrings/debian-archive-keyring.gpg; switching to https mirror https://mirrors.kernel.org/debian
+I: Installing core packages...
+...
+I: Configuring systemd...
+I: Configuring ca-certificates...
+I: Base system installed successfully.
+I have no name!@harry:/# passwd -d root
+passwd: password expiry information changed.
+I have no name!@harry:/#
+</pre>
+<p>That's it.  Export the newly-created directory via NFS and boot into
+it with a kernel supporting systemd (See Kernel Config Options in the
+<a class="reference external" href="http://cgit.freedesktop.org/systemd/systemd/tree/README">systemd README</a>):</p>
+<pre class="literal-block">...
+[  OK  ] Started Update UTMP about System Runlevel Changes.
+
+Debian GNU/Linux 8 harry ttyS0
+
+harry login: root
+Linux harry 4.0.0-00185-gec403a3-dirty #26 SMP Fri Aug 21 10:01:59 CEST 2015 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+root@harry:~#
+</pre>
+<p>Now you can tweak the system to your liking.  Setting host name would
+probably be a first step.  Next point <tt class="docutils literal">/etc/apt/sources.list</tt> to a
+repo near you and update the system, for example like this:</p>
+<pre class="literal-block">root@harry:~# cat &lt;&lt; EOT &gt; /etc/apt/sources.list
+deb http://ftp.de.debian.org/debian jessie main contrib non-free
+deb http://ftp.de.debian.org/debian jessie-updates main contrib non-free
+deb http://security.debian.org/debian-security jessie/updates main contrib non-free
+EOT
+root@harry:~# apt-get update  &amp;&amp; apt-get dist-upgrade
+Get:1 http://ftp.de.debian.org jessie InRelease [134 kB]
+Get:2 http://security.debian.org jessie/updates InRelease [63.1 kB]
+...
+</pre>
+</div>
+        </div>
+        
+        <ul class="pager hidden-print">
+<li class="previous">
+                <a href="https://blog.lazy-evaluation.net/posts/linux/gnome-3.10-nm.html" rel="prev" title="Gnome 3.10 breaks switching between wired network configurations by design">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="https://blog.lazy-evaluation.net/posts/linux/outlook-caldav-sync.html" rel="next" title="Synchronizing Outlook Calendar to ownCloud">Next post</a>
+            </li>
+        </ul>
+<div id="disqus_thread"><iframe id="dsq-app692" name="dsq-app692" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Quick and easy bootstrap of Debian 8 (Jessie) for armhf _ Dzu&#39;s Blog_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 582px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+        <script>
+        var disqus_shortname ="dzusblog",
+            disqus_url="https://blog.lazy-evaluation.net/posts/linux/debian-armhf-bootstrap.html",
+        disqus_title="Quick and easy bootstrap of Debian 8 (Jessie) for armhf",
+        disqus_identifier="cache/posts/linux/debian-armhf-bootstrap.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;
+</noscript>
+    
+
+
+        
+
+    </div>
+
+        
+       <script>var disqus_shortname="dzusblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2015-2017         <a href="mailto:dzu@member.fsf.org">Detlev Zundel</a> - Powered by         <a href="https://getnikola.com/" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </section><!-- Piwik --><script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.lazy-evaluation.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script><noscript>&lt;img src="https://piwik.lazy-evaluation.net/piwik.php?idsite=1&amp;amp;rec=1" style="border:0" alt=""&gt;</noscript>
+<!-- End Piwik Code -->
+  
+    
+    
+            <script src="./Quick and easy bootstrap of Debian 8 (Jessie) for armhf _ Dzu&#39;s Blog_files/all-nocdn.js.download" type="text/javascript"></script><script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+
+
+<iframe style="display: none;" src="./Quick and easy bootstrap of Debian 8 (Jessie) for armhf _ Dzu&#39;s Blog_files/saved_resource(1).html"></iframe></body></html>

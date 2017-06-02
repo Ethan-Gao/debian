@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/ -->
+<html lang="en-GB" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="https://api.instagram.com/v1/users/39296926?access_token=39296926.3a81a9f.af4637cd8cc14291849ed1dca78a2074&amp;callback=jQuery112405410858283753_1513840947962&amp;_=1513840947963"></script>
+	
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://blog.night-shade.org.uk/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://blog.night-shade.org.uk/wp-content/themes/twentyfifteen/js/html5.js"></script>
+	<![endif]-->
+	<script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script><script>(function(html){html.className=html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Building a pure Debian armhf rootfs – A travelling tinker</title>
+<!-- Jetpack Site Verification Tags -->
+<meta name="google-site-verification" content="GTptzBGXlrQTSOXeyJbcoDJRxJkfuFpsITY1_AHbh7U">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://secure.gravatar.com/">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="A travelling tinker » Feed" href="https://blog.night-shade.org.uk/feed/">
+<link rel="alternate" type="application/rss+xml" title="A travelling tinker » Comments Feed" href="https://blog.night-shade.org.uk/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="A travelling tinker » Building a pure Debian armhf rootfs Comments Feed" href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/feed/">
+		<script type="text/javascript">window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blog.night-shade.org.uk\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.4"}};!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);</script><script src="./Building a pure Debian armhf rootfs – A travelling tinker_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
+<link rel="stylesheet" id="twentyfifteen-jetpack-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/A.twentyfifteen.css,qver=5.6.1.pagespeed.cf.IY8uA-A9qo.css" type="text/css" media="all">
+<link rel="stylesheet" id="sb_instagram_styles-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/sb-instagram.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sb-font-awesome-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentyfifteen-fonts-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/A.genericons.css,qver=3.1.pagespeed.cf.0UPQGPj2Ei.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentyfifteen-style-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/A.style.css,qver=4.8.4.pagespeed.cf.dfp6436rIQ.css" type="text/css" media="all">
+<style id="twentyfifteen-style-inline-css" type="text/css">body{background-color:#111}body:before,.site-header{background-color:#202020}.post-navigation,.pagination,.secondary,.site-footer,.hentry,.page-header,.page-content,.comments-area,.widecolumn{background-color:#202020}button,input[type="button"],input[type="reset"],input[type="submit"],.pagination .prev,.pagination .next,.widget_calendar tbody a,.widget_calendar tbody a:hover,.widget_calendar tbody a:focus,.page-links a,.page-links a:hover,.page-links a:focus,.sticky-post{color:#202020}button,input[type="button"],input[type="reset"],input[type="submit"],.pagination .prev,.pagination .next,.widget_calendar tbody a,.page-links a,.sticky-post{background-color:#bebebe}body,blockquote cite,blockquote small,a,.dropdown-toggle:after,.image-navigation a:hover,.image-navigation a:focus,.comment-navigation a:hover,.comment-navigation a:focus,.widget-title,.entry-footer a:hover,.entry-footer a:focus,.comment-metadata a:hover,.comment-metadata a:focus,.pingback .edit-link a:hover,.pingback .edit-link a:focus,.comment-list .reply a:hover,.comment-list .reply a:focus,.site-info a:hover,.site-info a:focus{color:#bebebe}.entry-content a,.entry-summary a,.page-content a,.comment-content a,.pingback .comment-body>a,.author-description a,.taxonomy-description a,.textwidget a,.entry-footer a:hover,.comment-metadata a:hover,.pingback .edit-link a:hover,.comment-list .reply a:hover,.site-info a:hover{border-color:#bebebe}button:hover,button:focus,input[type="button"]:hover,input[type="button"]:focus,input[type="reset"]:hover,input[type="reset"]:focus,input[type="submit"]:hover,input[type="submit"]:focus,.pagination .prev:hover,.pagination .prev:focus,.pagination .next:hover,.pagination .next:focus,.widget_calendar tbody a:hover,.widget_calendar tbody a:focus,.page-links a:hover,.page-links a:focus{background-color:#bebebe;background-color:rgba(190,190,190,.7)}blockquote,a:hover,a:focus,.main-navigation .menu-item-description,.post-navigation .meta-nav,.post-navigation a:hover .post-title,.post-navigation a:focus .post-title,.image-navigation,.image-navigation a,.comment-navigation,.comment-navigation a,.widget,.author-heading,.entry-footer,.entry-footer a,.taxonomy-description,.page-links>.page-links-title,.entry-caption,.comment-author,.comment-metadata,.comment-metadata a,.pingback .edit-link,.pingback .edit-link a,.post-password-form label,.comment-form label,.comment-notes,.comment-awaiting-moderation,.logged-in-as,.form-allowed-tags,.no-comments,.site-info,.site-info a,.wp-caption-text,.gallery-caption,.comment-list .reply a,.widecolumn label,.widecolumn .mu_register label{color:#bebebe;color:rgba(190,190,190,.7)}blockquote,.logged-in-as a:hover,.comment-author a:hover{border-color:#bebebe;border-color:rgba(190,190,190,.7)}hr,.dropdown-toggle:hover,.dropdown-toggle:focus{background-color:#bebebe;background-color:rgba(190,190,190,.1)}pre,abbr[title],table,th,td,input,textarea,.main-navigation ul,.main-navigation li,.post-navigation,.post-navigation div+div,.pagination,.comment-navigation,.widget li,.widget_categories .children,.widget_nav_menu .sub-menu,.widget_pages .children,.site-header,.site-footer,.hentry+.hentry,.author-info,.entry-content .page-links a,.page-links>span,.page-header,.comments-area,.comment-list+.comment-respond,.comment-list article,.comment-list .pingback,.comment-list .trackback,.comment-list .reply a,.no-comments{border-color:#bebebe;border-color:rgba(190,190,190,.1)}a:focus,button:focus,input:focus{outline-color:#bebebe;outline-color:rgba(190,190,190,.3)}input:focus,textarea:focus{border-color:#bebebe;border-color:rgba(190,190,190,.3)}.secondary-toggle:before{color:#bebebe}.site-title a,.site-description{color:#bebebe}.site-title a:hover,.site-title a:focus{color:rgba(190,190,190,.7)}.secondary-toggle{border-color:#bebebe;border-color:rgba(190,190,190,.1)}.secondary-toggle:hover,.secondary-toggle:focus{border-color:#bebebe;border-color:rgba(190,190,190,.3)}.site-title a{outline-color:#bebebe;outline-color:rgba(190,190,190,.3)}.entry-footer{background-color:#1b1b1b}@media screen and (min-width:38.75em){.page-header{border-color:#bebebe}}@media screen and (min-width:59.6875em){.site-header,.secondary{background-color:transparent}.widget button,.widget input[type="button"],.widget input[type="reset"],.widget input[type="submit"],.widget_calendar tbody a,.widget_calendar tbody a:hover,.widget_calendar tbody a:focus{color:#202020}.secondary a,.dropdown-toggle:after,.widget-title,.widget blockquote cite,.widget blockquote small{color:#bebebe}.widget button,.widget input[type="button"],.widget input[type="reset"],.widget input[type="submit"],.widget_calendar tbody a{background-color:#bebebe}.textwidget a{border-color:#bebebe}.secondary a:hover,.secondary a:focus,.main-navigation .menu-item-description,.widget,.widget blockquote,.widget .wp-caption-text,.widget .gallery-caption{color:rgba(190,190,190,.7)}.widget button:hover,.widget button:focus,.widget input[type="button"]:hover,.widget input[type="button"]:focus,.widget input[type="reset"]:hover,.widget input[type="reset"]:focus,.widget input[type="submit"]:hover,.widget input[type="submit"]:focus,.widget_calendar tbody a:hover,.widget_calendar tbody a:focus{background-color:rgba(190,190,190,.7)}.widget blockquote{border-color:rgba(190,190,190,.7)}.main-navigation ul,.main-navigation li,.widget input,.widget textarea,.widget table,.widget th,.widget td,.widget pre,.widget li,.widget_categories .children,.widget_nav_menu .sub-menu,.widget_pages .children,.widget abbr[title]{border-color:rgba(190,190,190,.1)}.dropdown-toggle:hover,.dropdown-toggle:focus,.widget hr{background-color:rgba(190,190,190,.1)}.widget input:focus,.widget textarea:focus{border-color:rgba(190,190,190,.3)}.sidebar a:focus,.dropdown-toggle:focus{outline-color:rgba(190,190,190,.3)}}</style>
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href='https://blog.night-shade.org.uk/wp-content/themes/twentyfifteen/css/ie.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href='https://blog.night-shade.org.uk/wp-content/themes/twentyfifteen/css/ie7.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="social-logos-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/social-logos.min.css,qver=1.pagespeed.ce.HlAnvqp_mu.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/jetpack.css" type="text/css" media="all">
+<link rel="stylesheet" id="lightboxStyle-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/colorbox.min.css" type="text/css" media="screen">
+<script type="text/javascript" src="./Building a pure Debian armhf rootfs – A travelling tinker_files/jquery.js,qver=1.12.4.pagespeed.jm.pPCPAKkkss.js.download"></script>
+<script type="text/javascript" src="./Building a pure Debian armhf rootfs – A travelling tinker_files/jquery-migrate.min.js,qver=1.4.1.pagespeed.jm.C2obERNcWh.js.download"></script>
+<link rel="https://api.w.org/" href="https://blog.night-shade.org.uk/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.night-shade.org.uk/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.night-shade.org.uk/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Finding my wife’s missing phone with OpenWRT" href="https://blog.night-shade.org.uk/2013/08/finding-my-wifes-missing-phone-with-openwrt/">
+<link rel="next" title="Create a bootable SD for a Cubietruck" href="https://blog.night-shade.org.uk/2013/12/create-a-bootable-sd-for-a-cubietruck/">
+<meta name="generator" content="WordPress 4.8.4">
+<link rel="canonical" href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/">
+<link rel="shortlink" href="https://wp.me/p4cRlL-4H">
+<link rel="alternate" type="application/json+oembed" href="https://blog.night-shade.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.night-shade.org.uk%2F2013%2F12%2Fbuilding-a-pure-debian-armhf-rootfs%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://blog.night-shade.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.night-shade.org.uk%2F2013%2F12%2Fbuilding-a-pure-debian-armhf-rootfs%2F&amp;format=xml">
+
+<!-- Bad Behavior 2.2.20 run time: 0.877 ms -->
+<script type="text/javascript">function bb2_addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}bb2_addLoadEvent(function(){for(i=0;i<document.forms.length;i++){if(document.forms[i].method=='post'){var myElement=document.createElement('input');myElement.setAttribute('type','hidden');myElement.name='bb2_screener_';myElement.value='1513840857 119.123.197.211';document.forms[i].appendChild(myElement);}}});</script>
+		<style data-context="foundation-flickity-css">.flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-prev-next-button{position:absolute;top:50%;width:44px;height:44px;border:none;border-radius:50%;background:#fff;background:hsla(0,0%,100%,.75);cursor:pointer;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.flickity-prev-next-button:hover{background:#fff}.flickity-prev-next-button:focus{outline:0;box-shadow:0 0 0 5px #09f}.flickity-prev-next-button:active{opacity:.6}.flickity-prev-next-button.previous{left:10px}.flickity-prev-next-button.next{right:10px}.flickity-rtl .flickity-prev-next-button.previous{left:auto;right:10px}.flickity-rtl .flickity-prev-next-button.next{right:auto;left:10px}.flickity-prev-next-button:disabled{opacity:.3;cursor:auto}.flickity-prev-next-button svg{position:absolute;left:20%;top:20%;width:60%;height:60%}.flickity-prev-next-button .arrow{fill:#333}.flickity-page-dots{position:absolute;width:100%;bottom:-25px;padding:0;margin:0;list-style:none;text-align:center;line-height:1}.flickity-rtl .flickity-page-dots{direction:rtl}.flickity-page-dots .dot{display:inline-block;width:10px;height:10px;margin:0 8px;background:#333;border-radius:50%;opacity:.25;cursor:pointer}.flickity-page-dots .dot.is-selected{opacity:1}</style><style data-context="foundation-slideout-css">.slideout-menu{position:fixed;left:0;top:0;bottom:0;right:auto;z-index:0;width:256px;overflow-y:auto;-webkit-overflow-scrolling:touch;display:none}.slideout-menu.pushit-right{left:auto;right:0}.slideout-panel{position:relative;z-index:1;will-change:transform}.slideout-open,.slideout-open .slideout-panel,.slideout-open body{overflow:hidden}.slideout-open .slideout-menu{display:block}.pushit{display:none}</style>
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<style type="text/css" id="custom-background-css">body.custom-background{background-color:#353535;background-image:url(https://blog.night-shade.org.uk/wp-content/uploads/2011/11/xcropped.png.pagespeed.ic.c2r_FyPaCf.webp);background-position:right top;background-size:auto;background-repeat:no-repeat;background-attachment:fixed}</style>
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building a pure Debian armhf rootfs">
+<meta property="og:url" content="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/">
+<meta property="og:description" content="There are lots of filesystems images for various Debian flavours on ARM developer boards like the Cubietruck floating about. Most of these images are large binary files of unknown providence and ev…">
+<meta property="article:published_time" content="2013-12-16T23:01:31+00:00">
+<meta property="article:modified_time" content="2015-01-15T09:25:37+00:00">
+<meta property="og:site_name" content="A travelling tinker">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:widgets:theme" content="dark"><meta name="twitter:widgets:link-color" content="#000000"><meta name="twitter:widgets:border-color" content="#000000"><meta name="twitter:partner" content="tfwp">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Building a pure Debian armhf rootfs"><meta name="twitter:site" content="@TimJDFletcher"><meta name="twitter:description" content="There are lots of filesystems images for various Debian flavours on ARM developer boards like the Cubietruck floating about. Most of these images are large binary files of unknown providence and even compressed take a while to download. There is a better way of making a root image for your new ARM board, just build…">
+<style>.ios7.web-app-mode.has-fixed header{background-color:rgba(3,122,221,.88)}</style><script id="instafeed-fetcher" src="https://api.instagram.com/v1/users/39296926/media/recent?access_token=39296926.3a81a9f.af4637cd8cc14291849ed1dca78a2074&amp;count=20&amp;callback=instafeedCachebfe3da6ad515e93c.parse"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Building a pure Debian armhf rootfs – A travelling tinker_files/services.css"></head>
+
+<body class="post-template-default single single-post postid-291 single-format-standard custom-background">
+
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/#content">Skip to content</a>
+
+	<div id="sidebar" class="sidebar" style="top: 0px;">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+										<p class="site-title"><a href="https://blog.night-shade.org.uk/" rel="home">A travelling tinker</a></p>
+											<p class="site-description">Things I've fixed, places I've been</p>
+									<button class="secondary-toggle">Menu and widgets</button>
+			</div><!-- .site-branding -->
+		</header><!-- .site-header -->
+
+			<div id="secondary" class="secondary">
+
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="menu-default-container"><ul id="menu-default" class="nav-menu"><li id="menu-item-86" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-86"><a href="https://blog.night-shade.org.uk/">Home</a></li>
+<li id="menu-item-437" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-437"><a href="https://blog.night-shade.org.uk/category/security/">Security</a><button class="dropdown-toggle" aria-expanded="false"><span class="screen-reader-text">expand child menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-169"><a href="https://blog.night-shade.org.uk/keys-and-certificates/">Keys and Certificates</a></li>
+</ul>
+</li>
+<li id="menu-item-214" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-214"><a href="https://blog.night-shade.org.uk/category/linux/">Linux</a><button class="dropdown-toggle" aria-expanded="false"><span class="screen-reader-text">expand child menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-216" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-216"><a href="https://blog.night-shade.org.uk/category/linux/red-hat/">Red Hat</a></li>
+	<li id="menu-item-215" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-215"><a href="https://blog.night-shade.org.uk/category/linux/openwrt/">OpenWRT</a></li>
+</ul>
+</li>
+<li id="menu-item-435" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-435"><a href="https://blog.night-shade.org.uk/category/apple/">Apple</a><button class="dropdown-toggle" aria-expanded="false"><span class="screen-reader-text">expand child menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-436" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-436"><a href="https://blog.night-shade.org.uk/category/apple/ios/">iOS</a></li>
+</ul>
+</li>
+<li id="menu-item-428" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-428"><a href="https://blog.night-shade.org.uk/category/hardware/">Hardware</a><button class="dropdown-toggle" aria-expanded="false"><span class="screen-reader-text">expand child menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-431" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-431"><a href="https://blog.night-shade.org.uk/category/hardware/i9100/">i9100</a></li>
+	<li id="menu-item-432" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-432"><a href="https://blog.night-shade.org.uk/category/hardware/cubietruck/">Cubietruck</a></li>
+	<li id="menu-item-429" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-429"><a href="https://blog.night-shade.org.uk/category/hardware/iconnect/">iConnect</a></li>
+	<li id="menu-item-430" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-430"><a href="https://blog.night-shade.org.uk/category/hardware/wr703n/">WR703N</a></li>
+</ul>
+</li>
+<li id="menu-item-104" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-104"><a href="https://blog.night-shade.org.uk/category/photography/">Photography</a><button class="dropdown-toggle" aria-expanded="false"><span class="screen-reader-text">expand child menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-102" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-102"><a href="http://flickr.com/TimJDFletcher">Flickr Photostream</a></li>
+</ul>
+</li>
+</ul></div>			</nav><!-- .main-navigation -->
+		
+		
+					<div id="widget-area" class="widget-area" role="complementary">
+				<aside id="twitter_timeline-2" class="widget widget_twitter_timeline"><h2 class="widget-title">Twitter Timeline</h2><a class="twitter-timeline" data-height="400" data-theme="dark" data-link-color="#f96e5b" data-border-color="#e8e8e8" data-tweet-limit="5" data-lang="EN" data-partner="jetpack" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/TimJDFletcher">My Tweets</a></aside><aside id="text-4" class="widget widget_text"><h2 class="widget-title">Instagram Feed</h2>			<div class="textwidget"><div id="sb_instagram" class="sbi sbi_col_4" style="width:100%; padding-bottom: 10px; " data-id="39296926" data-num="20" data-res="auto" data-cols="4" data-options="{&quot;sortby&quot;: &quot;none&quot;, &quot;showbio&quot;: &quot;true&quot;, &quot;headercolor&quot;: &quot;&quot;, &quot;imagepadding&quot;: &quot;5&quot;}" data-sbi-index="0"><div class="sb_instagram_header" style="padding: 10px; padding-bottom: 0;"></div><div id="sbi_images" style="padding: 5px;"><div class="sbi_loader fa-spin"></div></div><div id="sbi_load"><a class="sbi_load_btn" href="javascript:void(0);" style="">Load More...</a><div class="sbi_follow_btn"><a href="https://instagram.com/" style="" target="_blank"><i class="fa fa-instagram"></i>Follow on Instagram</a></div></div></div></div>
+		</aside><aside id="archives-4" class="widget widget_archive"><h2 class="widget-title">Archives</h2>		<ul>
+			<li><a href="https://blog.night-shade.org.uk/2016/10/">October 2016</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2016/02/">February 2016</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2016/01/">January 2016</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2015/07/">July 2015</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2015/06/">June 2015</a>&nbsp;(2)</li>
+	<li><a href="https://blog.night-shade.org.uk/2015/05/">May 2015</a>&nbsp;(4)</li>
+	<li><a href="https://blog.night-shade.org.uk/2015/04/">April 2015</a>&nbsp;(3)</li>
+	<li><a href="https://blog.night-shade.org.uk/2015/03/">March 2015</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2015/02/">February 2015</a>&nbsp;(2)</li>
+	<li><a href="https://blog.night-shade.org.uk/2015/01/">January 2015</a>&nbsp;(4)</li>
+	<li><a href="https://blog.night-shade.org.uk/2014/12/">December 2014</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2014/05/">May 2014</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2014/01/">January 2014</a>&nbsp;(3)</li>
+	<li><a href="https://blog.night-shade.org.uk/2013/12/">December 2013</a>&nbsp;(2)</li>
+	<li><a href="https://blog.night-shade.org.uk/2013/08/">August 2013</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2013/03/">March 2013</a>&nbsp;(3)</li>
+	<li><a href="https://blog.night-shade.org.uk/2013/02/">February 2013</a>&nbsp;(2)</li>
+	<li><a href="https://blog.night-shade.org.uk/2013/01/">January 2013</a>&nbsp;(5)</li>
+	<li><a href="https://blog.night-shade.org.uk/2012/07/">July 2012</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2012/06/">June 2012</a>&nbsp;(3)</li>
+	<li><a href="https://blog.night-shade.org.uk/2012/03/">March 2012</a>&nbsp;(1)</li>
+	<li><a href="https://blog.night-shade.org.uk/2011/12/">December 2011</a>&nbsp;(2)</li>
+	<li><a href="https://blog.night-shade.org.uk/2011/10/">October 2011</a>&nbsp;(2)</li>
+		</ul>
+		</aside><aside id="linkcat-19" class="widget widget_links"><h2 class="widget-title">Certifications</h2>
+	<ul class="xoxo blogroll">
+<li><a href="https://mylearn.vmware.com/portals/certification/?menu=authenticate&amp;authCode=13932915-A644-B00F8F1B2836" title="VMware VCP-DCV5"><script data-pagespeed-no-defer="">//<![CDATA[
+(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/','WHkbuqa6FL',true,false,'qVvhEl_L3AY');
+//]]></script><img src="https://www.night-shade.org.uk/~tim/CV/VCP.png" alt="0 VMware VCP-DCV5" title="VMware VCP-DCV5" data-pagespeed-url-hash="1231091972" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a></li>
+<li><a href="https://www.redhat.com/wapps/training/certification/verify.html?certNumber=120-214-895&amp;verify=Verify" title="Red Hat Certified Engineer"><img src="https://www.night-shade.org.uk/~tim/CV/RHCE.png" alt="1 Red Hat RHCE" title="Red Hat Certified Engineer" data-pagespeed-url-hash="4222717093" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a></li>
+<li><a href="https://www.netapp.com/as/services-support/university/certifications/ncda.aspx" title="NetApp NSO-155 and NSO-156"><img src="https://www.night-shade.org.uk/~tim/CV/NCDA.png" alt="2 NetApp NCDA" title="NetApp NSO-155 and NSO-156" data-pagespeed-url-hash="1273688939" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a></li>
+
+	</ul>
+</aside>
+<aside id="rss-3" class="widget widget_rss"><h2 class="widget-title"><a class="rsswidget" href="http://www.instapaper.com/starred/rss/1415435/60LX4ToU9xy9DwNGMK3e0wVmpNI"><img class="rss-widget-icon" style="border:0" src="data:image/webp;base64,UklGRgACAABXRUJQVlA4TPMBAAAvDUADEE/kqJEkR6o26xEcz6N5RO49ftVdNBy5bSNJctI9+8x5/v/BOa2pqhhyJEmKpChYhvcKvrqsSsx819XJNpIkJ/0aC2xs8jfJTOug9Zd5UNZRull+CjWhr6yBlU8xf7IL4ycRP4kpiaBOtR9eX4y3mxNj7+R/A32NDmnh+hMgd3N46bkfFbZav60ykSE+XWpgc5qMPMd0ZCefl9APVylqGAI/6ZQhY4fiZ+HWYDQzHJdj/4F/bIlKEF0kJLERIGMShgnM24BkDUOwBlaDJfCAAkw3o0SWmHgNX6YhBBJl/5nP8QM7nDFFBIMNon/7Q7ZwyKldY8Blu50B34JIBKMYNuhkCdC9vM1X+PvlnZLu9lrZPeKNMcJPmwXwSnABdogG6EQARMAGARAADTAARkAAzDA3Tcli+j7XvQiAINu26ejEtm3bbaRt27Yd3zgT7zFE9D/rrd+fv3KlUqlUq81Ga2XLYna/PmdS52enzcLaJwDw7RdXN49UWno36NU8QHL7cE3F+UVPJBHVMSG/v6TiwgfAsT6FWLg7oeJLuCsElAMBKCaplk2m+4Ns2PZ7mKJCbujoeDAG7q4WTvreEUM2tidA3AgfdbYZwPiBCi4TNPR1KII03+fwz71516k9PDKan5iemV1e3dhsNpr0T7MBAA==" alt="RSS" data-pagespeed-url-hash="1015237434" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a> <a class="rsswidget" href="https://www.instapaper.com/liked">Starred on Instapaper</a></h2><ul><li><a class="rsswidget" href="http://www.theguardian.com/lifeandstyle/2017/jul/23/nigel-slater-beef-and-pork-recipes">Nigel Slater’s grilled beef and pork recipes</a> <span class="rss-date">2017-07-25</span></li><li><a class="rsswidget" href="http://www.theguardian.com/lifeandstyle/2017/jul/24/sri-lankan-tomato-and-coconut-dal-recipe-rosie-birkett-guest-cook">Six Sri Lankan-style curry recipes using British summer veg | Guest cook</a> <span class="rss-date">2017-07-25</span></li><li><a class="rsswidget" href="http://www.thekitchn.com/how-to-make-easy-pickled-red-c-109916">How To Make Easy Pickled Red Cabbage</a> <span class="rss-date">2017-07-24</span></li><li><a class="rsswidget" href="http://thewoksoflife.com/2015/06/smashed-asian-cucumber-salad/">Smashed Asian Cucumber Salad - The Woks of Life</a> <span class="rss-date">2017-06-25</span></li><li><a class="rsswidget" href="http://www.turkeysforlife.com/2011/03/turkish-recipes-mercimek-kofte-lentils.html">Turkish Recipes: Mercimek Köftesi • Turkey's For Life</a> <span class="rss-date">2017-05-13</span></li><li><a class="rsswidget" href="http://www.theguardian.com/lifeandstyle/2017/may/02/pizza-with-potatoes-and-rosemary-recipe-pizza-al-taglio-rachel-roddy">Rachel Roddy’s recipe for pizza with potatoes and rosemary | A kitchen in Rome</a> <span class="rss-date">2017-05-03</span></li><li><a class="rsswidget" href="https://nadiashealthykitchen.com/quick-prawn-coconut-curry/">Quick Prawn Coconut Curry</a> <span class="rss-date">2017-04-30</span></li><li><a class="rsswidget" href="http://www.theguardian.com/lifeandstyle/2017/apr/28/ful-medames-sausage-bun-cha-recipe-brunch-caroline-craig-sophie-missing-book-extract">Brunch like a master with these recipes for ful medames and sausage bun cha | Book extract</a> <span class="rss-date">2017-04-29</span></li><li><a class="rsswidget" href="http://seasonalcookinturkey.com/black-eyed-beans-chard/">Black Eyed Beans with Chard - A Warm Salad in a Garlic Dressing</a> <span class="rss-date">2017-04-05</span></li><li><a class="rsswidget" href="http://www.spiceupthecurry.com/paneer-tikka-recipe/">Paneer Tikka Recipe (How to make best paneer tikka recipe)</a> <span class="rss-date">2017-04-05</span></li></ul></aside><aside id="linkcat-2" class="widget widget_links"><h2 class="widget-title">Blogroll</h2>
+	<ul class="xoxo blogroll">
+<li><a href="https://www.bytemark.co.uk/" title="This server hosted is hosted by Bytemark" target="_blank">Bytemark Hosting</a></li>
+<li><a href="http://highpeakwebsolutions.co.uk/" rel="friend colleague" title="Need a website in High Peak, talk to Kevin">High Peak Web Solutions</a></li>
+<li><a href="https://github.com/TimJDFletcher">My code on Github</a></li>
+<li><a href="https://www.ebay.co.uk/sch/n1ght-5hade/m.html" rel="me" title="Stuff I’ve got for sale on eBay">My eBay items</a></li>
+<li><a href="https://flickr.com/TimJDFletcher" rel="me">My Flickr stream</a></li>
+<li><a href="https://twitter.com/TimJDFletcher" rel="me">My Twitter stream</a></li>
+
+	</ul>
+</aside>
+<aside id="meta-4" class="widget widget_meta"><h2 class="widget-title">Meta</h2>			<ul>
+						<li><a href="https://blog.night-shade.org.uk/wp-login.php">Log in</a></li>
+			<li><a href="https://blog.night-shade.org.uk/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://blog.night-shade.org.uk/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>			</div><!-- .widget-area -->
+		
+	</div><!-- .secondary -->
+
+	</div><!-- .sidebar -->
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+<article id="post-291" class="post-291 post type-post status-publish format-standard hentry category-cubietruck category-hardware category-linux">
+	
+	<header class="entry-header">
+		<h1 class="entry-title">Building a pure Debian armhf rootfs</h1>	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>There are lots of filesystems images for various Debian flavours on ARM developer boards like the Cubietruck floating about. Most of these images are large binary files of unknown providence and even compressed take a while to download. There is a better way of making a root image for your new ARM board, just build it on your own normal workstation directly from the Debian repos with debootstrap using the magic of QEMU.</p>
+<p>First install the support packages on your workstation:</p>
+<pre>sudo apt-get install qemu-user-static debootstrap binfmt-support</pre>
+<p>You will need about 500MB of space in a directory for the image, choose the version of Debian in this case we are building a wheezy image.</p>
+<pre>targetdir=rootfs
+distro=wheezy</pre>
+<p>Lets get going building the first stage of the rootfs image from the Debian mirrors, this will take a few minutes and downloads about 200MB.</p>
+<pre>mkdir $targetdir
+sudo debootstrap --arch=armhf --foreign $distro $targetdir</pre>
+<p>Next copy the the qemu-arm-static binary into the right place for the binfmt packages to find it and copy in resolv.conf from the host.</p>
+<pre>sudo cp /usr/bin/qemu-arm-static $targetdir/usr/bin/
+sudo cp /etc/resolv.conf $targetdir/etc</pre>
+<p>We now have a very basic armhf rootfs in a directory, the next stages take place inside a chroot of that directory.</p>
+<pre>sudo chroot $targetdir</pre>
+<p>Inside the chroot we need to set up the environment again</p>
+<pre>distro=wheezy
+export LANG=C</pre>
+<p>Now we need to complete the second stage of debootstrap to install the packages downloaded earlier</p>
+<pre>/debootstrap/debootstrap --second-stage</pre>
+<p>Once the package installation has finished, setup some basic support files</p>
+<pre>cat &lt;&lt;EOT &gt; /etc/apt/sources.list
+deb http://ftp.uk.debian.org/debian $distro main contrib non-free
+deb-src http://ftp.uk.debian.org/debian $distro main contrib non-free
+deb http://ftp.uk.debian.org/debian $distro-updates main contrib non-free
+deb-src http://ftp.uk.debian.org/debian $distro-updates main contrib non-free
+deb http://security.debian.org/debian-security $distro/updates main contrib non-free
+deb-src http://security.debian.org/debian-security $distro/updates main contrib non-free
+EOT
+
+cat &lt;&lt;EOT &gt; /etc/apt/apt.conf.d/71-no-recommends
+APT::Install-Recommends "0";
+APT::Install-Suggests "0";
+EOT</pre>
+<p>Pull in the latest apt database from the Debian mirrors</p>
+<pre>apt-get update</pre>
+<p>Install the locales package otherwise dpkg scripts, note in jessie you may need to install the dialog package as well.</p>
+<pre>apt-get install locales dialog
+dpkg-reconfigure locales</pre>
+<p>Install some additional packages inside the chroot, an ssh server for network access and ntp because many boards don’t have a functional RTC.</p>
+<pre>apt-get install openssh-server ntpdate</pre>
+<p>Set a root password so you can login via ssh or the console</p>
+<pre>passwd</pre>
+<p>Build a basic network interfaces file so that the board will DHCP on eth0</p>
+<pre>echo &lt;&lt;EOT &gt;&gt; /etc/network/interfaces
+allow-hotplug eth0
+iface eth0 inet dhcp
+EOT</pre>
+<p>Set the hostname</p>
+<pre>echo debian-armhf &gt; /etc/hostname</pre>
+<p>Enable the serial console, Debian sysvinit way</p>
+<pre>echo T0:2345:respawn:/sbin/getty -L ttyS0 115200 vt100 &gt;&gt; /etc/inittab</pre>
+<p>We are done inside the chroot, so quit the chroot shell</p>
+<pre>exit</pre>
+<p>Tidy up the support files</p>
+<pre>sudo rm $targetdir/etc/resolv.conf
+sudo rm $targetdir/usr/bin/qemu-arm-static</pre>
+<p>You now have a root file system for pretty much any armhf machine but next you need to make a bootable sd card image. I’ll cover that in the <a href="https://blog.night-shade.org.uk/2013/12/create-a-bootable-sd-for-a-cubietruck/">next post</a>, there are <a href="http://docs.cubieboard.org/tutorials/cb3/start">other</a> <a href="http://docs.cubieboard.org/tutorials/ct1/installation/install_lubuntu_desktop_server_to_sd_card">howtos</a> to assemble the bootable card.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-291" class="share-twitter sd-button share-icon" href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-291" class="share-facebook sd-button share-icon" href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-291" class="share-google-plus-1 sd-button share-icon" href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/?share=google-plus-1&amp;nb=1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li><a href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-291" class="share-linkedin sd-button share-icon" href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/?share=linkedin&amp;nb=1" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-reddit"><a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon" href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/?share=reddit&amp;nb=1" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-end"></li><li class="share-end"></li></ul></div></div></div></div></div>	</div><!-- .entry-content -->
+
+	
+	<footer class="entry-footer">
+		<span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/" rel="bookmark"><time class="entry-date published" datetime="2013-12-16T23:01:31+00:00">2013-12-16</time><time class="updated" datetime="2015-01-15T09:25:37+00:00">2015-01-15</time></a></span><span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span><a class="url fn n" href="https://blog.night-shade.org.uk/author/tim/">Tim Fletcher</a></span></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://blog.night-shade.org.uk/category/hardware/cubietruck/" rel="category tag">Cubietruck</a>, <a href="https://blog.night-shade.org.uk/category/hardware/" rel="category tag">Hardware</a>, <a href="https://blog.night-shade.org.uk/category/linux/" rel="category tag">Linux</a></span>			</footer><!-- .entry-footer -->
+
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			One thought on “Building a pure Debian armhf rootfs”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-196" class="social-twitter even thread-even depth-1">
+			<article id="div-comment-196" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn"><a href="https://twitter.com/TimJDFletcher" rel="external nofollow" class="url">TimJDFletcher</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://blog.night-shade.org.uk/2013/12/building-a-pure-debian-armhf-rootfs/#comment-196">
+							<time datetime="2013-12-18T09:24:39+00:00">
+								2013-12-18 at 09:24							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>How to install and use pure Debian on the Cubietruck <a href="http://t.co/85BqEvtuRt" rel="nofollow">http://t.co/85BqEvtuRt</a> and <a href="http://t.co/Ylw6vDSMwB" rel="nofollow">http://t.co/Ylw6vDSMwB</a> no downloading of disk images needed!</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+			<p class="no-comments">Comments are closed.</p>
+	
+	
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://blog.night-shade.org.uk/2013/08/finding-my-wifes-missing-phone-with-openwrt/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">Finding my wife’s missing phone with OpenWRT</span></a></div><div class="nav-next"><a href="https://blog.night-shade.org.uk/2013/12/create-a-bootable-sd-for-a-cubietruck/" rel="next"><span class="meta-nav" aria-hidden="true">Next</span> <span class="screen-reader-text">Next post:</span> <span class="post-title">Create a bootable SD for a Cubietruck</span></a></div></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	</div><!-- .site-content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+						<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+		</div><!-- .site-info -->
+	</footer><!-- .site-footer -->
+
+</div><!-- .site -->
+
+<!-- Powered by WPtouch: 4.3.21 -->	<div style="display:none">
+	</div>
+
+	<script type="text/javascript">window.WPCOM_sharing_counts={"https:\/\/blog.night-shade.org.uk\/2013\/12\/building-a-pure-debian-armhf-rootfs\/":291};</script>
+<!-- Lightbox Plus Colorbox v2.7.2/1.5.9 - 2013.01.24 - Message: 0-->
+<script type="text/javascript">jQuery(document).ready(function($){$("a[rel*=lightbox]").colorbox({initialWidth:"30%",initialHeight:"30%",maxWidth:"90%",maxHeight:"90%",opacity:0.8});});</script>
+<script type="text/javascript">//<![CDATA[
+var sb_instagram_js_options={"sb_instagram_at":"39296926.3a81a9f.af4637cd8cc14291849ed1dca78a2074"};
+//]]></script>
+<script type="text/javascript" src="./Building a pure Debian armhf rootfs – A travelling tinker_files/sb-instagram.min.js,qver=1.5.1.pagespeed.jm.46SV_Avdwa.js.download"></script>
+<script type="text/javascript" src="./Building a pure Debian armhf rootfs – A travelling tinker_files/devicepx-jetpack.js.download"></script>
+<script type="text/javascript" src="./Building a pure Debian armhf rootfs – A travelling tinker_files/gprofiles.js.download"></script>
+<script type="text/javascript">//<![CDATA[
+var WPGroHo={"my_hash":""};
+//]]></script>
+<script src="./Building a pure Debian armhf rootfs – A travelling tinker_files/plugins,_jetpack,_modules,_wpgroho.js,qver==4.8.4+themes,_twentyfifteen,_js,_skip-link-focus-fix.js,qver==20141010.pagespeed.jc.X0ITa1UhtC.js.download"></script><script>eval(mod_pagespeed_RyIVbSIPP5);</script>
+<script>eval(mod_pagespeed_YQV05Z4M6j);</script>
+<script type="text/javascript">//<![CDATA[
+var screenReaderText={"expand":"<span class=\"screen-reader-text\">expand child menu<\/span>","collapse":"<span class=\"screen-reader-text\">collapse child menu<\/span>"};
+//]]></script>
+<script src="./Building a pure Debian armhf rootfs – A travelling tinker_files/wp-content,_themes,_twentyfifteen,_js,_functions.js,qver==20150330+wp-content,_plugins,_jetpack,__inc,_build,_twitter-timeline.min.js,qver==4.0.0+wp-con.download"></script><script>eval(mod_pagespeed_xEmjJPGmQS);</script>
+<script>eval(mod_pagespeed_xtmKMpkJx4);</script>
+<script>eval(mod_pagespeed_MWO_4r3hkS);</script>
+<script>eval(mod_pagespeed_E4JjLStODH);</script>
+<script>eval(mod_pagespeed_bpMBYtx4J$);</script>
+<script type="text/javascript" src="./Building a pure Debian armhf rootfs – A travelling tinker_files/langs.min.js,qver=4.8.4.pagespeed.jm.7eRc_kJyEg.js.download"></script>
+<script type="text/javascript">//<![CDATA[
+var sharing_js_options={"lang":"en","counts":"1"};
+//]]></script>
+<script type="text/javascript" src="./Building a pure Debian armhf rootfs – A travelling tinker_files/sharing.js,qver=5.6.1.pagespeed.jm.vdg2AzOY4r.js.download"></script>
+<script type="text/javascript">var windowOpen;jQuery(document.body).on('click','a.share-twitter',function(){if('undefined'!==typeof windowOpen){windowOpen.close();}windowOpen=window.open(jQuery(this).attr('href'),'wpcomtwitter','menubar=1,resizable=1,width=600,height=350');return false;});var windowOpen;jQuery(document.body).on('click','a.share-facebook',function(){if('undefined'!==typeof windowOpen){windowOpen.close();}windowOpen=window.open(jQuery(this).attr('href'),'wpcomfacebook','menubar=1,resizable=1,width=600,height=400');return false;});var windowOpen;jQuery(document.body).on('click','a.share-google-plus-1',function(){if('undefined'!==typeof windowOpen){windowOpen.close();}windowOpen=window.open(jQuery(this).attr('href'),'wpcomgoogle-plus-1','menubar=1,resizable=1,width=480,height=550');return false;});var windowOpen;jQuery(document.body).on('click','a.share-linkedin',function(){if('undefined'!==typeof windowOpen){windowOpen.close();}windowOpen=window.open(jQuery(this).attr('href'),'wpcomlinkedin','menubar=1,resizable=1,width=580,height=450');return false;});</script>
+<script type="text/javascript" src="./Building a pure Debian armhf rootfs – A travelling tinker_files/e-201751.js.download" async="" defer=""></script>
+<script type="text/javascript">_stq=window._stq||[];_stq.push(['view',{v:'ext',j:'1:5.6.1',blog:'62170361',post:'291',tz:'0',srv:'blog.night-shade.org.uk'}]);_stq.push(['clickTrackerInit','62170361','291']);</script>
+
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><img src="./Building a pure Debian armhf rootfs – A travelling tinker_files/g.gif" alt=":)" width="6" height="5" id="wpstats"></body></html>
