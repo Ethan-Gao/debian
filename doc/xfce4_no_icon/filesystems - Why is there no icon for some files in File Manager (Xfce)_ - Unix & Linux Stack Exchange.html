@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>filesystems - Why is there no icon for some files in File Manager (Xfce)? - Unix &amp; Linux Stack Exchange</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/unix/img/favicon.ico?v=546c52892feb">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/unix/img/apple-touch-icon.png?v=5cf7fe716a89">
+        <link rel="search" type="application/opensearchdescription+xml" title="Unix &amp; Linux Stack Exchange" href="https://unix.stackexchange.com/opensearch.xml">
+
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/unix/img/apple-touch-icon@2.png?v=32fb07f7ce26">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="unix.stackexchange.com">
+        <meta name="twitter:site" content="@StackUnix">
+        <meta name="twitter:title" property="og:title" itemprop="title name" content="Why is there no icon for some files in File Manager (Xfce)?">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="I am using the File Manager (default?) in Xfce 4.10. Apparently, some files do not have an icon:
+How can you add icons?">
+        <script src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/rules-p-c1rF4kxgLUzNc.js.download" async=""></script><script async="" src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/quant.js.download"></script><script async="" src="https://sb.scorecardresearch.com/beacon.js"></script><script async="" src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/analytics.js.download"></script><script src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/jquery.min.js.download"></script>
+        <script src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/stub.en.js.download"></script>
+        <link rel="stylesheet" type="text/css" href="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/all.css">
+    
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Why is there no icon for some files in File Manager (Xfce)?&#39;" href="https://unix.stackexchange.com/feeds/question/346310">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:7,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:346310});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('106', '346310');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+             
+        
+        
+        
+            <script>
+                StackExchange.ready(function () {
+                    try {
+                        if (!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGTransform)
+                            return;
+                    } catch (ex) {
+                        return;
+                    }
+                    var d = 100;
+                    $.ajax({url:"https://cdn-prom.sstatic.net/WinterBash/js/wb-core-incl.js?v=8",cache:true,dataType:"script"}).done(function tryInit() {
+                        if (window.WinterBash) {
+                            WinterBash.core.init('winterbash2017.stackexchange.com', 'https://cdn-prom.sstatic.net/WinterBash/', '6', false);
+                        } else {
+                            if (d <= 800)
+                                setTimeout(tryInit, d);
+                            d *= 2;
+                        }
+                    });
+                });
+            </script>
+                <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('106');
+                StackExchange.realtime.subscribeToTopBarNotifications('106');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","serverTime":1513841401,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Unix & Linux Stack Exchange","description":"Q&A for users of Linux, FreeBSD and other Un*x-like operating systems","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":106,"childUrl":"https://unix.meta.stackexchange.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"77210613bb7c703c6a670d6e1b4fe7aa","tid":"9e1147af-4b87-8d04-7cf3-fdc53f35a281","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"topBar":{},"snippets":{"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"410e08a95a19","js/moderator.en.js":"8acee323897c","js/full-anon.en.js":"28918980152b","js/full.en.js":"f415d386d135","js/wmd.en.js":"a8bddaef4c2d","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"cedef12af31e","js/help.en.js":"f9152eb55343","js/tageditor.en.js":"09862381cd28","js/tageditornew.en.js":"02b1d3d406d3","js/inline-tag-editing.en.js":"f0c5d44f3ab3","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"6a01d42c833d","js/tagsuggestions.en.js":"78eee7c19ab2","js/post-validation.en.js":"496aae53e4c6","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"409355404cba","js/keyboard-shortcuts.en.js":"ae31b5790290","js/external-editor.en.js":"b46c950d6c5a","js/adops.en.js":"9a6a7812a212"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css">&lt;style&gt;body,.top-bar{margin-top:1.9em}&lt;/style&gt;</noscript>
+    <script async="" src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/full-anon.en.js.download"></script><script async="" src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/post-validation.en.js.download"></script><script async="" src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/external-editor.en.js.download"></script><link rel="stylesheet" type="text/css" href="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/wb-core-incl.css"><link rel="stylesheet" href="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/clc.min.css" type="text/css"></head>
+    <body class="question-page new-topbar">
+        <script async="" src="https://js-sec.indexww.com/ht/p/185901-159836282584097.js"></script>
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _scrolling">
+    <div class="-container">
+        <div class="-main">
+            
+                <a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-logo js-gps-track js-network-logo" data-gps-track="stack_exchange_popup.show">
+                    <svg aria-hidden="true" class="svg-icon native iconLogoSEAlternativeSm" width="110" height="15" viewBox="0 0 110 15"><g><path d="M50.4 11.92l-1.98-3.23-1.05 1.17v2.06h-1.42V2.08h1.42v6.07l2.76-3.24h1.73L49.4 7.66l2.77 4.26h-1.76zm-7.86.08c-1.6 0-3.16-.97-3.16-3.6 0-2.62 1.56-3.57 3.16-3.57.97 0 1.66.28 2.33.98l-.98.94c-.45-.48-.8-.66-1.35-.66s-1.01.22-1.32.62c-.3.39-.42.88-.42 1.7 0 .81.11 1.32.42 1.71.3.4.77.62 1.32.62s.9-.18 1.35-.66l.98.93c-.67.7-1.36.99-2.33.99zm-5.7-3.18h-1.67c-.84 0-1.27.38-1.27 1.01 0 .64.4 1 1.3 1 .54 0 .95-.05 1.33-.4.2-.21.3-.54.3-1.04v-.57zm.02 3.1v-.64c-.51.51-1 .72-1.88.72-.89 0-1.47-.2-1.9-.64a2.13 2.13 0 0 1-.57-1.5c0-1.17.83-2.02 2.45-2.02h1.87v-.5c0-.88-.44-1.3-1.55-1.3-.78 0-1.16.17-1.55.67l-.94-.87c.67-.77 1.37-1 2.55-1 1.94 0 2.92.8 2.92 2.4v4.68h-1.4zm-6.44 0c-1.33 0-1.95-.94-1.95-1.95V6.12h-.8V5.04h.8V2.9h1.43v2.13h1.37v1.08H29.9V9.9c0 .51.25.82.78.82h.59v1.2h-.85zm-6.9.08c-1.5 0-2.57-.35-3.52-1.3l1-.98a3.3 3.3 0 0 0 2.55.94c1.3 0 2.06-.55 2.06-1.5 0-.43-.13-.8-.4-1.03-.25-.23-.5-.33-1.09-.41l-1.17-.17a3.43 3.43 0 0 1-1.89-.79 2.43 2.43 0 0 1-.72-1.87c0-1.72 1.25-2.89 3.32-2.89 1.32 0 2.24.33 3.1 1.12l-.97.94a2.94 2.94 0 0 0-2.17-.76c-1.17 0-1.82.66-1.82 1.53 0 .36.12.68.38.91.25.22.66.39 1.12.46l1.13.16c.93.14 1.44.36 1.86.74.55.47.81 1.17.81 2.01 0 1.81-1.5 2.89-3.58 2.89z" fill="#FFF"></path><path d="M107.4 6.88c-.2-.44-.61-.76-1.23-.76-.63 0-1.04.32-1.23.76-.12.27-.16.46-.17.79h2.8a2 2 0 0 0-.17-.8zm-2.63 2.04c0 .94.58 1.63 1.6 1.63.81 0 1.21-.23 1.68-.69l1.11 1.08a3.52 3.52 0 0 1-2.8 1.16c-1.74 0-3.4-.8-3.4-3.76 0-2.39 1.3-3.74 3.2-3.74 2.06 0 3.22 1.5 3.22 3.5v.82h-4.61zm-5.68-2.67c-1.1 0-1.2.92-1.2 1.9 0 .96.1 1.9 1.2 1.9 1.08 0 1.21-.94 1.21-1.9 0-.98-.13-1.9-1.21-1.9zm-.19 8.53c-1.13 0-1.9-.22-2.67-.96l1.14-1.15c.41.4.83.56 1.45.56 1.1 0 1.48-.77 1.48-1.51v-.75c-.48.53-1.03.73-1.75.73s-1.34-.24-1.76-.65c-.69-.68-.74-1.63-.74-2.9 0-1.29.05-2.21.74-2.9a2.5 2.5 0 0 1 1.77-.65c.78 0 1.29.21 1.8.77V4.7h1.78v7.05c0 1.76-1.26 3.04-3.24 3.04zm-5.58-2.77V7.58c0-1-.63-1.33-1.21-1.33s-1.23.33-1.23 1.33v4.43h-1.84V4.7h1.8v.67c.47-.5 1.15-.76 1.83-.76.74 0 1.33.24 1.74.65.6.59.75 1.28.75 2.08V12h-1.84zm-7.14-3.1h-1.46c-.66 0-1.03.32-1.03.84 0 .5.34.84 1.06.84.51 0 .84-.04 1.16-.35.2-.18.27-.48.27-.93v-.4zm.04 3.1v-.63c-.5.49-.96.7-1.8.7-.84 0-1.45-.21-1.89-.65-.4-.4-.6-1-.6-1.64 0-1.17.8-2.12 2.51-2.12h1.74V7.3c0-.8-.4-1.15-1.37-1.15-.7 0-1.03.17-1.42.6l-1.17-1.14c.72-.78 1.43-1 2.66-1 2.06 0 3.14.86 3.14 2.58V12h-1.8zm-7 0V7.54c0-.97-.62-1.3-1.2-1.3-.57 0-1.18.34-1.18 1.3v4.47H75V2h1.84v3.36c.5-.5 1.11-.76 1.76-.76 1.62 0 2.47 1.13 2.47 2.67v4.74h-1.84zm-7.7.09c-1.48 0-3.3-.8-3.3-3.76 0-2.97 1.82-3.74 3.3-3.74 1 0 1.77.31 2.42.99L72.7 6.82c-.38-.4-.7-.57-1.19-.57-.44 0-.78.15-1.05.47-.28.36-.4.85-.4 1.62 0 .77.12 1.28.4 1.63.27.33.61.48 1.05.48.48 0 .8-.17 1.19-.58l1.24 1.23c-.65.67-1.41 1-2.43 1zm-6.07-.1l-1.36-2.2-1.34 2.2h-2.2l2.54-3.74-2.45-3.58h2.2l1.25 2.1 1.26-2.1h2.2l-2.44 3.58L67.65 12h-2.2zm-12.46 0V2h6.63v1.74h-4.66V6.1h3.97v1.75h-3.97v2.43h4.66V12H53z" fill="#2F96E8"></path><path d="M2 1h8a2 2 0 0 1 2 2H0c0-1.1.9-2 2-2z" fill="#8FD8F7"></path><path d="M0 10h12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm7 2v3l3-3z" fill="#155397"></path><path fill="#46A2D9" d="M0 4h12v2H0z"></path><path fill="#2D6DB5" d="M0 7h12v2H0z"></path></g></svg>
+                </a>
+                <div class="topbar-dialog network-logo-dialog js-network-logo-dialog dno">
+                    <div class="dialog-content">
+                        <h4 class="bold">Stack Exchange Network</h4>
+                        <p>Stack Exchange network consists of 171 Q&amp;A communities including <a href="https://stackoverflow.com/">Stack Overflow</a>, the largest, most trusted online community for developers to learn, share their knowledge, and build their careers.</p>
+                        <a class="btn-secondary" href="https://stackexchange.com/" data-gps-track="stack_exchange_popup.click">Visit Stack Exchange</a>
+                        <a class="icon-close js-close-button"><svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg></a>
+                    </div>
+                </div>
+
+
+                <nav class="navigation" role="navigation" aria-label="site navigation">
+                    <ol class="-list">
+                    </ol>
+                </nav>
+
+        </div>
+        
+            <form id="search" action="https://unix.stackexchange.com/search" method="get" class="searchbar" autocomplete="off" role="search">
+                <input name="q" type="text" placeholder="Search on Unix &amp; Linux…" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                <button type="submit" aria-label="Search..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+            </form>
+
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://unix.stackexchange.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://unix.stackexchange.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=unix.stackexchange.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+    <a href="https://unix.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="106" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-unix site-icon" title="Unix &amp; Linux"></div>
+        Unix &amp; Linux
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://unix.meta.stackexchange.com/" class="site-link js-gps-track" data-id="108" data-gps-track="site.switch({ target_site:108, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-unixmeta site-icon" title="Unix &amp; Linux Meta"></div>
+        Unix &amp; Linux Meta
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://unix.stackexchange.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2funix.stackexchange.com%2fquestions%2f346310%2fwhy-is-there-no-icon-for-some-files-in-file-manager-xfce" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://unix.stackexchange.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2funix.stackexchange.com%2fquestions%2f346310%2fwhy-is-there-no-icon-for-some-files-in-file-manager-xfce" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://unix.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://unix.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://unix.meta.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+        </div>
+        <ol class="-list">
+    <li class="-item">
+        <a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-link js-inbox-button" title="Recent inbox messages">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item"><a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+                <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                <a href="https://unix.stackexchange.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2funix.stackexchange.com%2fquestions%2f346310%2fwhy-is-there-no-icon-for-some-files-in-file-manager-xfce" class="login-link btn-clear" rel="nofollow">Log In</a>
+                    <a href="https://unix.stackexchange.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2funix.stackexchange.com%2fquestions%2f346310%2fwhy-is-there-no-icon-for-some-files-in-file-manager-xfce" class="login-link btn-topbar-primary" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+
+
+    <div class="container  ">
+            <div id="header">
+                <br class="cbt">
+                <div id="hlogo">
+                    <a href="https://unix.stackexchange.com/" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        Unix &amp; Linux
+                    </a>
+                </div>
+                <div id="hmenus">
+                        <div class="nav mainnavs" role="navigation" aria-label="site navigation">
+                            <ul>
+                                    <li class="youarehere">
+        <a id="nav-questions" href="https://unix.stackexchange.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+        Questions
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-tags" href="https://unix.stackexchange.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-users" href="https://unix.stackexchange.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+        Users
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-badges" href="https://unix.stackexchange.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:4})">
+        Badges
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-unanswered" href="https://unix.stackexchange.com/unanswered" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:5})">
+        Unanswered
+        </a>
+    </li>
+                            </ul>
+                        </div>
+                    <div class="nav askquestion" role="navigation" aria-label="ask new question">
+                        <ul>
+                            <li>
+                                <a id="nav-askquestion" href="https://unix.stackexchange.com/questions/ask">Ask Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        <div id="content">
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/unix/img/apple-touch-icon.png?v=5cf7fe716a89">
+
+
+<div id="herobox" class="js-dismissable-hero" data-campaign-name="nso">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Unix &amp; Linux Stack Exchange is a question and answer site for users of Linux, FreeBSD and other Un*x-like operating systems. Join them; it only takes a minute:
+            <br>
+            <br>
+            <a href="https://unix.stackexchange.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2funix.stackexchange.com%2fquestions%2f346310%2fwhy-is-there-no-icon-for-some-files-in-file-manager-xfce" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Here's how it works:</b>
+            <ol id="hiw">
+                <li id="q">
+                    Anybody can ask a question
+                </li>
+                <li id="an">
+                    Anybody can answer
+                </li>
+                <li id="b">
+                    The best answers are voted up and rise to the top
+                </li>
+            </ol>
+        </div>
+    <div style="clear: both"></div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        StackExchange.Hero.init("nso", "a");
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+
+        $('.js-dismissable-hero #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+              });
+
+            StackExchange.Hero.dismiss();
+
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".js-dismissable-hero").fadeOut("fast", function () {
+                        $(".js-dismissable-hero").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+</script>    <div class="inner-content">
+            <div id="question-header">
+                <h1 itemprop="name"><a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce" class="question-hyperlink">Why is there no icon for some files in File Manager (Xfce)?</a></h1>
+
+            
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="346310" id="question">
+
+    <div id="dfp-tlb" class="everyonelovesstackoverflow"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="346310">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#">favorite</a>
+        <div class="favoritecount"><b></b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I am using the File Manager (default?) in Xfce 4.10. Apparently, some files do not have an icon:</p>
+
+<p><a href="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/oY6dK.png" rel="nofollow noreferrer"><img src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/oY6dK.png" alt="enter image description here"></a></p>
+
+<p>How can you add icons?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://unix.stackexchange.com/questions/tagged/filesystems" class="post-tag js-gps-track" title="show questions tagged &#39;filesystems&#39;" rel="tag">filesystems</a> <a href="https://unix.stackexchange.com/questions/tagged/xfce" class="post-tag js-gps-track" title="show questions tagged &#39;xfce&#39;" rel="tag">xfce</a> <a href="https://unix.stackexchange.com/questions/tagged/icons" class="post-tag js-gps-track" title="show questions tagged &#39;icons&#39;" rel="tag">icons</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://unix.stackexchange.com/q/346310" title="short permalink to this question" class="short-link" id="link-post-346310">share</a><span class="lsep">|</span><a href="https://unix.stackexchange.com/posts/346310/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://unix.stackexchange.com/posts/346310/revisions" title="show all edits to this post">edited <span title="2017-02-20 15:45:34Z" class="relativetime">Feb 20 at 15:45</span></a>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time" style="margin-left: 42.0057px !important;">
+        asked <span title="2017-02-20 14:41:26Z" class="relativetime">Feb 20 at 14:41</span>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        <a href="https://unix.stackexchange.com/users/217005/karlo" style="display: inline;"><div class="hat" style="float: left; display: block; width: 0px; height: 0px; overflow: visible; position: relative; left: -6px; top: -10px;" data-hatid="36"><img src="data:image/svg+xml,%3Csvg%20width%3D%2248%22%20height%3D%2244%22%20enable-background%3D%22new%200%200%20200%20200%22%20version%3D%221.1%22%20viewBox%3D%2221.14269720869234%2029.631915211451698%20147.5792898852977%20135.17653037403102%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20transform%3D%22rotate(5%2096%2096)%20translate(12.785696696838428%2012.785696696838428)%20scale(0.8331845136737078)%22%3E%3Cpath%20d%3D%22m175.6%20130.7c5.708-4.556%209.38-11.61%209.38-19.54%200-6.504-2.471-12.42-6.501-16.85%200.131-0.05%200.271-0.082%200.4-0.139%201.66-0.713%203.038-1.891%203.897-3.313%200.845-1.424%201.218-3.066%200.839-4.58-2.523%201.423-4.52%201.516-5.991%201.262%200.369-1.649%200.572-3.366%200.572-5.135%200-10.66-6.965-19.57-16.32-21.9%201.096-2.897%200.811-5.71-1.256-8.423-0.981%201.873-2.078%203.269-3.401%204.211-1.532-7.861-8.007-14.24-16.53-16.6-3.521-9.75-12.86-16.72-23.82-16.72-6.2%200-11.88%202.228-16.28%205.926-4.403-3.698-10.08-5.926-16.28-5.926-10.96%200-20.3%206.968-23.82%2016.72-8.439%202.332-14.86%208.617-16.48%2016.38l-4.695-0.877c0.081%201.912%200.478%203.567%201.226%205.063-9.964%201.825-17.56%2011.02-17.56%2022.15%200%203.453%200.753%206.712%202.058%209.638-5.402%204.564-8.841%2011.43-8.841%2019.12%200%206.773%202.682%2012.9%207.016%2017.39-2.285%200.841-5.004%201.086-8.243%200.878%202.23%204.879%206.301%207.304%2011.77%207.896-0.872%202.401-1.358%205.008-1.358%207.736%200%2010.44%206.993%2019.13%2016.26%2021.09l-4.695%208.704s23.58%209.291%2036.92-11.21c-9.852-9.527-16.7-25.22-16.7-47.15%200-14.52%203.081-26.34%208.076-35.44-2e-3%20-0.036-2e-3%20-0.073-5e-3%20-0.109%200.022%202e-3%200.044%201e-3%200.067%203e-3%208.278-15%2021.78-22.58%2035.28-22.66%2013.5%200.074%2027%207.658%2035.28%2022.66%200.021-2e-3%200.043-1e-3%200.065-3e-3%20-2e-3%200.036-2e-3%200.073-6e-3%200.109%204.996%209.102%208.076%2020.92%208.076%2035.44%200%2021.93-6.852%2037.63-16.7%2047.15%2013.34%2020.5%2036.92%2011.21%2036.92%2011.21l-4.695-8.704c9.272-1.954%2016.27-10.65%2016.27-21.09%200-2.761-0.495-5.398-1.387-7.823l5.91-2.921c-1.5-1.9-3-3-4.8-3.8z%22%3E%3C%2Fpath%3E%3Cg%20fill%3D%22%23414042%22%3E%3Cpath%20d%3D%22m162.4%20100c-0.924%201.14-1.855%202.355-2.272%203.564-0.097%200.294-0.121%200.583-0.089%200.771%200.041%200.192%200.112%200.256%200.241%200.347%200.277%200.192%200.896%200.318%201.522%200.373%201.441%200.107%202.9%200.191%204.397%200.401%200.751%200.099%201.514%200.207%202.304%200.419%200.798%200.24%201.62%200.402%202.621%201.274%200.243%200.229%200.501%200.549%200.675%200.963%200.183%200.411%200.233%200.901%200.183%201.309-0.115%200.824-0.456%201.317-0.746%201.726-0.151%200.204-0.308%200.384-0.462%200.55l-0.353%200.376c-0.131%200.163-0.284%200.353-0.418%200.602-0.568%200.92-0.776%202.138-0.645%203.312%200.058%200.594%200.223%201.178%200.491%201.711%200.242%200.55%200.604%201.054%201.073%201.466%200.91%200.883%202.285%201.328%203.776%201.492-1.389%200.55-3.107%200.596-4.646-0.175-1.539-0.764-2.679-2.292-3.135-3.971-0.486-1.676-0.358-3.545%200.433-5.222%200.193-0.405%200.461-0.818%200.78-1.23l0.379-0.442c0.092-0.103%200.175-0.204%200.238-0.294%200.139-0.177%200.176-0.343%200.148-0.25-0.046%200.114%200.12%200.389%200.081%200.308-0.092-0.122-0.714-0.422-1.304-0.599-0.617-0.188-1.292-0.369-1.979-0.532-1.384-0.31-2.826-0.612-4.267-1-0.794-0.201-1.677-0.451-2.464-1.296-0.389-0.43-0.599-1.103-0.537-1.642%200.044-0.548%200.265-0.968%200.482-1.331%201-1.6%202.2-2.5%203.5-3.2z%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22m137%2048.06c-0.373%201.431-0.728%202.844-0.796%204.199-0.044%200.664-0.014%201.324%200.171%201.812%200.199%200.492%200.416%200.721%200.784%200.841%200.838%200.269%202.204%200.218%203.526-0.035%200.68-0.118%201.386-0.236%202.165-0.344%200.393-0.049%200.802-0.084%201.273-0.082%200.471%200.017%201.02%200.03%201.728%200.362%200.35%200.172%200.724%200.471%200.983%200.846%200.259%200.374%200.388%200.774%200.448%201.113%200.109%200.683%200.028%201.188-0.057%201.646-0.107%200.484-0.214%200.795-0.317%201.157-0.11%200.361-0.21%200.71-0.332%201.057-0.463%201.361-0.982%202.789-1.118%203.801-0.049%200.501%200.021%200.781%200.339%201.211%200.158%200.205%200.378%200.418%200.634%200.606%200.188%200.149%200.444%200.293%200.704%200.384%201.064%200.428%202.531%200.022%203.8-0.701-0.819%201.205-2.219%202.285-4.072%202.204-0.454-0.033-0.882-0.147-1.33-0.344-0.378-0.165-0.754-0.372-1.127-0.66-0.771-0.533-1.341-1.687-1.372-2.642-0.079-0.961%200.067-1.76%200.224-2.508l0.489-2.158%200.251-1.036c0.082-0.338%200.18-0.723%200.213-0.95%200.047-0.25%200.046-0.479%200.031-0.512-0.048-0.048%200.13%200.257%200.215%200.262%200.053%200.014-0.14-0.049-0.389-0.049-0.253-0.01-0.566%200.015-0.894%200.04-0.661%200.049-1.387%200.161-2.145%200.211-0.76%200.053-1.557%200.084-2.395%200.016-0.857-0.08-1.685-0.222-2.619-0.766-0.951-0.531-1.577-1.658-1.632-2.583-0.088-0.94%200.092-1.752%200.331-2.502%200.5-1.49%201.3-2.79%202.3-3.91z%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22m44.38%2066.45c-2.257%201.4-3.919%203.35-4.37%205.474-0.216%201.106-0.246%202.089%200.128%203.034%200.338%200.967%200.96%201.9%201.684%203.072%200.331%200.614%200.779%201.256%200.938%202.408%200.066%200.571-0.062%201.29-0.372%201.82-0.303%200.539-0.685%200.9-1.049%201.166-0.366%200.268-0.723%200.458-1.071%200.624l-0.826%200.392c-0.495%200.265-1.002%200.551-1.462%200.875-0.901%200.663-1.714%201.47-2.123%202.478-0.454%200.987-0.377%202.234%200.439%203.327-0.614-0.271-1.167-0.771-1.516-1.432-0.361-0.659-0.473-1.454-0.414-2.219%200.157-1.546%200.982-2.923%202.007-3.97%200.507-0.542%201.068-1.002%201.686-1.404%200.335-0.223%200.595-0.375%200.879-0.546%200.224-0.14%200.425-0.288%200.565-0.424%200.14-0.139%200.224-0.25%200.226-0.287%204e-3%20-0.039-0.01%200.011-0.02-0.062-7e-3%20-0.147-0.244-0.657-0.557-1.156-0.614-1.041-1.453-2.3-1.833-3.846-0.395-1.552-0.22-3.276%200.402-4.621%200.58-1.412%201.612-2.58%202.79-3.374%201.18-0.76%202.5-1.25%203.85-1.32z%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22m130.6%2040.3c-2.062-0.668-4.007-1.217-5.952-1.598-1.938-0.384-3.852-0.59-5.75-0.563-1.899%200.028-3.782%200.286-5.674%200.779-1.903%200.478-3.778%201.224-5.808%202.015%202.427-3.604%206.886-5.871%2011.44-5.9%202.269-0.03%204.517%200.458%206.54%201.352%202.2%200.91%204.1%202.16%205.4%203.91z%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22m70.62%2040.3c1.336-1.745%203.197-3%205.206-3.916%202.022-0.894%204.27-1.382%206.539-1.352%204.553%200.03%209.012%202.296%2011.44%205.9-2.031-0.791-3.906-1.537-5.809-2.015-1.893-0.493-3.775-0.75-5.673-0.779-1.898-0.026-3.812%200.179-5.75%200.563-1.95%200.38-3.9%200.93-5.96%201.6z%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22m37.39%20137.1c-0.155%202.215-0.155%204.278%200.041%206.297%200.19%202.009%200.577%203.939%201.262%205.705%200.686%201.766%201.674%203.352%203.043%204.71%201.362%201.377%203.106%202.471%205.059%203.547-2.222%200.198-4.543-0.354-6.562-1.619-2.015-1.267-3.597-3.289-4.438-5.516-0.86-2.229-1.07-4.614-0.798-6.875%200.3-2.2%201.02-4.5%202.4-6.2z%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22m163.8%20137.1c1.378%201.779%202.095%203.996%202.396%206.249%200.271%202.26%200.061%204.646-0.8%206.875-0.841%202.227-2.423%204.248-4.438%205.515-2.017%201.266-4.34%201.817-6.562%201.62%201.953-1.076%203.696-2.17%205.06-3.548%201.369-1.357%202.359-2.944%203.042-4.709%200.686-1.766%201.071-3.696%201.262-5.705%200.2-2.1%200.2-4.1%200-6.3z%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22m28.56%20120.2c1.39-0.279%202.567-0.44%203.631-0.733%201.054-0.289%201.91-0.68%202.574-1.223%200.666-0.535%201.217-1.234%201.642-2.187%200.436-0.945%200.718-2.079%200.977-3.455%200.984%201.009%201.481%202.441%201.417%203.945-0.051%201.498-0.795%203.107-2.098%204.126-1.289%201.041-2.951%201.381-4.378%201.227-1.43%200-2.74-0.6-3.76-1.6z%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" width="48" height="44" style="display: block;"></div><div class="gravatar-wrapper-32"><img src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/6408569f9a053eaf6782724db6df5da1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://unix.stackexchange.com/users/217005/karlo">Karlo</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">115</span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-346310" class="comments js-comments-container ">
+		        <table>
+                    <tbody class="js-comments-list" data-remaining-comments-count="2" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-612832" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><code>cat $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml | grep -i theme</code> please edit your question for answer.</span>
+		            –&nbsp;<span class="comment-user">user192526</span>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#comment612832_346310"><span title="2017-02-20 15:12:52Z" class="relativetime-clean">Feb 20 at 15:12</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-612846" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Which distrie? <code>lsb_release -a</code></span>
+		            –&nbsp;<span class="comment-user">user192526</span>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#comment612846_346310"><span title="2017-02-20 16:01:01Z" class="relativetime-clean">Feb 20 at 16:01</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-613146" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I ave the same distrie it mußt be there. <code>cat $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml | grep -i theme     &lt;property name="ThemeName" type="string" value="MurrinaVerdeOlivo"/&gt;     &lt;property name="IconThemeName" type="string" value="OpenWorld"/&gt;     &lt;property name="SoundThemeName" type="empty"/&gt;     &lt;property name="KeyThemeName" type="empty"/&gt;     &lt;property name="CursorThemeName" type="string" value="Adwaita"/&gt;     &lt;property name="CursorThemeSize" type="empty"/&gt;</code></span>
+		            –&nbsp;<span class="comment-user">user192526</span>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#comment613146_346310"><span title="2017-02-21 09:12:50Z" class="relativetime-clean">Feb 21 at 9:12</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-647617" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1 While this question seems to be indirectly solved in linked question, this question is unique on its own. This could happen when trying to install Xfce from minimal packages.</span>
+                    –&nbsp;<a href="https://unix.stackexchange.com/users/125388/clearkimura" title="1,369 reputation" class="comment-user">clearkimura</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#comment647617_346310"><span title="2017-05-13 07:04:28Z" class="relativetime-clean">May 13 at 7:04</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-647644" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Most likely, you did not install the recommended icon theme for Xfce. Other icon themes might work better. More details in my delayed answer below.</span>
+                    –&nbsp;<a href="https://unix.stackexchange.com/users/125388/clearkimura" title="1,369 reputation" class="comment-user">clearkimura</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#comment647644_346310"><span title="2017-05-13 09:22:43Z" class="relativetime-clean">May 13 at 9:22</span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-346310" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" onclick="">show <b>2</b> more comments</a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="1">
+                                1 Answer
+                                <span style="display:none;" itemprop="answerCount">1</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere " href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="364809"></a>
+<div id="answer-364809" class="answer accepted-answer" data-answerid="364809" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="364809">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The mainstream desktop environments i.e. GNOME, KDE would include complete icon theme by default. Others may include fallback and complete icon themes as separate packages.</p>
+
+<p><strong>Icon theme in Xfce</strong></p>
+
+<p>When Xfce is installed from minimal packages i.e. installing a metapackage without recommended packages, icon theme would be missing. Most of the icons might be blank or using fallback icon provided by the minimal packages (similar to the following screenshot).</p>
+
+<p><a href="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/xSbDP.png" rel="nofollow noreferrer"><img src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/xSbDP.png" alt="Xfce minimal desktop with no icon"></a></p>
+
+<p>To check the dependencies for metapackage of Xfce, run the APT cache command and see the following output.</p>
+
+<pre><code>$ apt-cache depends xfce4
+xfce4
+  Depends: xfwm4
+  Depends: xfconf
+  Depends: xfce4-settings
+  Depends: xfce4-panel
+  Depends: xfdesktop4
+  Depends: thunar
+  Depends: gtk2-engines-xfce
+  Depends: xfce4-session
+  Depends: xfce4-appfinder
+  Depends: xfce4-mixer
+  Depends: orage
+  Depends: libxfce4ui-utils
+  Suggests: xfce4-goodies
+  Suggests: xfce4-power-manager
+  Suggests: gtk3-engines-xfce
+  Recommends: xorg
+  Recommends: desktop-base
+  Recommends: thunar-volman
+  Recommends: tango-icon-theme
+  Recommends: xfce4-notifyd
+</code></pre>
+
+<p>Alternatively, the <a href="https://packages.debian.org/search?keywords=xfce4&amp;searchon=names&amp;exact=1&amp;suite=all&amp;section=all" rel="nofollow noreferrer">package search result on Debian.org</a> will show similar listing for respective releases. Either way, the recommended icon theme for Xfce is Tango (<code>tango-icon-theme</code>).</p>
+
+<p><strong>Is this icon included</strong></p>
+
+<p>One way to check whether existing icon theme has dedicated icon for particular type of file, is to search in the <code>/usr/share/icons</code> directory using <code>find</code> command with relevant keyword.</p>
+
+<p>The following is example output when looking for relevant icon for TeX document (as shown in the question) in the <code>mimetypes</code> directories of any installed icon themes.</p>
+
+<pre><code>$ find /usr/share/icons/*/*/mimetypes/* -name '*tex.png'
+/usr/share/icons/gnome/16x16/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/gnome/22x22/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/gnome/24x24/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/gnome/256x256/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/gnome/32x32/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/128x128/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/16x16/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/22x22/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/24x24/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/32x32/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/36x36/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/48x48/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/64x64/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/72x72/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/nuoveXT2/96x96/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-tex.png
+/usr/share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-tex.png
+</code></pre>
+
+<p>In above output, there are three icon themes that provide dedicated icon for TeX document: <strong>gnome</strong>, <strong>nuoveXT2</strong>, <strong>Tango</strong>. Each icon themes may provide minimal or full set of icon sizes; This may affect the appearance of icons in various UI elements.</p>
+
+<p><strong>Which icon theme has all</strong></p>
+
+<p>Despite the recommended icon theme for Xfce is Tango, many distributions prefer to use own brand of icon themes. The following are different brands of icon theme used by some distributions.</p>
+
+<ul>
+<li>Xubuntu uses "elementary Xfce" icon theme (Xfce 4)</li>
+<li>Debian uses "Adwaita" icon theme (GNOME 3)</li>
+<li>Kubuntu uses "Breeze" icon theme (KDE Plasma 5)</li>
+</ul>
+
+<p>As side note, the "Adwaita" icon theme may be incomplete or missing in older releases of <a href="https://packages.debian.org/search?suite=all&amp;section=all&amp;arch=any&amp;searchon=names&amp;keywords=adwaita-icon-theme" rel="nofollow noreferrer">Debian packages</a> i.e. Debian 7 (Wheezy) and <a href="http://packages.ubuntu.com/search?suite=all&amp;section=all&amp;arch=any&amp;keywords=adwaita-icon-theme&amp;searchon=names" rel="nofollow noreferrer">Ubuntu packages</a> i.e. Ubuntu 14.04 (Trusty).</p>
+
+<p>Prefering other brands of icon theme would <em>not</em> mean the recommended icon theme i.e. Tango is any less incomplete. In fact, <a href="http://tango.freedesktop.org/Tango_Desktop_Project" rel="nofollow noreferrer">Tango project</a> aims to create a cross-desktop icon theme that follow a standard and consistent style guide to look coherent and being <a href="http://tango.freedesktop.org/Tango_Showroom" rel="nofollow noreferrer">adopted by many projects</a>.</p>
+
+<p>Above all, user can just install any <a href="https://packages.debian.org/search?suite=all&amp;section=all&amp;arch=any&amp;searchon=names&amp;keywords=icon-theme" rel="nofollow noreferrer">icon theme available on Debian</a> depending on the release.</p>
+
+<p><strong>TL;DR</strong> The recommended icon theme for Xfce was likely missing; Install it. Some distributions provide own brand of icon themes that are more complete.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://unix.stackexchange.com/a/364809" title="short permalink to this answer" class="short-link" id="link-post-364809">share</a><span class="lsep">|</span><a href="https://unix.stackexchange.com/posts/364809/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://unix.stackexchange.com/posts/364809/revisions" title="show all edits to this post">edited <span title="2017-05-13 09:34:02Z" class="relativetime">May 13 at 9:34</span></a>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2017-05-13 09:19:32Z" class="relativetime">May 13 at 9:19</span>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        <a href="https://unix.stackexchange.com/users/125388/clearkimura"><div class="gravatar-wrapper-32"><img src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/99f0aff371c7ab81a5607c46e8fb6f3a" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://unix.stackexchange.com/users/125388/clearkimura">clearkimura</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,369</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="26 bronze badges"><span class="badge3"></span><span class="badgecount">26</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-364809" class="comments js-comments-container  dno">
+		        <table>
+                    <tbody class="js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                            <tr><td></td><td></td></tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-364809" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="https://unix.stackexchange.com/questions/346310/answer/submit" method="post" class="post-form">
+                            <input type="hidden" id="post-id" value="346310">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="">
+                            <h2 class="space">Your Answer</h2>
+
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="77210613bb7c703c6a670d6e1b4fe7aa">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://unix.stackexchange.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2funix.stackexchange.com%2fquestions%2f346310%2fwhy-is-there-no-icon-for-some-files-in-file-manager-xfce%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><g><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></g></svg> Sign up using Google
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"></path></svg> Sign up using Facebook
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphXSm" width="18" height="18" viewBox="0 0 18 18"><g><path fill="#BCBBBB" d="M14 16v-5h2v7H2v-7h2v5z"></path><path d="M5 15v-2h8v2H5zM12.09.72l4.5 6.06-1.2.9-4.51-6.06 1.21-.9zM8.34 4.3l.97-1.16 5.8 4.83-.96 1.16-5.8-4.83zm-1.9 3.36l.64-1.37 6.85 3.19-.63 1.37-6.85-3.2zM5.4 11.39l.38-1.67 7.42 1.48-.22 1.46-7.58-1.27z" fill="#F48024"></path></g></svg> Sign up using Email and Password
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2funix.stackexchange.com%2fquestions%2f346310%2fwhy-is-there-no-icon-for-some-files-in-file-manager-xfce%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+                            </div>
+
+                                                            <div class="form-submit cbt">
+                                        <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+                                    <a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?                            Browse other questions tagged <a href="https://unix.stackexchange.com/questions/tagged/filesystems" class="post-tag" title="show questions tagged &#39;filesystems&#39;" rel="tag">filesystems</a> <a href="https://unix.stackexchange.com/questions/tagged/xfce" class="post-tag" title="show questions tagged &#39;xfce&#39;" rel="tag">xfce</a> <a href="https://unix.stackexchange.com/questions/tagged/icons" class="post-tag" title="show questions tagged &#39;icons&#39;" rel="tag">icons</a>  or <a href="https://unix.stackexchange.com/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2017-02-20 14:41:26Z"><b>10 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>135 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce?lastactivity" class="lastactivity-link" title="2017-05-13 09:34:02Z">7 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+            <div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://stackoverflow.blog/2017/12/18/podcast-122-hold-closer-tiny-dancer-dasher-prancer-vixen/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="https://stackoverflow.blog/2017/12/18/podcast-122-hold-closer-tiny-dancer-dasher-prancer-vixen/?cb=1" class="question-hyperlink">Podcast #122 – Hold Me Closer Tiny Dancer, and Dasher, and Prancer, and Vixen</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>            
+<div id="dfp-tsb" class="everyonelovesstackoverflow" data-clc-stalled="true"></div>
+            <div id="hireme"></div>
+<script>;window.clc=window.clc||{},window.clc.init=window.clc.init||function(a){var b=window,c=b.document;try{if("function"!=typeof[].indexOf||!window.addEventListener||!a.allowed)return;var d=new RegExp(a.allowed);if(!d.test(location.hostname))return;if(b.clc.options)for(var e in b.clc.options)a[e]=b.clc.options[e];b.clc.cmd="undefined"==typeof b.clc.cmd?[]:b.clc.cmd,b.clc.autoload=b.clc.autoload||function(){"function"==typeof b.clc.load?b.clc.load():b.clc.cmd.push(function(a){a.load()})};var f=a.wv;if(c.hidden&&f)return void c.addEventListener("visibilitychange",function b(){c.hidden||(window.clc.init(a),c.removeEventListener("visibilitychange",b))});b.clc.options=a,a.al&&b.clc.autoload();var g=/Trident/i.test(navigator.userAgent)?a.lib.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,".ie$1.js$2"):a.lib,h=c.createElement("script");h.async=!0,h.src=g,c.body.appendChild(h)}catch(a){}},window.clc.loadDisplayAds=window.clc.loadDisplayAds||function(){function a(b){b.style.height=b.style.maxHeight=b.style.minHeight="auto",b.style.display="IFRAME"===b.tagName?"none":"block",[].forEach.call(b.children,a)}function b(a){new Image().src="https://"+e+"/stalled.gif?"+a}var c=window,d=c.document,e="clc.stackoverflow.com",f={slots:{lb:[[728,90]],mlb:[[728,90]],sb:[[300,250],[300,600]],"tag-sponsorship":[[730,135]]},ids:{"dfp-tlb":"lb","dfp-mlb":"mlb","dfp-tsb":"sb","dfp-tag":"tag-sponsorship","clc-tlb":"lb","clc-mlb":"mlb","clc-tsb":"sb"}},g=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?"tag-pages":"question-pages",h=location.hostname;/^clc\./.test(location.hostname)&&(h="test/dev.stackoverflow.com");var i=[4385506061,4386578282,4386579572];return function(e){var j=(e&&0<e.length?e:Object.keys(f.ids)).map(function(a){return d.getElementById(a)}).filter(function(a){return!!a&&/^\s*$/.test(a.innerHTML)}).map(function(a){return a.id});if(0!==j.length){c.googletag=c.googletag||{},c.googletag.cmd=c.googletag.cmd||[],c.googletag.cmd.push(function(){var e=c.googletag,k=d.createElement("div");k.className="adsbox",k.id="clc-abd",k.style.position="absolute",k.style.pointerEvents="none",k.innerHTML="&nbsp;",d.body.appendChild(k);var l=e.pubads();l.enableSingleRequest(),l.addEventListener("slotRenderEnded",function(c){var e=c.serviceName,f=c.slot,g=c.lineItemId;try{var h=f.getSlotElementId(),j=[];h||j.push("id=0");var k=d.getElementById(h);if(!h||k?k.hasAttribute("data-clc-stalled")&&j.push("st=1"):j.push("el=0"),0!==j.length)return void b(j.join("&"));-1===i.indexOf(g)?k.setAttribute("data-clc-prefilled","true"):a(k),k.setAttribute("data-clc-ready","true")}catch(a){var l=d.getElementById("dfp-tsb")||d.getElementById("clc-tsb");l&&l.setAttribute("data-clc-ready","true"),b("e=1")}});var m=c.dfp_targeting||{};m&&Object.keys(m).forEach(function(a){l.setTargeting(a,m[a])});for(var n=0,o=j;n<o.length;n++){var p=o[n],q=f.ids[p],r=f.slots[q],s="/"+"248424177"+"/"+h+"/"+q+"/"+g,t=e.defineSlot(s,r,p);("tag-sponsorship"===q||"sb"==q)&&t.setCollapseEmptyDiv(!0,!0),t.addService(l),!1}e.enableServices();for(var p,u=0,v=j;u<v.length;u++)p=v[u],e.display(p)});var k=d.createElement("script");k.async=!0,k.src="https://www.googletagservices.com/tag/js/gpt.js",document.body.appendChild(k)}}}(),window.clc.init.call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=b0e6e728032a","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=b18b3a2258df","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"ga":false});</script>            <script>
+window.clc_request='ArWcR6VESNUIAAAAAMZIBQALAAAAAgAAAAAYAAAAfGZpbGVzeXN0ZW1zfHhmY2V8aWNvbnN8AEBPSW63RjaIT3M';                    clc.autoload();
+                var dfp_targeting={Registered:['false'],'ron-tag':['filesystems','xfce','icons'],Community:['true']};                                    clc.loadDisplayAds();
+            </script>
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://unix.stackexchange.com/q/346278?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="https://unix.stackexchange.com/questions/346278/how-to-obtain-a-trash-can-icon-on-the-dektop-xfce?noredirect=1&amp;lq=1" class="question-hyperlink">How to obtain a trash can icon on the dektop (Xfce)</a>
+</div>			</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/16774?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">5</div></a><a href="https://unix.stackexchange.com/questions/16774/how-to-assign-an-icon-to-a-program-in-openbox?rq=1" class="question-hyperlink">How to assign an icon to a program in Openbox?</a></div><div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/23776?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">11</div></a><a href="https://unix.stackexchange.com/questions/23776/how-to-change-a-file-type-icon-in-xfce-thunar?rq=1" class="question-hyperlink">How to change a file type icon in XFCE (Thunar)?</a></div><div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/37810?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://unix.stackexchange.com/questions/37810/add-blinking-network-monitor-icon-to-gnome-xfce?rq=1" class="question-hyperlink">Add blinking network-monitor icon to GNOME / XFCE</a></div><div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/45692?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="https://unix.stackexchange.com/questions/45692/how-to-assign-special-folder-icons-in-xfce?rq=1" class="question-hyperlink">How to assign special folder icons in XFCE?</a></div><div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/140179?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">3</div></a><a href="https://unix.stackexchange.com/questions/140179/some-icons-are-broken-in-the-application-menu?rq=1" class="question-hyperlink">Some icons are broken in the application menu</a></div><div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/200096?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="https://unix.stackexchange.com/questions/200096/how-to-make-xfce-desktop-icons-text-transparent?rq=1" class="question-hyperlink">How to make XFCE desktop icons text transparent?</a></div><div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/283209?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://unix.stackexchange.com/questions/283209/removing-xfce-icons-and-themes?rq=1" class="question-hyperlink">Removing xfce icons and themes</a></div><div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/294551?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://unix.stackexchange.com/questions/294551/xfce-ignoring-icons-set-in-usr-share-applications?rq=1" class="question-hyperlink">XFCE ignoring icons set in /usr/share/applications/</a></div><div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/346278?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://unix.stackexchange.com/questions/346278/how-to-obtain-a-trash-can-icon-on-the-dektop-xfce?rq=1" class="question-hyperlink">How to obtain a trash can icon on the dektop (Xfce)</a></div><div class="spacer js-gps-track"><a href="https://unix.stackexchange.com/q/382563?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://unix.stackexchange.com/questions/382563/xfce-how-to-align-icons-on-right-side-of-desktop?rq=1" class="question-hyperlink">xfce: How to align icons on right side of desktop?</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/176911/how-did-rose-catch-up-to-finn" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How did Rose catch up to Finn?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-softwareengineering" title="Software Engineering Stack Exchange"></div><a href="https://softwareengineering.stackexchange.com/questions/362735/using-ifdef-to-switch-between-different-types-of-behavior-during-development" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Using #ifdef to switch between different types of behavior during development
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/346043/determining-capacitor-polarity" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    determining capacitor polarity
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/112144/what-classes-are-based-on-intelligence-but-not-reliant-on-magic-supernatural-pow" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What classes are based on intelligence but not reliant on magic/supernatural power?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/8296/how-to-ask-to-pay-for-products-from-a-friends-shop-rather-than-accepting-them-a" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to ask to pay for products from a friend's shop rather than accepting them as gifts without being rude?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/84007/why-didnt-j-j-abrams-direct-the-last-jedi" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why didn't J.J. Abrams direct The Last Jedi?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-crypto" title="Cryptography Stack Exchange"></div><a href="https://crypto.stackexchange.com/questions/54082/how-safe-is-end-to-end-encryption" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:281 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How safe is end to end encryption?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-photo" title="Photography Stack Exchange"></div><a href="https://photo.stackexchange.com/questions/95101/do-convex-lenses-make-parallel-light-rays-of-different-wavelength-converge-to-di" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do convex lenses make parallel light rays of different wavelength converge to different points?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/176803/why-did-luke-call-the-lightsaber-by-a-different-name" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Luke call the lightsaber by a different name?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-economics" title="Economics Stack Exchange"></div><a href="https://economics.stackexchange.com/questions/19738/why-do-economists-disagree-so-much" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:591 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do economists disagree so much?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/422961/when-is-the-earliest-usage-of-woke-and-wokeness-in-their-meaning-of-awarenes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When is the earliest usage of 'woke' and 'wokeness' in their meaning of awareness of social injustice?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="https://dba.stackexchange.com/questions/193638/is-there-an-elegant-way-to-send-a-query-directly-to-a-physical-printer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there an elegant way to send a Query directly to a physical printer?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/112091/does-microwaving-a-die-significantly-alter-its-balance" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does microwaving a die significantly alter its balance?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/151023/a-very-long-terza-rima" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A very long Terza Rima
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/100527/two-countries-have-a-five-thousand-mile-desert-between-them-how-can-a-city-surv" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Two countries have a five thousand mile desert between them. How can a city survive there?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="https://gaming.stackexchange.com/questions/323037/why-are-some-csgo-weapons-considered-noob-guns" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are some CS:GO weapons considered "noob guns"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/175783/is-the-owasp-recommendation-regarding-localstorage-still-valid" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the OWASP recommendation regarding localstorage still valid?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-magento" title="Magento Stack Exchange"></div><a href="https://magento.stackexchange.com/questions/206643/magento-2-2-2-customer-session-not-working-with-cache-enable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:479 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Magento 2.2.2: Customer session not working with cache enable
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2575216/write-down-the-complete-list-of-abelian-groups-with-360-elements" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Write down the complete list of abelian groups with 360 elements
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-boardgames" title="Board &amp; Card Games Stack Exchange"></div><a href="https://boardgames.stackexchange.com/questions/39512/can-a-spell-fizzle-because-a-cost-reducing-effect-is-removed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a spell fizzle because a cost-reducing effect is removed?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2572757/what-is-the-answer-to-this-infamous-common-core-question" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the answer to this infamous "Common Core" question?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/100544/how-does-a-gorgon-sleep" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does a gorgon sleep?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="https://gis.stackexchange.com/questions/266013/esri-field-names" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    ESRI Field Names?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-chess" title="Chess Stack Exchange"></div><a href="https://chess.stackexchange.com/questions/19455/does-there-exist-an-algorithm-that-would-play-perfect-chess-if-given-infinite-pr" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:435 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does there exist an algorithm that would play perfect chess if given infinite processing power?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+        </div>
+    <div id="feed-link">
+    <div id="feed-link-text">
+        <a href="https://unix.stackexchange.com/feeds/question/346310" title="feed of this question and its answers">
+            <svg aria-hidden="true" class="svg-icon iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"></path></svg>
+            question feed
+        </a>
+    </div>
+</div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/346310/ivc/1625');});</script>
+<noscript>&lt;div&gt;&lt;img src="/posts/346310/ivc/1625" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;</noscript><div style="display:none" id="prettify-lang"></div></div>
+
+
+        </div>
+    </div><script async="" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row">
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://unix.stackexchange.com/">Unix &amp; Linux</a></h5>
+                        <ul class="-list">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://unix.stackexchange.com/tour">Tour</a></li>
+                                <li class="-item"><a href="https://unix.stackexchange.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=unix.stackexchange.com">Chat</a></li>
+                            <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://unix.stackexchange.com/contact">Contact</a></li>
+                                <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://unix.meta.stackexchange.com/">Feedback</a></li>
+                                                            <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                                                    <li class="-item"><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-back-trigger js-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://unix.stackexchange.com/questions/346310/why-is-there-no-icon-for-some-files-in-file-manager-xfce#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (26)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (16)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright g-row jc-end">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                    with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev&nbsp;2017.12.20.28229</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="g-row">
+                    Linux is a registered trademark of Linus Torvalds. UNIX is a registered trademark of The Open Group. <br>This site is not affiliated with Linus Torvalds or The Open Group in any way.
+                </div>
+                    </div>
+    </footer>
+
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Unix &amp;amp; Linux Stack Exchange works best with JavaScript enabled
+            &lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;
+        &lt;/div&gt;
+    </noscript>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-24', {'cookieDomain': 'stackexchange.com'});
+                ga('set', 'dimension2', '|filesystems|xfce|icons|');
+                ga('send', 'pageview');
+                    
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+    </script>
+        
+    
+    
+<script async="" src="./filesystems - Why is there no icon for some files in File Manager (Xfce)_ - Unix &amp; Linux Stack Exchange_files/clc.min.js.download"></script></body></html>
