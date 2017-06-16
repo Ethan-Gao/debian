@@ -1,0 +1,1 @@
+geetest_1513848497474({"user_error": "\u7f51\u7edc\u4e0d\u7ed9\u529b", "status": "error", "error": "old challenge", "error_code": "error_02"})

@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="robots" content="index,follow"><meta name="keywords" content="lcd, linux, AM335x EVM, AM335 x, AM335x, Kernel"><meta name="e2e_group" content="Support Forums"><meta name="e2e_group_family" content="Processors"><meta name="e2e_subgroup_family" content="Sitara™ Processors"><meta name="e2e_type" content="Forum"><meta name="GENERATOR" content="Zimbra Community 8"><link rel="canonical" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">
+<link rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/layout.css" type="text/css" media="screen"><script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/d7fc497f21"></script><script type="text/javascript" async="" charset="utf-8" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/conversion_async.js.download" id="utag_52"></script><script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/nr-1071.min.js.download"></script><script type="text/javascript" async="" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/linkid.js.download"></script><script type="text/javascript" async="" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/ec.js.download"></script><script type="text/javascript" async="" charset="utf-8" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/analytics.js.download" id="tealium-tag-7110"></script><script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/i.js.download"></script><script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/utag.js.download" type="text/javascript" async=""></script><script type="text/javascript" defer="" async="" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/evergage.min.js.download"></script><script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/jquery.min.js.download"></script><script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/telligent.glow.min.js.download"></script><script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/jquery.validate.min.js.download"></script><script type="text/javascript">
+// <![CDATA[
+try { jQuery.extend(jQuery.validator.messages,{required:'This field is required.',remote:'Please fix this field.',date:'Please enter a valid date.',dateISO:'Please enter a valid date (ISO).',number:'Please enter a valid number.',digits:'Please enter only digits.',creditcard:'Please enter a valid credit card number.',equalTo:'Please enter the same value again.',accept:'Please enter a value with a valid extension.',maxlength:jQuery.validator.format('Please enter no more than {0} characters.'),minlength:jQuery.validator.format('Please enter at least {0} characters.'),rangelength:jQuery.validator.format('Please enter a value between {0} and {1} characters long.'),range:jQuery.validator.format('Please enter a value between {0} and {1}.'),max:jQuery.validator.format('Please enter a value less than or equal to {0}.'),min:jQuery.validator.format('Please enter a value greater than or equal to {0}.')}); } catch(e) { };
+// ]]>
+</script><script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/telligent.evolution.min.js.download"></script><script type="text/javascript">
+// <![CDATA[
+try { jQuery.telligent.evolution.site.configure({baseUrl:'\/',isRemote:false,remoteUrlEncodePattern:'',monthNames:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],dayNames:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],authorizationCookieName:'AuthorizationCookie',defaultErrorMessage:'An error occurred.  Please try again or contact your administrator.',defaultMultiErrorMessagePrefix:'The following errors occurred:  ',silverlightFileUploadEnabled:true,accessingUserId:2101,accessingUserIsSystemAccount:true});
+jQuery.extend($.fn.evolutionUserFileTextBox.defaults,{removeText:'Remove',selectText:'Select\/Upload...',noFileText:'No File Selected'});
+jQuery.telligent.evolution.navigationConfirmation.configure({message:'Unless you save before leaving this page, you will lose any changes you have made.'});
+jQuery.telligent.evolution.validation.registerExtensions({passwordInvalidMessage:'Password contains invalid chars ...',passwordRegex:'^.*$',emailInvalidMessage:'Your email address is invalid.',emailRegex:'^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$',usernameInvalidMessage:'Your sign in name does not meet the requirements for this site.',usernameRegex:'^[a-zA-Z0-9_\\- @\\.]+$',emailsInvalidMessage:'One or more emails is invalid',urlInvalidMessage:'URL not in correct format',urlRegex:'^((http|https|mailto|mms|ftp):|\/|#|~\/)'});
+jQuery.extend(jQuery.fn.evolutionLike.defaults,{likeText:'Like',unlikeText:'Unlike',modalTitleText:'People who like this',modalShowMoreText:'Show More',whoLikesOtherText:'<a href=\"{user_profile_url}\" class=\"internal-link view-user-profile\">{user_display_name}<\/a> likes this',whoLikesOtherTwoText:'<a href=\"{user_profile_url}\" class=\"internal-link view-user-profile\">{user_display_name}<\/a> and <span class=\"who-likes\">1 other<\/span> like this',whoLikesOtherMultipleText:'<a href=\"{user_profile_url}\" class=\"internal-link view-user-profile\">{user_display_name}<\/a> and <span class=\"who-likes\">{count} others<\/span> like this',whoLikesAccessingText:'You like this',whoLikesAccessingTwoText:'You and <span class=\"who-likes\">1 other<\/span> like this',whoLikesAccessingMultipleText:'You and <span class=\"who-likes\">{count} others<\/span> like this'});
+jQuery.extend(jQuery.fn.evolutionInlineTagEditor.defaults,{editButtonText:'Edit tags',selectTagsText:'Select tags',saveTagsText:'Save',cancelText:'Cancel'});
+jQuery.extend(jQuery.fn.evolutionStarRating.defaults,{titles:['Terrible','Poor','Fair','Average','Good','Excellent'],ratingMessageFormat:'Average rating: {rating} out of {count} ratings.'});
+jQuery.extend(jQuery.fn.evolutionModerate.defaults,{moderateLinkText:'moderate',reportLinkText:'Flag as spam\/abuse',reportedLinkText:'Flagged as spam\/abuse',reportedNotificationMessageText:'{NAME}\'s post has been flagged. <strong>Thank you for your feedback.<\/strong>'});
+jQuery.extend(jQuery.fn.evolutionBookmark.defaults,{deleteBookmarkText:'Unbookmark {content_type_name}',addBookmarkText:'Bookmark this {content_type_name}',processingText:'...'});
+} catch(e) { };
+// ]]>
+</script><script type="text/javascript">jQuery(function($) {
+	$.telligent.evolution.messaging.subscribe('userActionSubscibeToggle', function(data) {
+		var e = $(data.target);
+		var userId = e.data('userid'), accessingUserId = e.data('accessinguserid'), v = e.data('subscribe');
+		e.html('...');
+		if (v) {
+			$.telligent.evolution.post({
+				url: $.telligent.evolution.site.getBaseUrl() + 'api.ashx/v2/usersubscriptions/{FollowerId}/following.json',
+				data: {  FollowerId: accessingUserId, FollowingId: userId },
+				dataType: 'json',
+				success: function(response) { e.html('Email unsubscribe to user').data('subscribe', false); },
+				error: function(response) {  e.html('Email subscribe to user').data('subscribe', true); }
+			});
+		} else {
+			$.telligent.evolution.del({
+				url: $.telligent.evolution.site.getBaseUrl() + 'api.ashx/v2/usersubscriptions/{FollowerId}/following/{FollowingId}.json',
+				data: {  FollowerId: accessingUserId, FollowingId: userId },
+				dataType: 'json',
+				success: function(response) { e.html('Email subscribe to user').data('subscribe', true); },
+				error: function(response) {  e.html('Email subscribe to user').data('subscribe', false); }
+			});
+		}
+	});
+});</script><script type="text/javascript">jQuery(function($) {
+	$.telligent.evolution.messaging.subscribe('userActionFriendshipToggle', function(data) {
+		var e = $(data.target);
+		var userId = e.data('userid'), accessingUserId = e.data('accessinguserid'), v = parseInt(e.data('friendship'));
+		var t = e.html();
+		e.html('...');
+		if (v == 0) {
+				e.html(t);
+				$.glowModal('/user/requestfriend?UserId=' + userId + '', {width:670,height:390});
+		} else if (v == 3) {
+				$.telligent.evolution.post({
+					url: $.telligent.evolution.site.getBaseUrl() + 'api.ashx/v2/users/{RequestorId}/friends.json',
+					data: { RequestorId: accessingUserId, RequesteeId: userId, RequestMessage: '<p style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;\"><strong>Hi,<\/strong><\/p>\n<p style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;\"><strong>I would like to be friends with you on the <a title=\"TI E2E Community\" style=\"color: #ff0000;\">TI E2E Community<\/a>.&nbsp;&nbsp;&nbsp; Thank you!<\/strong><\/p> '},
+					dataType: 'json',
+					success: function(response) { window.location = window.location; },
+					error: function(response) {  e.html(t); }
+				});
+		} else if (v == 1 || v == 2 || v == 4) {
+			if (v == 4 || (v == 1 && window.confirm('Are you sure you want to cancel this friendship request?')) || (v == 2 && window.confirm('Are you sure you want to unfriend this person?'))) {
+				$.telligent.evolution.del({
+					url: $.telligent.evolution.site.getBaseUrl() + 'api.ashx/v2/users/{RequestorId}/friends/{RequesteeId}.json',
+					data: { RequestorId: accessingUserId, RequesteeId: userId },
+					dataType: 'json',
+					success: function(response) { window.location = window.location; },
+					error: function(response) {  e.html(t); }
+				});
+			} else { e.html(t); }
+		}
+	});
+});</script><script type="text/javascript">(function($){ $.telligent.evolution.media.defaults.endpoint = 'https://e2e.ti.com/callback.ashx?__type=Telligent.Evolution.Api.Plugins.Endpoints.FileViewerEndpoint%2C%20Telligent.Evolution.Api'; }(jQuery));</script><script type="text/javascript">(function($){ $.telligent.evolution.preview.defaults.endpoint = 'https://e2e.ti.com/callback.ashx?__type=Telligent.Evolution.Api.Plugins.Endpoints.WebPreviewEndpoint%2C%20Telligent.Evolution.Api'; }(jQuery));</script><script type="text/javascript">(function($){ $.telligent.evolution.language.defaults.dateEndpoint = 'https://e2e.ti.com/callback.ashx?__type=Telligent.Evolution.Api.Plugins.Endpoints.DateFormattingEndpoint%2C%20Telligent.Evolution.Api'; }(jQuery));</script><script type="text/javascript">(function($){ $.fn.evolutionUserFileTextBox.defaults.endpoint = 'https://e2e.ti.com/callback.ashx?__type=Telligent.Evolution.Api.Plugins.Endpoints.UserFileTextBoxEndpoint%2C%20Telligent.Evolution.Api'; }(jQuery));</script>
+          <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"d7fc497f21","applicationID":"47619253,47619254","transactionName":"MgEBYBNZW0dYVkNQWwtLImcxF1MbQnNYS0EILQdJTkwaT39aRUxZMQwRUQBcfHBE","queueTime":0,"applicationTime":380,"agent":"","atts":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><meta name="viewport" content="width=device-width"><meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3"><link rel="shortcut icon" type="image/ico" href="https://e2e.ti.com/cfs-filesystemfile/__key/themefiles/s-ac6c06b274524486add6d4f6b26d379d-files/favicon.ico"><link rel="apple-touch-icon-precomposed" href="https://e2e.ti.com/cfs-filesystemfile/__key/themefiles/s-fd-ac6c06b274524486add6d4f6b26d379d-files/favicon152.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="https://e2e.ti.com/cfs-filesystemfile/__key/themefiles/s-fd-ac6c06b274524486add6d4f6b26d379d-files/favicon144.png">
+        <link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/screen.less"><!--[if lte IE 7]><link type="text/css" rel="stylesheet" href="https://e2e.ti.com/cfs-filesystemfile/__key/themefiles/h-00000000875c52c7-s-ac6c06b274524486add6d4f6b26d379d-stylesheetfiles-https-e2eticom-443/ie7.less" /><![endif]--><!--[if lte IE 8]><link type="text/css" rel="stylesheet" href="https://e2e.ti.com/cfs-filesystemfile/__key/themefiles/h-00000000875c52c7-s-ac6c06b274524486add6d4f6b26d379d-stylesheetfiles-https-e2eticom-443/ie8.less" /><![endif]--><!--[if gte IE 9]--><link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/print.css" media="print"><!--[endif]--><!--[if gte IE 9]--><link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/handheld.less" media="only screen and (max-width: 768px)"><!--[endif]--><!--[if gte IE 9]--><link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/tablet.less" media="only screen and (min-device-width: 769px) and (max-device-width: 1024px) and (orientation: landscape), only screen and (min-device-width: 769px) and (max-device-width: 1024px) and (orientation: portrait)"><!--[endif]--><link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/calendar.css"><!--[if gte IE 9]--><link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/calendar_2D00_handheld.css" media="(max-width: 768px)"><!--[endif]--><link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/analyticswidget.css"><script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/theme.js.download"></script><script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/analytics.js(1).download"></script>
+          <link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/dynamic-style" media="screen,print">
+        
+          
+        
+          <link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/dynamic-style(1)" media="screen,print">
+        <link rel="alternate" type="application/rss+xml" title="Mike Worster&#39;s Activities (RSS 2.0)" href="https://e2e.ti.com/members/3585364/activities/rss"><link rel="alternate" type="application/rss+xml" title="Activities of People Mike Worster Follows (RSS 2.0)" href="https://e2e.ti.com/members/3585364/activities/followersrss"><link rel="alternate" type="application/rss+xml" title="Mike Worster&#39;s Groups Activities (RSS 2.0)" href="https://e2e.ti.com/members/3585364/activities/groupsrss"><link rel="alternate" type="application/rss+xml" title="Sitara™ Processors (RSS 2.0)" href="https://e2e.ti.com/support/arm/sitara_arm/rss"><link rel="alternate" type="application/rss+xml" title="Sitara Processors Forum - Recent Threads (RSS 2.0)" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/rss?Mode=0"><link rel="alternate" type="application/rss+xml" title="Sitara Processors Forum - Recent Posts (RSS 2.0)" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/rss?Threadless=1"><link rel="alternate" type="application/rss+xml" title="AM335x EVM LCD powering off (RSS 2.0)" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950/rss?ContentTypeId=0"><title>
+	AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community
+</title><style type="text/css" class="evergageCampaignStyles">/*
+ * Copyright (C) 2010-2014 Evergage, Inc.
+ * All rights reserved.
+ */
+
+
+/* Fluid class for determining actual width in IE */
+#qtip-rcontainer .evergage-tooltip{
+    display: block !important;
+    visibility: hidden !important;
+    position: static !important;
+    float: left !important;
+}
+
+/* Core qTip styles */
+.evergage-tooltip, .evergage-qtip{
+    position: fixed;
+    left: -28000px;
+    top: -28000px;
+    display: none;
+}
+
+.evergage-tooltip.evergage-unsafe-tooltip {
+    display: block;
+    left: inherit;
+    top: inherit;
+}
+
+.evergage-tooltip.evergageMessageInVisualEditorTestMode {
+    position: absolute;
+    pointer-events: auto;
+}
+
+.evergage-tooltip > .evergage-tooltip-content-unsafe-tooltip {
+    margin: 0px !important;
+    border: none !important;
+    outline: 0px !important;
+    padding: 0px !important;
+}
+
+.evergage-tooltip.evergage-jgrowl.evergage-tooltip-bar {
+    max-width: 100% !important;
+    width: 100% !important;
+    border-radius: 0px !important;
+    -o-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -ms-border-radius: 0px !important;
+}
+
+.evergage-tooltip-invisible {
+    display: none !important;
+    visibility: hidden !important;
+    width: 1px !important;
+    height: 1px !important;
+}
+
+.evergage-tooltip-page {
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: inherit !important;
+    display: inline-block;
+}
+
+.evergage-tooltip-page-replace {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.evergage-tooltip .evergage-tooltip-content li.evergage-tasklistitem-notdone, .evergage-tooltip .evergage-tooltip-content li.evergage-tasklistitem-done {
+    text-transform: inherit;
+    display: list-item;
+    width: inherit;
+    line-height: inherit;
+    text-align: left;
+    margin-bottom: 10px;
+    list-style-position: inside;
+}
+
+.evergage-tooltip li.evergage-task-done, .evergage-tooltip li.evergage-task-notdone {
+    margin-bottom: 10px;
+}
+
+.evergage-tooltip .evergage-tooltip-content li.evergage-tasklistitem-done, .evergage-tooltip li.evergage-task-done {
+    text-decoration: line-through;
+}
+
+.evergage-tooltip.evergage-nonBlocking.evergage-tooltip-hover {
+    opacity: 0.2 !important;
+}
+
+.evergage-tooltip .evergage-tooltip-content{
+    position: relative;
+    padding: 5px 9px;
+    overflow: hidden;
+
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.evergage-tooltip .evergage-tooltip-titlebar{
+    position: relative;
+    min-height: 14px;
+    padding: 5px 35px 5px 10px;
+    overflow: hidden;
+
+    border-width: 0 0 1px;
+    font-weight: bold;
+}
+
+.evergage-tooltip-titlebar + .evergage-tooltip-content{ border-top-width: 0 !important; }
+
+/* Default close button class */
+.evergage-tooltip-titlebar .evergage-tooltip-close {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    margin-top: -9px;
+    font-weight: bold;
+
+    cursor: pointer;
+    outline: medium none;
+
+    border: none;
+    background: transparent;
+    /*border-width: 1px;*/
+    /*border-style: solid;*/
+}
+
+.emptyTitle > .evergage-tooltip-titlebar  {
+    height: 0;
+    float: right;
+    z-index: 2147483647;
+}
+
+* html .evergage-tooltip .evergage-tooltip-titlebar .evergage-tooltip-close { top: 16px; } /* IE fix */
+
+.evergage-tooltip-titlebar .evergage-ui-icon-close,
+.evergage-tooltip-icon .evergage-ui-icon-close {
+    display: block;
+    text-indent: -1000em;
+    direction: ltr;
+}
+
+.evergage-tooltip-icon, .evergage-tooltip-icon .evergage-ui-icon-close {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.evergage-tooltip-icon .evergage-ui-icon-close{
+    width: 18px;
+    height: 14px;
+
+    text-align: center;
+    text-indent: 0;
+    font: normal bold 14px/14px sans-serif;
+
+    color: inherit;
+    background: transparent none no-repeat -100em -100em;
+}
+
+a.evergage-tooltip-close:hover {
+    text-decoration: none;
+}
+
+.evergage-ui-icon-close:hover {
+    font-size: 22px;
+}
+
+
+/* Applied to 'focused' tooltips e.g. most recently displayed/interacted with */
+.evergage-tooltip-focus {}
+
+/* Applied on hover of tooltips i.e. added/removed on mouseenter/mouseleave respectively */
+.evergage-tooltip-hover {}
+
+/* Default tooltip style */
+.evergage-tooltip-default {
+    /*border-width: 2px;
+    border-style: solid;
+    border-color: #F1D031;
+
+    background-color: #FFFFA3;
+    color: #555;*/
+}
+
+.evergage-tooltip-default .evergage-tooltip-titlebar {
+    background-color: transparent;
+}
+
+.evergage-tooltip-default .evergage-tooltip-icon {
+    /*border-color: #CCC;*/
+    /*background: #F1F1F1;*/
+    /*color: #777;*/
+}
+
+/* Add shadows to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE9+, Safari 2+ */
+.evergage-tooltip-shadow{
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* Add rounded corners to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE9+, Safari 2+ */
+.evergage-tooltip-rounded,
+.evergage-tooltip-tipsy,
+.evergage-tooltip-bootstrap{
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+
+/* IE9 fix - removes all filters */
+.evergage-tooltip:not(.ie9haxors) div.evergage-tooltip-content,
+.evergage-tooltip:not(.ie9haxors) div.evergage-tooltip-titlebar{
+    filter: none;
+    -ms-filter: none;
+}
+
+
+/* Tips plugin */
+.evergage-tooltip .evergage-tooltip-tip{
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.evergage-tooltip .evergage-tooltip-tip,
+.evergage-tooltip .evergage-tooltip-tip .evergage-qtip-vml{
+    position: absolute;
+
+    line-height: 0.1px !important;
+    font-size: 0.1px !important;
+    color: #123456;
+
+    background: transparent;
+    border: 0 dashed transparent;
+}
+
+.evergage-tooltip .evergage-tooltip-tip canvas{ top: 0; left: 0; }
+
+.evergage-tooltip .evergage-tooltip-tip .evergage-qtip-vml{
+    behavior: url(#default#VML);
+    display: inline-block;
+    visibility: visible;
+}
+
+/* Modal plugin */
+#evergage-qtip-overlay{
+    position: fixed;
+    left: -10000em;
+    top: -10000em;
+}
+
+/* Applied to modals with show.modal.blur set to true */
+#evergage-qtip-overlay.blurs{ cursor: pointer; }
+
+/* Change opacity of overlay here */
+#evergage-qtip-overlay div{
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+
+    background-color: black;
+
+    opacity: 0.7;
+    filter:alpha(opacity=70);
+    -ms-filter:\"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)\";
+}
+
+.evergage.poweredByEvergage > a {
+    opacity: 0.2;
+    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    right: 4px;
+    bottom: 2px;
+}
+
+.evergage.poweredByEvergage > a:hover {
+    opacity: 1;
+}
+
+
+/*# sourceURL=evergageStyles.css*/</style><script type="text/javascript" async="" charset="utf-8" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/utag.4.js.download" id="utag_ti.main_4"></script><script type="text/javascript" async="" charset="utf-8" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/utag.52.js.download" id="utag_ti.main_52"></script><link type="text/css" rel="stylesheet" href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/main.css" data-systemjs-css=""><script type="text/javascript" async="" charset="utf-8" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/utag.87.js.download" id="utag_ti.main_87"></script><script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1035033177/?random=1513848505337&amp;cv=8&amp;fst=1513848505337&amp;num=1&amp;guid=ON&amp;eid=376635470%2C659238991&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_his=2&amp;u_tz=480&amp;u_java=false&amp;u_nplug=4&amp;u_nmime=5&amp;frm=0&amp;url=https%3A%2F%2Fe2e.ti.com%2Fsupport%2Farm%2Fsitara_arm%2Ff%2F791%2Ft%2F345950&amp;tiba=AM335x%20EVM%20LCD%20powering%20off%20-%20Sitara%20Processors%20Forum%20-%20Sitara%E2%84%A2%20Processors%20-%20TI%20E2E%20Community&amp;async=1&amp;rfmt=3&amp;fmt=4"></script></head><body spellcheck="true" style="padding-top: 105px;"><form name="ctl04" method="post" action="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950" id="ctl04" novalidate="novalidate">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUBMGRk2maSnWryKnTSdAgVkmY8csPR0g9yKyXi53CrGfvLEX0=">
+</div>
+
+
+<script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/WebResource.axd" type="text/javascript"></script>
+<script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/WebResource(1).axd" type="text/javascript"></script>
+<script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/WebResource(2).axd" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C21772F6">
+</div><div class="header-fragments-header"></div>
+<div class="header-fragments" id="ctl05_ctl01_page"><div class="layout">
+<div class="layout-header"></div>
+<div class="layout-content header-top-content with-adaptable-elements" id="ctl05_ctl01_layout" style="visibility: visible;">
+<div class="layout-region header" id="ctl05_ctl01_header" style="position: fixed; top: 0px; z-index: 10;">
+<div class="layout-region-inner header"><div class="content-fragment site-banner no-wrapper responsive-1" id="header-1722">
+<div class="content-fragment-content">
+
+
+
+
+
+
+
+
+
+				
+		
+	
+		
+
+
+
+<div class="banner site  with-site-navigation " id="header-1722_banner">
+	<div class="avatar">
+						    
+								              <a href="http://www.ti.com/" title="Go to TI.com" class="ui-tip" style="background-image: url(&#39;/cfs-file/__key/defaultwidgets/e2e80000000000000000000000000000-8e37c7cc2be34dab910dfa4c3808ef60/iconHeader.svg&#39;); background-image: url(&#39;/cfs-file/__key/defaultwidgets/e2e80000000000000000000000000000-8e37c7cc2be34dab910dfa4c3808ef60/ti_5F00_logo.png&#39;)\9; *background-image: url(&#39;/cfs-file/__key/defaultwidgets/e2e80000000000000000000000000000-8e37c7cc2be34dab910dfa4c3808ef60/ti_5F00_logo.png&#39;); background-repeat: no-repeat; width: 280px; height: 35px">
+			  </a>
+      			</div>
+
+      <h3 class="name hidden">TI E2E Community</h3>
+
+					<div class="navigation-list site-links" id="header-1722_bannerSiteLinks">
+			<ul>
+				<li class="navigation-list-item">
+					<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950#" class="site-navigation group ui-tip" id="header-1722_site" data-tip="Groups" title="Groups">Menu</a>
+				</li>
+			</ul>
+		</div>
+	
+	<fieldset class="search" id="header-1722_searchFields" style="">
+		<ul class="field-list">
+			<li class="field-item">
+				<span class="field-item-description hidden">
+					<label>Search through millions of questions and answers</label>
+				</span>
+				<span class="field-item-input">
+					<input autocomplete="off" type="search" placeholder="Search through millions of questions and answers" id="header-1722_Search" value="">
+					<input class="searchIcon" type="button">
+				</span>
+			</li>
+		</ul>
+	</fieldset>
+ 
+					<div class="navigation-list user-links" id="header-1722_bannerLinks">
+				<ul style="width: 100%">
+																																																		<li class="navigation-list-item">
+							<a href="https://e2e.ti.com/login?ReturnUrl=%2Fsupport%2Farm%2Fsitara_arm%2Ff%2F791%2Ft%2F345950" class="ui-tourtip internal-link user with-icon ui-tip" data-tourtipkey="t;zMc3juMrq02RDfpMOAjvYA;uqnDnB3wREIoDPKHxPAQqg" data-tourtipmessage="Sign in or Join the community." title="Join or Sign In">User</a>
+						</li>
+																																													</ul>
+			</div>
+	
+	<div class="navigation-list handheld">
+		<ul>
+			<li class="navigation-list-item">
+				<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950#" class="site" id="header-1722_handheldSiteLinksLink">Menu</a>
+			</li>
+			<li class="navigation-list-item">
+				<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950#" class="search" id="header-1722_handheldSearchFieldsLink">Search through millions of questions and answers</a>
+			</li>
+			<li class="navigation-list-item">
+															<a href="https://e2e.ti.com/login?ReturnUrl=%2Fsupport%2Farm%2Fsitara_arm%2Ff%2F791%2Ft%2F345950" class="user">User</a>
+												</li>
+		</ul>
+	</div>
+	<div class="container handheld">
+		<fieldset class="search" style="" id="header-1722_handheldSearchFields"></fieldset>
+		<div class="user-links" style="display:none" id="header-1722_handheldBannerLinks"></div>
+	</div>
+
+</div>
+<div class="e2e-header">
+  <div class="e2e-banner">
+		<a href="https://e2e.ti.com/" title="TI E2E™ Community" class="ui-tip">TI E2E™ Community</a>
+  </div>
+</div>
+
+
+
+    
+            
+    
+
+
+
+			</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment navigation-custom no-wrapper responsive-hidden" id="header-1723">
+<div class="content-fragment-content">
+
+							
+
+
+			<div class="navigation-list links" id="header-1723_container" data-minlinks="0" data-direction="horizontal" data-maxlinks="7" data-lid="" style="display: block; overflow: hidden; height: 42px;"><div class="container" style="overflow-y: hidden; overflow-x: auto; height: 62px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 660px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><a href="https://e2e.ti.com/support/" style="float: left;">Forums</a><ul class="children" style="display: none; float: left;">
+													  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/amplifiers/">Amplifiers</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/switches_multiplexers/">Switches &amp; Multiplexers</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/applications/">Applications</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  									  								  									  								  								  <a href="https://e2e.ti.com/support/arm/" class="selected">Processors</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/clocks/">Clock and Timing</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/data_converters/">Data Converters</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/development_tools/">Development Tools</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/dsp/">Digital Signal Processors (DSP)</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/dlp__mems_micro-electro-mechanical_systems/">DLP® Products &amp; MEMS</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/embedded/">Embedded Software</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/interface/">Interface</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/logic/">Logic </a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/isolation/">Isolation</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/microcontrollers/">Microcontrollers</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/omap/">OMAP™ Applications Processors (Read Only)</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/power_management/">Power Management</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/rf__digital_radio/">RF &amp; Digital Radio</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/sensor/">Sensor Products</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/other_analog/">Haptics &amp; Touch</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/wireless_connectivity/">Wireless Connectivity</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						   						   						   						   						   							  </ul></li><li class="navigation-list-item" style="display: inline;"><a href="https://e2e.ti.com/blogs_/" style="float: left;">Blogs</a><ul class="children" style="display: none; float: left;">
+													  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/analogwire">Analog Wire</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/behind_the_wheel">Behind the Wheel</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/connecting_wirelessly">ConnecTIng Wirelessly</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/enlightened">Enlightened: The TI DLP® Blog</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/industrial_strength">Industrial Strength</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/maketheswitch">Launch Your Design</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/helpcentral">Learn E2E</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/motordrivecontrol">Motor Drive &amp; Control</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/msp430blog">MSP Low-Power Plays</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/powerhouse">Power House</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/process">The Process</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/thinkinnovate">Think. Innovate</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/toolsinsider">Tools Insider</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						  						  						  						  						  							  <li>
+								  																	  <a href="https://e2e.ti.com/blogs_/b/designproject">University Program</a>
+							  </li>
+						   						   						   						   						   						   
+						   						  						   						   						   						   						   							  </ul></li><li class="navigation-list-item" style="display: inline;"><a href="https://e2e.ti.com/group/" style="float: left;">Groups</a><ul class="children" style="display: none; float: left;">
+													  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/group/universityprogram/">TI University Program</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/group/ru/">Russian E2E (сообщество E2E)</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/group/jp/">Japanese E2E (日本語コミュニティ)</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/group/helpcentral/">Learn E2E</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/group/launchyourdesign/">Launch Your Design</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/group/motor/">Motor Drive &amp; Control</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						   						   						   						   						   							  </ul></li><li class="navigation-list-item" style="display: inline;"><a href="https://training.ti.com/" style="float: left;">TI Training</a><ul class="children" style="display: none; float: left;">
+						  						  							  <li>
+								  <a href="http://www.ti.com/ww/en/techdays/index.html">Tech days</a>
+							  </li>
+						  						  							  <li>
+								  <a href="https://training.ti.com/">Online training</a>
+							  </li>
+						  						  							  <li>
+								  <a href="https://training.ti.com/search-catalog/type/classroom/type/webcast">Live events</a>
+							  </li>
+						  						  							  <li>
+								  <a href="http://www.ti.com/ww/en/power_supply_design_seminars/index.html">Power Supply Design Seminar</a>
+							  </li>
+						  							  </ul></li></ul></div></div>
+		</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment header-fragment t-i-header no-wrapper responsive-1" id="header-1724">
+<div class="content-fragment-content">
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+			
+	
+<script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/personalization.js.download"></script>
+<script language="javascript" type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/includes_5F00_pg.js.download"></script>
+<script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/lib.js.download"></script>
+
+	</div>
+<div class="content-fragment-footer"></div>
+</div>
+</div>
+</div>
+<div class="layout-region content" id="ctl05_ctl01_content">
+<div class="layout-region-inner content"><div class="content-fragment group-banner no-wrapper responsive-1" id="header-1533311608">
+<div class="content-fragment-content">
+
+
+
+
+
+
+
+
+
+<div class="banner context  ">
+  	<div class="avatar">
+		<a href="https://e2e.ti.com/support/arm/sitara_arm/">
+			<img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/defaulthub.gif" style="width: 68px;height:0;padding:68px 0 0 0;overflow:hidden;background:url(&#39;https://e2e.ti.com/utility/defaulthub.gif&#39;) center center no-repeat;background-size:cover;" alt="Sitara™ Processors">
+		</a>
+	</div>
+	<h3 class="name">
+		<a href="https://e2e.ti.com/support/arm/sitara_arm/"><span>Sitara™ Processors</span></a>
+	</h3>
+
+			<h2 class="description">
+			<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791"><span>Sitara Processors Forum</span></a>
+		</h2>
+	
+			<div class="navigation-list applications">
+			<div class="" data-minlinks="0" data-maxlinks="0" data-direction="vertical"><div class="container"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; visibility: visible;"><li class="navigation-list-tem"><a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950#" class="more" data-more="">More</a></li></ul></div></div>
+		</div>
+	
+	
+																					
+		<div class="navigation-list new">
+			<div class="" data-maxlinks="1" data-minlinks="1"><div class="container"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; visibility: visible;"><li class="navigation-list-item"><a class="internal-link add-post forum" href="https://e2e.ti.com/p/addpost?fn=791">Sign In to Post</a></li></ul></div></div>
+		</div>
+		
+	</div>
+			</div>
+<div class="content-fragment-footer"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="layout-footer"></div>
+</div></div><div class="header-fragments-footer"></div><div class="single-column" style="display: none;"></div><div class="content-fragment-page forums-thread" id="ctl05_ctl02_page"><div class="layout">
+<div class="layout-header"></div>
+<div class="layout-content content-left-sidebar-right" id="ctl05_ctl02_layout">
+<div class="layout-region right-sidebar" id="ctl05_ctl02_right-sidebar">
+<div class="layout-region-inner right-sidebar"><div class="content-fragment raw-html no-wrapper responsive-1 
+	    navigation-custom
+    " id="fragment-316646">
+<div class="content-fragment-content">
+
+<div class="navigation-list links" style="display: block;">
+<ul style="list-style: outside none none; padding: 0px; margin: 0px; overflow: hidden; visibility: visible;">
+<li class="navigation-list-item parent-link"><a href="https://e2e.ti.com/support/arm/">Go to Processors</a></li>
+</ul>
+</div>
+
+	</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment navigation-custom no-wrapper with-spacing responsive-1" id="fragment-316647">
+<div class="content-fragment-content">
+
+							
+
+
+			<div class="navigation-list links" id="fragment-316647_container" data-minlinks="0" data-direction="vertical" data-maxlinks="5" data-lid="" style="display: block;"><div class="container"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; visibility: visible;"><li class="navigation-list-item"><a href="https://e2e.ti.com/support/arm/sitara_arm/f/791" class="selected">Forums</a><ul class="children" style="display:none">
+													  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/amplifiers/">Amplifiers</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/switches_multiplexers/">Switches &amp; Multiplexers</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/applications/">Applications</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  									  								  									  								  								  <a href="https://e2e.ti.com/support/arm/" class="selected">Processors</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/clocks/">Clock and Timing</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/data_converters/">Data Converters</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/development_tools/">Development Tools</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/dsp/">Digital Signal Processors (DSP)</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/dlp__mems_micro-electro-mechanical_systems/">DLP® Products &amp; MEMS</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/embedded/">Embedded Software</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/interface/">Interface</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/logic/">Logic </a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/isolation/">Isolation</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/microcontrollers/">Microcontrollers</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/omap/">OMAP™ Applications Processors (Read Only)</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/power_management/">Power Management</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/rf__digital_radio/">RF &amp; Digital Radio</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/sensor/">Sensor Products</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/other_analog/">Haptics &amp; Touch</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/wireless_connectivity/">Wireless Connectivity</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						   						   						   						   						   							  </ul></li><li class="navigation-list-item"><a href="https://e2e.ti.com/support/arm/sitara_arm/b/sitara_announcements">Announcements</a><ul class="children" style="display:none">
+													  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/amplifiers/">Amplifiers</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/switches_multiplexers/">Switches &amp; Multiplexers</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/applications/">Applications</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  									  								  									  								  								  <a href="https://e2e.ti.com/support/arm/" class="selected">Processors</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/clocks/">Clock and Timing</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/data_converters/">Data Converters</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/development_tools/">Development Tools</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/dsp/">Digital Signal Processors (DSP)</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/dlp__mems_micro-electro-mechanical_systems/">DLP® Products &amp; MEMS</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/embedded/">Embedded Software</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/interface/">Interface</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/logic/">Logic </a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/isolation/">Isolation</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/microcontrollers/">Microcontrollers</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/omap/">OMAP™ Applications Processors (Read Only)</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/power_management/">Power Management</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/rf__digital_radio/">RF &amp; Digital Radio</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/sensor/">Sensor Products</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/other_analog/">Haptics &amp; Touch</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						  						  						  						  						  
+							  <li>
+								  								  									  								  									  								  									  								  								  <a href="https://e2e.ti.com/support/wireless_connectivity/">Wireless Connectivity</a>
+							  </li>
+							  
+						   						   						   						   						   						   						   						   						   						   						   
+						   						  						   						   						   						   						   							  </ul></li></ul></div></div>
+	</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div id="fragment-239031345"></div>
+<div id="fragment-316648"></div>
+<div id="fragment-316649"></div>
+</div>
+</div>
+<div class="layout-region content" id="ctl05_ctl02_content">
+<div class="layout-region-inner content"><div id="fragment-316650"></div>
+<div id="fragment-316651"></div>
+<div id="fragment-316652"></div>
+<div class="content-fragment thread no-wrapper with-spacing responsive-1" id="fragment-316653">
+<div class="content-fragment-content">
+
+ 
+
+
+<div id="pi316653-paged-content">
+
+
+
+
+
+
+
+							
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	<div class="content full" id="345950">
+
+		
+							<div class="status">
+				<ul class="attribute-list">
+					<li class="attribute-item resolution-status">
+						<span class="attribute-value suggested">
+							TI thinks resolved
+						</span>
+					</li>
+				</ul>
+			</div>
+				
+					<h1 class="name">AM335x EVM LCD powering off</h1>
+            <div class="author starter-header">
+              <div class="user-icons">
+                <span class="rank-icon">
+                                                      <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-03/icon_5F00_expert.gif&#39;) no-repeat" class="rank-image">
+                    <a onclick="self.location=&#39;/group/helpcentral/w/e2e/ti-e2e-community-recognition-program.aspx&#39;;return false" title="Click here for explanation of levels" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">
+                      <span class="rank-name">Expert</span>
+                    </a><span class="rank-points">1565</span> points
+                  </div>
+                                  </span>
+                <span class="role-icon">
+                                    <img align="absbottom" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/communitymember.gif">
+                </span>
+              </div>
+            	<span class="user-name">
+            		            			<a href="https://e2e.ti.com/members/3585364" class="internal-link view-user-profile">
+            				Mike Worster
+            			</a>
+            		            		            	</span>
+            	<div class="avatar">
+            		            			<a href="https://e2e.ti.com/members/3585364">
+            				<img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/default.png_2D00_32x32x2.png" border="0" alt="Mike Worster">
+            			</a>
+            		            	</div>
+            </div>
+		
+				
+		<div class="content">
+						<p>In using the AM335x EVM I've noticed that after some time of inactivity the LCD seems to turn itself off. I need to disable this functionality so I poked around a bit trying to find out why it was doing this in the first place.</p>
+<p>When I was reading on the LCDC Driver's Guide: <a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide">http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide</a></p>
+<p>I saw this line:</p>
+<p>"Framebuffer console blankes out after blanking interval....Default blankinterval is 10 minutes"</p>
+<p>And in there it stated that "unblanking" can happen with this command:</p>
+<div class="content-scrollable-wrapper" style="max-width: 100%; overflow: auto; max-height: none;"><div><div id="highlighter_365042" class="syntaxhighlighter  bash"><div class="toolbar"><span><a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="bash plain">$</code><code class="bash functions">echo</code> <code class="bash string">"0"</code> <code class="bash plain">&gt; </code><code class="bash plain">/sys/class/graphics/fb0/blank</code></div></div></td></tr></tbody></table></div></div></div>
+<p>And if I want to keep it&nbsp;permanently "unblanked" I can append to the boot arguments consoleblank=0. I gave this a try updating my boot command to:</p>
+<div class="content-scrollable-wrapper" style="max-width: 100%; overflow: auto; max-height: none;"><div><div id="highlighter_476751" class="syntaxhighlighter  bash"><div class="toolbar"><span><a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="bash plain">U-Boot</code><code class="bash comments"># setenv mmc_args 'run bootargs_defaults;setenv bootargs ${bootargs} root=${mmc_root} rootfstype=${mmc_root_fs_type} ip=169.254.0.2 consoleblank=0'</code></div></div></td></tr></tbody></table></div></div></div>
+<p>But when I do this it seems the LCD comes up powered off... I've also noted when the screen goes off echoing "0" to fb0/blank doesn't seem to do anything.. whereas echoing "4" seems to turn it back on (the screen slowly turns on, almost fading on)</p>
+<p>Are these the correct commands? Should "0" in fact be turning ON the display? If so why am I not seeing that effect?</p><div style="clear:both;"></div>
+									
+		</div>
+
+				
+				
+				    		<div class="post-tags">
+    		    		<span class="ui-tag" data-contentid="e9d96982-9b55-4f78-a47f-96678f79beaa" data-contenttypeid="46448885-d0e6-4133-bbfb-f0cd7b0fd6f7" data-urlformat="https://e2e.ti.com/support/arm/sitara_arm/f/791/tags/{tag}" data-readonly="true" data-tags="lcd,linux,AM335x EVM,AM335 x,AM335x,Kernel" data-configuration=""><span><a rel="nofollow tag" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/tags/lcd">lcd</a>, <a rel="nofollow tag" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/tags/linux">linux</a>, <a rel="nofollow tag" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/tags/AM335x+EVM">AM335x EVM</a>, <a rel="nofollow tag" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/tags/AM335+x">AM335 x</a>, <a rel="nofollow tag" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/tags/AM335x">AM335x</a>, <a rel="nofollow tag" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/tags/Kernel">Kernel</a></span></span>
+    		</div>
+		
+							<div class="author footer">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-03/icon_5F00_expert.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/group/helpcentral/w/e2e/ti-e2e-community-recognition-program.aspx&#39;;return false" title="Click here for explanation of levels" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">
+          <span class="rank-name">Expert</span>
+        </a><span class="rank-points">1565</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="https://e2e.ti.com/members/3585364" class="internal-link view-user-profile">
+				Mike Worster
+			</a>
+					</span>
+	<div class="avatar">
+					<a href="https://e2e.ti.com/members/3585364">
+				<img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/default.png_2D00_32x32x2.png" border="0" alt="Mike Worster">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions footer">
+	
+								
+	
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" id="fragment-316653_postActions-e9d96982-9b55-4f78-a47f-96678f79beaa" style="overflow: hidden; height: 25px;"><div class="container" style="overflow-y: hidden; overflow-x: auto; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 314px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">Jun 4, 2014 12:00 PM</a>
+				</span></li><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+</div>
+
+
+		
+			</div>
+	
+
+
+			<ul class="filter margin-bottom margin-top" id="fragment-316653_filters">
+			<li class="filter-option  selected ">
+				<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950#" data-messagename="telligent.evolution.widgets.thread.answerfilter" data-filter="all">All Responses</a>
+			</li>
+			<li class="filter-option ">
+				<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950#" data-messagename="telligent.evolution.widgets.thread.answerfilter" data-filter="answers">Suggested Answers</a>
+			</li>
+		</ul>
+
+			
+	<ul class="content-list content margin-bottom">
+		
+
+
+
+
+
+	<li class="content-item suggested">
+	<div class="content full" id="1209934">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-11/icon_5F00_mastermind.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/group/helpcentral/w/e2e/ti-e2e-community-recognition-program.aspx&#39;;return false" title="Click here for explanation of levels" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">
+          <span class="rank-name">Mastermind</span>
+        </a><span class="rank-points">25235</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/tiemployee.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="https://e2e.ti.com/members/2008929" class="internal-link view-user-profile">
+				Miroslav Kiradzhiyski XID
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="https://e2e.ti.com/members/2008929">
+				<img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/4TONN5UL05FQ.png_2D00_32x32x2.png" border="0" alt="Miroslav Kiradzhiyski XID">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow-y: hidden; overflow-x: auto; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1209934#1209934">Jun 4, 2014 1:24 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+						<p>Hi Mike,</p>
+<p>I'm testing this on the AM335x GP EVM board using SDK v7 and everything seems to work as intended.</p>
+<p><strong>echo "4" &gt; /sys/class/graphics/fb0/blank</strong> -&gt; Framebuffer console on display blanks<br><strong>echo "0" &gt; /sys/class/graphics/fb0/blank</strong> -&gt; Framebuffer console on display unblanks<br>Adding "<strong>consoleblank=0</strong>" to the kernel bootargs. -&gt; The display is on and framebuffer console is unblanked when the board boots up. I didn't wait for 10 minutes to see if it will blank afterwards.</p>
+<p>Which version of the SDK are you using?</p>
+<p>Best regards,<br>Miroslav</p><div style="clear:both;"></div>
+									<div><strong><span style="color:#ff0000;"><br></span></strong></div>
+<div><strong><span style="color:#ff0000;">--------------------------------------------------------------------------------------------------------------------------------</span></strong></div>
+<div><strong><span style="color:#ff0000;">Note: If this post answers your question, please click the <span style="background-color:#99cc00;color:#000000;">Verify Answer</span> button below. Thank you!<br></span></strong></div>
+<div><strong><span style="color:#ff0000;">--------------------------------------------------------------------------------------------------------------------------------</span></strong></div>
+		</div>
+
+				
+				
+				
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-316653_postActions-833f3c97-6e25-4f80-9218-e22434e05bf9" style="overflow: hidden;"><div class="container" style="overflow-y: hidden; overflow-x: auto;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 870px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+</div>
+
+
+		
+			</div>
+
+		
+
+
+
+
+
+	</li><li class="content-item ">
+	<div class="content full" id="1210435">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-03/icon_5F00_expert.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/group/helpcentral/w/e2e/ti-e2e-community-recognition-program.aspx&#39;;return false" title="Click here for explanation of levels" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">
+          <span class="rank-name">Expert</span>
+        </a><span class="rank-points">1565</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="https://e2e.ti.com/members/3585364" class="internal-link view-user-profile">
+				Mike Worster
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="https://e2e.ti.com/members/3585364">
+				<img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/default.png_2D00_32x32x2.png" border="0" alt="Mike Worster">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow-y: hidden; overflow-x: auto; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1210435#1210435">Jun 4, 2014 7:52 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1209934#1209934">Miroslav Kiradzhiyski XID</a>:</p>
+															<p>Miroslav,</p>
+<p>&nbsp;&nbsp;&nbsp; Maybe I'm looking for the wrong thing. When I have something on the display, for example if I launch a Qt application then kill it (just the image is up there), after some amount of time (minutes) the display goes blank. Are you aware of this behavior and what might be the cause of it?</p>
+<p>-Mike</p><div style="clear:both;"></div>
+									
+		</div>
+
+				
+				
+				
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-316653_postActions-d01b1732-d2e2-4172-838b-1701a9c61296" style="overflow: hidden;"><div class="container" style="overflow-y: hidden; overflow-x: auto;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 870px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+</div>
+
+
+		
+			</div>
+
+		
+
+
+
+
+
+	</li><li class="content-item ">
+	<div class="content full" id="1210440">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-12/icon_5F00_guru.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/group/helpcentral/w/e2e/ti-e2e-community-recognition-program.aspx&#39;;return false" title="Click here for explanation of levels" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">
+          <span class="rank-name">Guru</span>
+        </a><span class="rank-points">87780</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/tiemployee.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="https://e2e.ti.com/members/173289" class="internal-link view-user-profile">
+				Brad Griffis
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="https://e2e.ti.com/members/173289">
+				<img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/4TZKO2Z7WJY5.jpg_2D00_32x32x2.jpg" border="0" alt="Brad Griffis">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow-y: hidden; overflow-x: auto; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1210440#1210440">Jun 4, 2014 7:56 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1210435#1210435">Mike Worster</a>:</p>
+															<p>Mike,</p>
+<p>Are you using SDK 6 or 7?</p>
+<p>Do you have a console hooked up?&nbsp; Do you either see anything print out in the terminal window or perhaps see any clues with "dmesg"?&nbsp; I haven't really explored it yet, but one other thought might be that it's a more generic power management feature, e.g. the device is trying to suspend or something due to inactivity?</p>
+<p>Brad</p><div style="clear:both;"></div>
+									<p>---------------------------------------------------------------------------------------------------------<br><a target="_blank" href="http://processors.wiki.ti.com/index.php/User:BradGriffis">http://processors.wiki.ti.com/index.php/User:BradGriffis</a><br>---------------------------------------------------------------------------------------------------------&nbsp;</p>
+		</div>
+
+				
+				
+				
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-316653_postActions-7a0bfdbc-94e3-47e5-bb47-f7810ca5f08b" style="overflow: hidden;"><div class="container" style="overflow-y: hidden; overflow-x: auto;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 870px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+</div>
+
+
+		
+			</div>
+
+		
+
+
+
+
+
+	</li><li class="content-item ">
+	<div class="content full" id="1257371">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-12/icon_5F00_guru.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/group/helpcentral/w/e2e/ti-e2e-community-recognition-program.aspx&#39;;return false" title="Click here for explanation of levels" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">
+          <span class="rank-name">Guru</span>
+        </a><span class="rank-points">87780</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/tiemployee.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="https://e2e.ti.com/members/173289" class="internal-link view-user-profile">
+				Brad Griffis
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="https://e2e.ti.com/members/173289">
+				<img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/4TZKO2Z7WJY5.jpg_2D00_32x32x2.jpg" border="0" alt="Brad Griffis">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow-y: hidden; overflow-x: auto; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1257371#1257371">Jul 28, 2014 8:33 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1210440#1210440">Brad Griffis</a>:</p>
+															<p>Mike,</p>
+<p>I was able to see the screen automatically turn off when running the Chameleon demo for a long period of time.&nbsp; This specific test was using SDK 6.00 with the base file system plus graphics manually added on top:</p>
+<ul>
+<li>/etc/init.d/335x-demo</li>
+<li>/opt/gfxsdkdemos/ogles2/OGLES2ChameleonMan -qaf=100000</li>
+</ul>
+<p>After the screen had blanked and the program terminated I was able to bring it back using the documented command:</p>
+<ul>
+<li>echo "0" &gt; /sys/class/graphics/fb0/blank</li>
+</ul>
+<p>I'm currently running a test where I added consoleblank=0 to my bootargs.&nbsp; I should have an update in a few minutes regarding whether it worked as expected.</p>
+<p>Brad</p><div style="clear:both;"></div>
+									<p>---------------------------------------------------------------------------------------------------------<br><a target="_blank" href="http://processors.wiki.ti.com/index.php/User:BradGriffis">http://processors.wiki.ti.com/index.php/User:BradGriffis</a><br>---------------------------------------------------------------------------------------------------------&nbsp;</p>
+		</div>
+
+				
+				
+				
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-316653_postActions-65f666ff-b72d-4624-818b-beb04add9312" style="overflow: hidden;"><div class="container" style="overflow-y: hidden; overflow-x: auto;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 870px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+</div>
+
+
+		
+			</div>
+
+		
+
+
+
+
+
+	</li><li class="content-item ">
+	<div class="content full" id="1257381">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-12/icon_5F00_guru.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/group/helpcentral/w/e2e/ti-e2e-community-recognition-program.aspx&#39;;return false" title="Click here for explanation of levels" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">
+          <span class="rank-name">Guru</span>
+        </a><span class="rank-points">87780</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/tiemployee.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="https://e2e.ti.com/members/173289" class="internal-link view-user-profile">
+				Brad Griffis
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="https://e2e.ti.com/members/173289">
+				<img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/4TZKO2Z7WJY5.jpg_2D00_32x32x2.jpg" border="0" alt="Brad Griffis">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow-y: hidden; overflow-x: auto; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1257381#1257381">Jul 28, 2014 8:43 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1257371#1257371">Brad Griffis</a>:</p>
+															<p>Mike,</p>
+<p>The test went as expected.&nbsp; Can you run "cat /proc/cmdline" to verify that the consoleblank=0 is truly getting passed to the kernel as expected?&nbsp; For comparison sake I see the following in my system:</p>
+<p>console=ttyO0,115200n8 root=/dev/mmcblk0p2 ro rootfstype=ext3 rootwait ip=none consoleblank=0</p>
+<p>Furthermore, I tried running another test where I blank and unblank the console during operation:</p>
+<ul>
+<li>/opt/gfxsdkdemos/ogles2/OGLES2ChameleonMan -qaf=10000 &amp;</li>
+<li>echo "4" &gt; /sys/class/graphics/fb0/blank</li>
+<li>echo "0" &gt; /sys/class/graphics/fb0/blank</li>
+</ul>
+<p>The screen transitions to blank/unblank were sharp.&nbsp; I did not notice the "fade" that you initially mentioned.</p>
+<p>Brad</p><div style="clear:both;"></div>
+									<p>---------------------------------------------------------------------------------------------------------<br><a target="_blank" href="http://processors.wiki.ti.com/index.php/User:BradGriffis">http://processors.wiki.ti.com/index.php/User:BradGriffis</a><br>---------------------------------------------------------------------------------------------------------&nbsp;</p>
+		</div>
+
+				
+				
+				
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-316653_postActions-6c489fcd-4f1d-4ba5-ad4b-605604c33163" style="overflow: hidden;"><div class="container" style="overflow-y: hidden; overflow-x: auto;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 870px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+</div>
+
+
+		
+			</div>
+
+		
+
+
+
+
+
+	</li><li class="content-item ">
+	<div class="content full" id="1569810">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-01/icon_5F00_prodigy.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/group/helpcentral/w/e2e/ti-e2e-community-recognition-program.aspx&#39;;return false" title="Click here for explanation of levels" href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950">
+          <span class="rank-name">Prodigy</span>
+        </a><span class="rank-points">135</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="https://e2e.ti.com/members/4175138" class="internal-link view-user-profile">
+				Nhattrieu Duong
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="https://e2e.ti.com/members/4175138">
+				<img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/default.png_2D00_32x32x2.png" border="0" alt="Nhattrieu Duong">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow-y: hidden; overflow-x: auto; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1569810#1569810">Jul 13, 2015 9:56 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/p/345950/1257381#1257381">Brad Griffis</a>:</p>
+															I'd like to add this tidbit here in case a newbie like myself stumbles onto this thread:<br>
+<br>
+In order to pass "consoleblank=0" to the kernel, I created uEnv.txt in the boot partition (NOT rootfs/boot) and added the line:<br>
+<br>
+optargs="consoleblank=0"<br>
+<br>
+With that added, cat /proc/cmdline does indeed show consoleblank=0:<br>
+<br>
+console=ttyO0,115200n8 consoleblank=0 root=/dev/mmcblk0p2 ro rootfstype=ext4 rootwait<br>
+<br>
+I don't know if this will work with a more complicated uEnv.txt or other boot settings, but this did work for me starting from the vanilla SD card created by create-sdcard.sh in SDK8.<div style="clear:both;"></div>
+									
+		</div>
+
+				
+				
+				
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-316653_postActions-21ef5f43-312d-46ea-9629-831e1fd27d18" style="overflow: hidden;"><div class="container" style="overflow-y: hidden; overflow-x: auto;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 870px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+</div>
+
+
+		
+			</div>
+
+	</li></ul>
+
+	<div class="pager ui-page" data-currentpage="0" data-pagesize="10" data-totalitems="6" data-pagekey="pi316653" data-pagedcontenturl="/utility/scripted-file.ashx?_cf=thread.vm&amp;_fid=316653&amp;_ct=page&amp;_cp=forums-thread&amp;_ctt=c6108064af6511ddb074de1a56d89593&amp;_ctc=98c065f63af145f6986cbda79052b288&amp;_ctn=decec9f8365c4a06ab6053f36924f21f&amp;_cc=0&amp;_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950" data-pagedcontentwrapperid="pi316653-paged-content" data-pagedcontentpagingevent="ui.page.pi316653.paging" data-pagedcontentpagedevent="ui.page.pi316653.paged" data-loadonanyhashchange="true" data-loadingindicator="true" data-configuration="ShowIndividualPages=false&amp;ShowPrevious=true&amp;ShowNext=true&amp;PagedContentFile=thread.vm&amp;LoadOnAnyHashChange=true&amp;LoadingIndicator=true">  </div>
+</div>
+
+
+</div>
+<div class="content-fragment-footer"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="layout-footer"></div>
+</div></div><div class="footer-fragments-header"></div>
+<div class="footer-fragments" id="ctl05_ctl03_page"><div class="layout">
+<div class="layout-header"></div>
+<div class="layout-content content" id="ctl05_ctl03_layout">
+<div class="layout-region content" id="ctl05_ctl03_content">
+<div class="layout-region-inner content"><div class="content-fragment scripted-content-fragment no-wrapper responsive-1" id="footer-1688">
+<div class="content-fragment-content">
+                                                                
+<script language="JavaScript">
+    var subject = "AM335x EVM LCD powering off";
+	
+			var tiPageName = 'E2E-AM335x EVM LCD powering off-EN';
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+            			<script language="JavaScript">
+var tiContentGroup='TI E2E Community/Forums/Sitara Processors/Sitara Processors Forum';
+</script></div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment t-i-footer no-wrapper with-spacing responsive-3" id="footer-1689">
+<div class="content-fragment-content">
+
+          
+      
+    
+  <!-- TI Footer - Start -->
+
+<div class="footertop">
+  <div class="footerLinks">
+    <div id="footerLinks_e2e">
+      <div id="home">
+        <div class="foothead">
+        TI E2E™ Community
+        </div>
+        <ul class="footlinks">
+          <li><a href="http://e2e.ti.com/support/w/forums/261.ti-e2e-community-forums-site-map.aspx">Forums</a></li>
+          <li><a href="http://e2e.ti.com/blogs_/default.aspx">Blogs</a></li>
+          <li><a href="http://e2e.ti.com/group/default.aspx">Groups</a></li>
+          <li><a href="https://training.ti.com/">TI training</a></li>
+          <li><a href="http://e2e.ti.com/group/helpcentral/f/301.aspx">Site Support &amp; Feedback</a></li>
+          <li><a href="http://e2e.ti.com/user/settings.aspx">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="footerLinks_e2eGroups">
+      <div id="home">
+        <div class="foothead">
+        TI E2E™ Community Groups
+        </div>
+        <ul class="footlinks">
+          <li><a href="http://e2e.ti.com/group/universityprogram/default.aspx">TI University Program</a></li>
+          <li><a href="http://e2e.ti.com/group/maketheswitch/default.aspx">Make the Switch</a></li>
+          <li><a href="http://e2e.ti.com/group/microcontrollerprojects/default.aspx">Microcontroller Projects</a></li>
+          <li><a href="http://e2e.ti.com/group/motor/b/blog/default.aspx">Motor Drive &amp; Control</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="footerLinks_partners">
+      <div id="home">
+        <div class="foothead">
+        Other Communities
+        </div>
+        <ul class="footlinks">
+          <li><a href="http://www.deyisupport.com/">Deyisupport</a></li>
+          <li><a href="http://designsomething.org/">Designsomething.org</a></li>
+          <li><a href="http://beagleboard.org/">beagleboard.org</a></li>
+          <li><a href="http://www.element14.com/community/community/manufacturers/ti">TI on Element 14</a></li>
+          <li><a href="http://www.digikey.com/techxchange/groups/texas-instruments">TI on TechXchange</a><span style="font-size:50%; vertical-align:super; text-decoration:none; color: #333333;">SM</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="footerLinks_other">
+      <div id="home">
+        <div class="foothead">
+        Other Technical &amp; Support Resources
+        </div>
+        <ul class="footlinks">
+          <li><a href="http://www.ti.com/webench">WEBENCH® Design Center</a></li>
+          <li><a href="http://www.ti.com/general/docs/dsnsuprt.tsp">Product Information Centers</a></li>
+          <li><a href="http://www.ti.com/general/docs/techdocs.tsp">Technical Documents</a></li>
+          <li><a href="http://www.ti.com/3p">TI Design Network</a></li>
+          <li><a href="http://focus.ti.com/en/multimedia/flash/selection_tools/tech-articles/contributed-articles.htm">TI Technical Articles</a></li>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="disclaimer">
+  <p>All content and materials on this site are provided "as is". TI and its respective suppliers and providers of content make no representations about the suitability of these materials for any purpose and disclaim all warranties and conditions with regard to these materials, including but not limited to all implied warranties and conditions of merchantability, fitness for a particular purpose, title and non-infringement of any third party intellectual property right. TI and its respective suppliers and providers of content make no representations about the suitability of these materials for any purpose and disclaim all warranties and conditions with respect to these materials. No license, either express or implied, by estoppel or otherwise, is granted by TI. Use of the information on this site may require a license from a third party, or a license from TI.</p>
+  <p>Content on this site may contain or be subject to specific guidelines or limitations on use. All postings and use of the content on this site are subject to the <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of Use</a> of the site; third parties using this content agree to abide by any limitations or guidelines and to comply with the <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of Use</a> of this site. TI, its suppliers and providers of content reserve the right to make corrections, deletions, modifications, enhancements, improvements and other changes to the content and materials, its products, programs and services at any time or to move or discontinue any content, products, programs, or services without notice.</p>
+  </div>
+</div>
+
+<!-- Syntax Highlighter CSS autoloader code starts -->
+<link href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/shCore.css" rel="stylesheet" type="text/css"> 
+<link href="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/shThemeDefault.css" rel="stylesheet" type="text/css"> 
+<script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/XRegExp.js.download" type="text/javascript"></script>
+<script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/shCore.js.download" type="text/javascript"></script> 
+<script src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/shAutoloader.js.download" type="text/javascript"></script> 
+<script type="text/javascript">
+$(document).ready(function() {
+ SyntaxHighlighter.autoloader('applescript            /tiny_mce/SyntaxHighlighter/scripts/shBrushAppleScript.js','actionscript3 as3      /tiny_mce/SyntaxHighlighter/scripts/shBrushAS3.js','bash shell             /tiny_mce/SyntaxHighlighter/scripts/shBrushBash.js','coldfusion cf          /tiny_mce/SyntaxHighlighter/scripts/shBrushColdFusion.js','cpp c                  /tiny_mce/SyntaxHighlighter/scripts/shBrushCpp.js','c# c-sharp csharp      /tiny_mce/SyntaxHighlighter/scripts/shBrushCSharp.js','css                    /tiny_mce/SyntaxHighlighter/scripts/shBrushCss.js','delphi pascal          /tiny_mce/SyntaxHighlighter/scripts/shBrushDelphi.js','diff patch pas         /tiny_mce/SyntaxHighlighter/scripts/shBrushDiff.js','erl erlang             /tiny_mce/SyntaxHighlighter/scripts/shBrushErlang.js','groovy                 /tiny_mce/SyntaxHighlighter/scripts/shBrushGroovy.js','java                   /tiny_mce/SyntaxHighlighter/scripts/shBrushJava.js','jfx javafx             /tiny_mce/SyntaxHighlighter/scripts/shBrushJavaFX.js','js jscript javascript  /tiny_mce/SyntaxHighlighter/scripts/shBrushJScript.js','perl pl                /tiny_mce/SyntaxHighlighter/scripts/shBrushPerl.js','php                    /tiny_mce/SyntaxHighlighter/scripts/shBrushPhp.js','text plain             /tiny_mce/SyntaxHighlighter/scripts/shBrushPlain.js','py python              /tiny_mce/SyntaxHighlighter/scripts/shBrushPython.js','ruby rails ror rb      /tiny_mce/SyntaxHighlighter/scripts/shBrushRuby.js','sass scss              /tiny_mce/SyntaxHighlighter/scripts/shBrushSass.js','scala                  /tiny_mce/SyntaxHighlighter/scripts/shBrushScala.js','sql                    /tiny_mce/SyntaxHighlighter/scripts/shBrushSql.js','vb vbnet               /tiny_mce/SyntaxHighlighter/scripts/shBrushVb.js','xml xhtml xslt html    /tiny_mce/SyntaxHighlighter/scripts/shBrushXml.js');
+ SyntaxHighlighter.config.stripBrs = true; 
+ SyntaxHighlighter.all();     
+});
+</script> 
+<!-- Syntax Highlighter CSS autoloader code ends -->
+
+<span id="sSC"></span>
+
+  <script language="javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/analytics-secure.js.download" type="text/javascript"></script><script language="JavaScript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/metrics-min.js.download" type="text/javascript"></script>
+
+<div id="footer">
+
+<!--<p><a href="http://www.ti.com/footer_products"><b class="first_item">Products</b></a> | <a href="http://www.ti.com/footer_apps"><b>Applications</b></a> | <a href="http://www.ti.com/footer_support"><b>Design Support</b></a> | <a href="http://www.ti.com/footer_buy"><b>Sample &amp; Buy</b></a> <a href="http://www.ti.com/footer_rss"><img src="https://focus.ti.com/graphics/shared/rss.gif" alt="RSS" width="40" height="13" border="0" class="rss_ico"></a></p>
+  <p><a href="http://www.ti.com/footer_worldwide">TI Worldwide</a> | <a href="http://www.ti.com/footer_about_ti">About TI</a> | <a href="http://www.ti.com/footer_contact">Contact Us</a> | <a href="http://www.ti.com/footer_investor_relations">Investor Relations</a> | <a href="http://www.ti.com/footer_press">Press Center</a> | <a href="http://www.ti.com/footer_csr">Corporate Citizenship</a> | <a href="http://www.ti.com/footer_careers">Careers</a> | <a href="http://www.ti.com/footer_tags">Tags</a> | <a href="http://www.ti.com/footer_myti">my.TI Login</a> | <a href="http://www.ti.com/footer_search">All Searches</a> | <a href="http://www.ti.com/footer_sitemap">Site Map</a></p>
+  <p class="disclaim"><a href="http://www.ti.com/footer_copyright">&copy; Copyright 1995-<script>var date = new Date();document.write(date.getFullYear());</script><noscript>2009</noscript></a> Texas Instruments Incorporated. All rights reserved. <a href="http://www.ti.com/footer_trademarks">Trademarks</a> | <a href="http://www.ti.com/footer_privacy">Privacy Policy</a> | <a href="http://www.ti.com/footer_terms">Terms of Use</a> </p>
+-->
+</div>
+
+
+<div id="footnote">
+<div class="container">
+
+<div style=" float:right; text-align:right;">
+
+<div class="social">
+            <span>Follow Us</span>
+<span><a href="http://www.ti.com/facebook" style="color:#000;" name="&amp;lid=EN_US_footer_facebookicon"><img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/follow-us-facebook.png" alt="Texas Instruments on Facebook" border="0" align="absmiddle"></a></span>
+<span><a href="http://twitter.com/txinstruments" style="color:#000;" name="&amp;lid=EN_US_footer_twittericon"><img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/follow-us-twitter.png" alt="Texas Instruments on Twitter" border="0" align="absmiddle"></a></span>
+<span><a href="http://www.ti.com/linkedin" style="color:#000;" name="&amp;lid=EN_US_footer_linkedin-icon"><img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/linkedin.png" alt="Texas Instruments on LinkedIn" border="0" align="absmiddle"></a></span>
+<span><a href="https://plus.google.com/u/0/104292131839044508100/posts?hl=en" style="color:#000;" name="&amp;lid=EN_US_footer_google-icon"><img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/google.png" alt="Texas Instruments on Google+" border="0" align="absmiddle"></a></span>
+        </div>
+
+
+<div id="footerbadge" style="width:180px;"><!--<a href="http://www.ti.com/general/docs/gencontent.tsp?contentId=106103"><span style="float:left; padding:15px 0 0 0; font-size:9px;">Texas Instruments<br>is a member of</span><img src="http://www.ti.com/assets/en/images/homepage/ecia-logo-1.jpg" alt="Member of ECIA"></a>--><!--  <img src="images/picp-logo.jpg" alt="picp-logo" width="211" height="48" /> --></div>
+</div>
+
+<a href="http://www.ti.com/footer_worldwide" name="&amp;lid=EN_US_footer_worldwide">TI Worldwide</a> | <a href="http://www.ti.com/footer_contact" name="&amp;lid=EN_US_footer_contactus">Contact Us</a> |<!--  <a href="http://www.ti.com/corp/docs/feedbk2.htm" name="&lid=EN_US_footer_websitefeedback">Website Feedback</a> | --> <a href="http://my.ti.com/" name="&amp;lid=EN_US_footer_mytilogin">my.TI Login</a> | <a href="http://www.ti.com/general/docs/sitemap.tsp" name="&amp;lid=EN_US_footer_sitemap"> Site Map</a> | <a href="http://www.ti.com/corp/docs/csr/index.shtml" name="&amp;lid=EN_US_footer_corporate_citizenship">Corporate Citizenship</a> | <a href="http://www.ti.com/footer_mobile"><img src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/mobile.gif" alt="mobile" width="12" height="21" name="&amp;lid=EN_US_footer_mobile"> m.ti.com (Mobile Version)</a>
+
+<p>TI is a global semiconductor design and manufacturing company. Innovate with 100,000+ analog ICs and<br>embedded processors, along with software, tools and the industry’s largest sales/support staff.</p>
+
+<div style="width:48%; padding-top:5px;">
+<a href="http://www.ti.com/corp/docs/legal/copyright.shtml" name="&amp;lid=EN_US_footer_websitefeedback">© Copyright 1995-2017</a> Texas Instruments Incorporated. All rights reserved.
+<br>
+<a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm" name="&amp;lid=EN_US_footer_trademarks">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml" name="&amp;lid=EN_US_footer_privacypolicy">Privacy Policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml" name="&amp;lid=EN_US_footer_termsofuse">Terms of Use</a>
+</div><!-- Copyright ends -->
+
+</div><!-- Footnote ends -->
+</div>
+			</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment scripted-content-fragment no-wrapper responsive-hidden" id="footer-1780">
+<div class="content-fragment-content">
+
+
+
+
+                                                                                                
+<script type="text/javascript">
+          var tiUserGeo = {"country_code":"CN","city":"GUANGZHOU","continent":"AS","throughput":"vhigh","network":"chinanet","network_type":"","bw":"5000","proxy":"","user_agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36","IP":"119.123.197.211", "ABM":""};
+</script>
+<div id="tiPrivacy"></div></div>
+<div class="content-fragment-footer"></div>
+</div>
+<div id="footer-1690"></div>
+<div id="footer-1691"></div>
+<div id="footer-1692"></div>
+<div id="footer-1693"></div>
+</div>
+</div>
+</div>
+<div class="layout-footer"></div>
+</div></div><div class="footer-fragments-footer"></div>
+
+
+	<script type="text/html" id="site-banner-notification-preferences-template">
+		<div class="notification-preference">
+			<span class="description">Do not notify me when someone <strong><%: notificationTypeName %></strong>?</span>
+			<a href="#" class="confirm internal-link button submit-button" data-notificationtypeid="<%: notificationTypeId %>">b2833Confirm</a>
+			<a href="#" class="cancel internal-link button submit-button">Cancel</a>
+		</div>
+	</script>
+
+
+	<script type="text/html" id="site-banner-list-template">
+		<div>
+			<div class="multiple-column-list columns-1">
+				<div class="multiple-column-item column-1">
+					<ul class="content-list content">
+					</ul>
+					<div class="loading">Loading...</div>
+					<% if(footerContent) { %>
+						<div class="content-list-footer">
+							<%= footerContent %>
+						</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<script type="text/html" id="site-banner-bookmark-filter-template">
+
+		<ul class="navigation-list filter">
+			<% if(contentTypeIds && contentTypeIds.length > 0) { %>
+				<li class="navigation-item conversations">
+					<a class="internal-link" href="#" data-contenttypeids="<%: contentTypeIds %>">Content</a>
+				</li>
+			<% } %>
+			<% if(applicationContentTypeIds && applicationContentTypeIds.length > 0) { %>
+				<li class="navigation-item conversations">
+					<a class="internal-link" href="#" data-contenttypeids="<%: applicationContentTypeIds %>">Application</a>
+				</li>
+			<% } %>
+			<% if(containerTypes && containerTypes.length > 0) { %>
+				<% foreach(containerTypes, function(containerType) {  %>
+					<li class="navigation-item conversations">
+						<a class="internal-link" href="#" data-contenttypeids="<%: containerType.id %>"><%: containerType.name %></a>
+					</li>
+				<% }); %>
+			<% } %>
+		</ul>
+
+	</script>
+
+	<script type="text/html" id="site-banner-notification-filter-template">
+		<ul class="navigation-list filter">
+			<li class="navigation-item all">
+				<a class="internal-link" href="#" data-filter="all">All</a>
+			</li>
+			<li class="navigation-item unread">
+				<a class="internal-link" href="#" data-filter="unread">Unread</a>
+			</li>
+		</ul>
+	</script>
+
+	<script type="text/html" id="site-banner-search-filter-template">
+		<% if(places && places.length > 0) { %>
+			<ul class="navigation-list filter">
+				<% foreach(places, function(place) { %>
+					<li class="navigation-item">
+						<a class="place internal-link" href="#" data-key="<%: place.key %>" data-value="<%: place.value %>"><%= place.name %></a>
+				<% }); %>
+			</ul>
+		<% } %>
+
+		<% if(filters && filters.length > 0) { %>
+			<ul class="navigation-list filter">
+			<% foreach(filters, function(filter) {  %>
+				<li class="navigation-item">
+					<a class="type internal-link" href="#" data-key="<%: filter.key %>"><%= filter.name %></a>
+				</li>
+			<% }); %>
+			</ul>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="site-banner-user-template">
+		<div class="user">
+			<div class="avatar">
+				<a href="$core_v2_encoding.HtmlAttributeEncode($user.ProfileUrl)">
+					<img src="/cfs-filesystemfile/__key/communityserver-components-imagefileviewer/communityserver-components-avatars_2E00_/default.png_2D00_40x40x2.png" />
+				</a>
+			</div>
+			<span class="user-name">
+				<a href="$core_v2_encoding.HtmlAttributeEncode($user.ProfileUrl)">Anonymous</a>
+			</span>
+		</div>
+
+							<ul class="navigation-list user">
+      																																																																																									</ul>
+			</script>
+
+
+	<script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/ui.js.download"></script>
+	<script type="text/javascript">
+		
+		
+
+		
+						
+		
+		jQuery(function(){
+			jQuery.telligent.evolution.widgets.siteBanner.register({
+				wrapper: '#header-1722',
+
+				messagePrefix: 'widget.header-1722.',
+				banner: jQuery('#header-1722_banner'),
+
+				handheldSearchFieldsLink: jQuery('#header-1722_handheldSearchFieldsLink'),
+				handheldSearchFields: jQuery('#header-1722_handheldSearchFields'),
+				handheldBannerLinksLink: jQuery('#header-1722_handheldBannerLinksLink'),
+				handheldBannerLinks: jQuery('#header-1722_handheldBannerLinks'),
+				searchFields: jQuery('#header-1722_searchFields'),
+				bannerLinks: jQuery('#header-1722_bannerLinks'),
+				handheldBannerLinksCount: jQuery('#header-1722_handheldBannerLinksCount'),
+				bannerSiteLinks: jQuery('#header-1722_bannerSiteLinks'),
+				handheldSiteLinksLink: jQuery('#header-1722_handheldSiteLinksLink'),
+				handheldSiteLinks: jQuery('#header-1722_handheldSiteLinks'),
+
+				notificationsTemplate: 'site-banner-list-template',
+				notificationsUrl: '/utility/scripted-file.ashx?_cf=notifications.vm\u0026_fid=1722\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=98c065f63af145f6986cbda79052b288\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950',
+				notificationsLink: jQuery('#header-1722_notifications'),
+				notificationsUnread: 0,
+				notificationListFooterContent: '\u003ca href=\"#\" class=\"mark-read left\"  style=\"display:none\" \u003eMark as Read\u003c/a\u003e\u003ca class=\"right\" href=\"${notificationSettingsUrl}\"\u003eSettings\u003c/a\u003e',
+				notificationPreferenceTemplate: 'site-banner-notification-preferences-template',
+				notificationssUnreadCountMessageSingular: 'You have {0} unread notification',
+				notificationssUnreadCountMessagePlural: 'You have {0} unread notifications',
+				notificationsFilterTemplate: 'site-banner-notification-filter-template',
+
+				conversationsTemplate: 'site-banner-list-template',
+				conversationsUrl: '/utility/scripted-file.ashx?_cf=conversations.vm\u0026_fid=1722\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=98c065f63af145f6986cbda79052b288\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950',
+				conversationsLink: jQuery('#header-1722_conversations'),
+				conversationsUnread: 0,
+				conversationNotificationTypeId: '84e4c0a7-3a17-4dfe-b8a0-d7038aa04a84',
+				conversationListFooterContent: '\u003ca href=\"${core_v2_urls.Conversations()}\" class=\"left\"\u003eView All\u003c/a\u003e\u003ca href=\"#\" data-messagename=\"widget.header-1722.startconversation\" class=\"right\"\u003eNew Message\u003c/a\u003e',
+				conversationsUnreadCountMessageSingular: 'You have {0} unread message',
+				conversationsUnreadCountMessagePlural: 'You have {0} unread messages',
+				conversationNewConversationModalUrl: '$core_v2_encoding.JavascriptEncode($core_v2_urls.AddConversation())',
+
+				bookmarksTemplate: 'site-banner-list-template',
+				bookmarksUrl: '/utility/scripted-file.ashx?_cf=bookmarks.vm\u0026_fid=1722\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=98c065f63af145f6986cbda79052b288\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950',
+				bookmarksLink: jQuery('#header-1722_bookmarks'),
+				bookmarksListFooterContent: '\u003ca class=\"left\" href=\"${bookmarksUrl}\"\u003eView All\u003c/a\u003e',
+				bookmarksContentTypes: '$core_v2_encoding.JavascriptEncode($contentTypes)',
+				bookmarksApplicationContentTypes: '$core_v2_encoding.JavascriptEncode($applicationContentTypes)',
+				bookmarksContainerContentTypes: '$core_v2_encoding.JavascriptEncode($containerContentTypes)',
+				bookmarksFilterTemplate: 'site-banner-bookmark-filter-template',
+				bookmarksIsBookmarked:  false ,
+				bookmarksCurrentContentId: '',
+				bookmarksBookmarks: 'Bookmarks',
+				bookmarkAdded: 'Bookmark Added',
+				bookmarkRemoved: 'Bookmark Removed',
+
+				userPopupTemplate: 'site-banner-list-template',
+				userContentTemplate: 'site-banner-user-template',
+				userLink: jQuery('#header-1722_user'),
+
+				searchTemplate: 'site-banner-list-template',
+				searchUrl: '/utility/scripted-file.ashx?_cf=search.vm\u0026_fid=1722\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=98c065f63af145f6986cbda79052b288\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950',
+				searchInput: jQuery('#header-1722_Search'),
+				searchFooterContent: '\u003cspan class=\"right\"\u003e\u003ca data-messagename=\"widget.header-1722.advancedsearch\" id=\"header-1722_advancedsearch\" href=\"#\"\u003eAdvanced Search\u003c/a\u003e\u003c/span\u003e',
+				searchFilterTemplate: 'site-banner-search-filter-template',
+				searchAdvancedUrl: '/search?{0}',
+				searchAdvancedUserUrl: '/members?{0}',
+				searchFilterContentName: 'Content',
+				searchFilterGroupsName: 'Groups',
+				searchFilterPeopleName: 'People',
+				searchPlaceApplicationId:  'f07abfea-1b31-46f1-9590-40360f860b7f' ,
+				searchPlaceApplicationName:  'In Sitara Processors Forum' ,
+				searchPlaceGroupId:  '98c065f6-3af1-45f6-986c-bda79052b288' ,
+				searchPlaceGroupName:  'In Sitara™ Processors' ,
+				searchPlaceAnywhereName: 'Anywhere',
+				advancedSearchId: 'header-1722_advancedsearch',
+				searchShowPeople:  true
+									,siteNavigationType: 'group'
+					,siteNavigationUrl: '/utility/scripted-file.ashx?_cf=groups.vm\u0026_fid=1722\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=98c065f63af145f6986cbda79052b288\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950'
+					,siteNavigationTemplate: 'site-banner-list-template'
+					,siteNavigationLink: jQuery('#header-1722_site')
+					,siteNavigationTitle:  						'Groups'
+																,siteNavigationCustomItems:
+													[
+																			{
+								label: 'Support Forums',
+								url: 'https://e2e.ti.com/support/'
+							}
+													,
+																			{
+								label: 'Blogs',
+								url: 'https://e2e.ti.com/blogs_/'
+							}
+													,
+																			{
+								label: 'Videos',
+								url: 'https://e2e.ti.com/videos/'
+							}
+													,
+																			{
+								label: 'Groups',
+								url: 'https://e2e.ti.com/group/'
+							}
+													 
+								,{
+									label: 'All Groups',
+									url: '/g'
+								}
+														]
+																		});
+		});
+	</script>
+		<script>
+		jQuery(function(j){
+			// no sub-nav on touch
+			if(j('body').hasClass('touch'))
+				return;
+
+			var container = j('#header-1723_container');
+			var popup;
+
+			function hideLinksPopup() {
+				if(popup) {
+					popup.glowPopUpPanel('hide');
+				}
+			}
+
+			function showLinksPopUp(parent, children) {
+				var links = j('<ul></ul>').append(children);
+				links.on('mouseleave', function(){
+					hideLinksPopup();
+				});
+
+				if(popup) {
+					hideLinksPopup();
+					popup.glowPopUpPanel('empty', '')
+						.glowPopUpPanel('append', links)
+						.glowPopUpPanel('show', parent);
+				} else {
+					popup = j('<div></div>')
+						.glowPopUpPanel({
+							cssClass: 'navigation-custom links-popup-panel',
+							zIndex: 1500,
+							hideOnDocumentClick: true
+						})
+						.glowPopUpPanel('append', links)
+						.glowPopUpPanel('show', parent)
+				}
+			}
+      
+        container.on('mouseover', '.navigation-list-item', function(e){
+            j(".navigation-custom.links-popup-panel").parent().attr('class','menuPopupPanel');
+        });
+
+			container.on('mouseover', '.navigation-list-item a', function(e){
+				var elm = j(e.target);
+				var children = elm.data('_link_children');
+				if(!children) {
+					children = elm.closest('li').find('ul.children > li');
+					elm.data('_link_children', children);
+				}
+				if(children && children.length > 0) {
+					showLinksPopUp(elm, children);
+				}
+			});
+
+			container.on('mouseout', '.navigation-list-item a', function(e){
+				if(!(e.relatedTarget &&
+					(j(e.relatedTarget).is('.links-popup-panel') ||
+					j(e.relatedTarget).closest('.links-popup-panel').length > 0)))
+					hideLinksPopup();
+			});
+		});
+		</script>
+		<script type="text/javascript">
+		jQuery(function(j){
+			j.telligent.evolution.widgets.scglobal.register();
+		});
+	</script>
+<script type="text/javascript">
+// <![CDATA[
+ctl05_ctl01 = new ContentFragmentContainerCustomCallback('ctl05_ctl01',new Function('mode','parameters','callback','errorCallback','context','authValue','ctl05_ctl01_ctl00._doCallback(mode+\':\'+authValue+\':\'+parameters,callback,context,errorCallback);'),'AuthorizationCookie');
+// ]]>
+</script><script>
+SystemJS.import( 'widget-thread' ).then( function( init ) {
+	return init( {
+		wrapperFragmentId: "fragment-316653",
+		threadId: 345950,
+		isAdmin: false,
+		isOP: false,
+		isTIer: false,
+		pageIndexQueryKey: "pi316653",
+		messages: {
+			paged: "ui.page.pi316653.paged",
+			moreLink: "widget.fragment-316653.more"
+		},
+		resources: {"replyModerated":"All replies are moderated. Your reply will appear once a moderator approves it.","resolutionFeedbackDetails":"Please provide details to help us resolve this issue.","suggestedAnswer":"Answer Suggested","tiThinksResolved":"TI thinks resolved","resolved":"Resolved"},
+		urls: {
+			ajax: {"resolutionStatus":"/utility/scripted-file.ashx?_cf=callback-resolutionstatus.vm&_fid=316653&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=98c065f63af145f6986cbda79052b288&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950","subscribe":"/utility/scripted-file.ashx?_cf=subscribe.vm&_fid=316653&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=98c065f63af145f6986cbda79052b288&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950","endorse":"/utility/scripted-file.ashx?_cf=callback-endorse.vm&_fid=316653&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=98c065f63af145f6986cbda79052b288&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950","unlink":"/utility/scripted-file.ashx?_cf=callback-unlink.vm&_fid=316653&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=98c065f63af145f6986cbda79052b288&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950","moreActions":"/utility/scripted-file.ashx?_cf=callback-more-actions.vm&_fid=316653&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=98c065f63af145f6986cbda79052b288&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950","thread":"/utility/scripted-file.ashx?_cf=thread-list.vm&_fid=316653&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=98c065f63af145f6986cbda79052b288&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950","mute":"/utility/scripted-file.ashx?_cf=mute.vm&_fid=316653&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=98c065f63af145f6986cbda79052b288&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950","deleteVerifyAnswerExtAttr":"/utility/scripted-file.ashx?_cf=deleteVerifyAnswerExtAttr.vm&_fid=316653&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=98c065f63af145f6986cbda79052b288&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950","advancedReply":"/utility/scripted-file.ashx?_cf=callback-advancedreply.vm&_fid=316653&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=98c065f63af145f6986cbda79052b288&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950"}
+		},
+		totalReplyCount: 6
+	} );
+} );
+</script>
+<script type="text/javascript">
+// <![CDATA[
+ctl05_ctl02 = new ContentFragmentContainerCustomCallback('ctl05_ctl02',new Function('mode','parameters','callback','errorCallback','context','authValue','ctl05_ctl02_ctl00._doCallback(mode+\':\'+authValue+\':\'+parameters,callback,context,errorCallback);'),'AuthorizationCookie');
+// ]]>
+</script>	<script type="text/javascript" src="./AM335x EVM LCD powering off - Sitara Processors Forum - Sitara™ Processors - TI E2E Community_files/ui.js(1).download"></script>
+	<script type="text/javascript">
+		jQuery(function(){
+			jQuery.telligent.evolution.widgets.userHover.register({
+				getUserInformationUrl: '/utility/scripted-file.ashx?_cf=get-user-information.vm\u0026_fid=1690\u0026_ct=footer\u0026_cp=forums-thread\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=98c065f63af145f6986cbda79052b288\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950',
+				getRecentActivityUrl: '/utility/scripted-file.ashx?_cf=get-recent-activity.vm\u0026_fid=1690\u0026_ct=footer\u0026_cp=forums-thread\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=98c065f63af145f6986cbda79052b288\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2farm%2fsitara_arm%2ff%2f791%2ft%2f345950'
+			});
+		});
+	</script>
+	<script type="text/javascript">
+	//<![CDATA[
+
+        jQuery.telligent.evolution.ui.components.moderate.defaults = {
+    		reportedText: 'Thank you for your report',
+    		flagText: 'Flag as spam/abuse',
+    		flaggedText: 'Flagged as spam/abuse'
+    	};
+	//]]>
+	</script>
+<script type="text/javascript">
+// <![CDATA[
+ctl05_ctl03 = new ContentFragmentContainerCustomCallback('ctl05_ctl03',new Function('mode','parameters','callback','errorCallback','context','authValue','ctl05_ctl03_ctl00._doCallback(mode+\':\'+authValue+\':\'+parameters,callback,context,errorCallback);'),'AuthorizationCookie');
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+window.ctl05_ctl01_ctl00 = new Telligent_CallbackManager('ctl05_ctl01_ctl00','ctl05$ctl01$ctl00','ctl04');
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+window.ctl05_ctl02_ctl00 = new Telligent_CallbackManager('ctl05_ctl02_ctl00','ctl05$ctl02$ctl00','ctl04');
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+window.ctl05_ctl03_ctl00 = new Telligent_CallbackManager('ctl05_ctl03_ctl00','ctl05$ctl03$ctl00','ctl04');
+// ]]>
+</script></form></body></html>

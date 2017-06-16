@@ -1,0 +1,9 @@
+1.kernel printk:
+[   73.831264] tilcdc 4830e000.lcdc: timeout waiting for framedone
+2.screen blank
+
+link:
+http://www.openedv.com/thread-70161-1-1.html
+http://blog.csdn.net/cxw3506/article/details/8119311?reload#
+https://e2e.ti.com/support/arm/sitara_arm/f/791/t/345950
+http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide

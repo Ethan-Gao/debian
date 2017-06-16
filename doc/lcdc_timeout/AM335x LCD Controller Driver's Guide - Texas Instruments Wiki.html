@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>AM335x LCD Controller Driver's Guide - Texas Instruments Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1">
+<link rel="shortcut icon" href="http://processors.wiki.ti.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://processors.wiki.ti.com/opensearch_desc.php" title="Texas Instruments Wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://processors.wiki.ti.com/api.php?action=rsd">
+<link rel="alternate" hreflang="x-default" href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Texas Instruments Wiki Atom feed" href="http://processors.wiki.ti.com/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/load.php">
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: davincid_wikidb:resourceloader:filter:minify-css:7:e1ffd603cbaaa5f1a36e0d13fe843535 */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+/* cache key: davincid_wikidb:resourceloader:filter:minify-css:7:f8d0c6895ce3ae14434c16b8fca59432 */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(/resources/src/mediawiki.action/images/green-checkmark.png?2014-10-01T12:38:20Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: davincid_wikidb:resourceloader:filter:minify-css:7:b7714e8f038e3865508d553d58b1f7e6 */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+/* cache key: davincid_wikidb:resourceloader:filter:minify-css:7:ae3fa4570b5ac0c6cf7b3776c8ae4d6f */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/load(1).php">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: davincid_wikidb:resourceloader:filter:minify-css:7:70500b672b667d946e900b286b62c126 */</style>
+<script type="text/javascript" async="" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/linkid.js.download"></script><script type="text/javascript" async="" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/ec.js.download"></script><script type="text/javascript" async="" charset="utf-8" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/analytics.js.download" id="tealium-tag-7110"></script><script type="text/javascript" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/i.js.download"></script><script type="text/javascript" async="" charset="utf-8" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/conversion_async.js.download" id="utag_52"></script><script src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/utag.js.download" type="text/javascript" async=""></script><script src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/load(2).php"></script><script src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/load(3).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"AM335x_LCD_Controller_Driver's_Guide","wgTitle":"AM335x LCD Controller Driver's Guide","wgCurRevisionId":113820,"wgRevisionId":113820,"wgArticleId":13504,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["AM335x","PSP","Linux"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"AM335x_LCD_Controller_Driver's_Guide","wgRelevantArticleId":13504,"wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"publish":false},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":false,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: davincid_wikidb:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script><script src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/load(4).php"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<script type="text/javascript" async="" charset="utf-8" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/utag.4.js.download" id="utag_ti.main_4"></script><script type="text/javascript" async="" charset="utf-8" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/utag.52.js.download" id="utag_ti.main_52"></script><script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1035033177/?random=1513848510572&amp;cv=8&amp;fst=1513848510572&amp;num=1&amp;guid=ON&amp;eid=376635471%2C659238991&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_his=2&amp;u_tz=480&amp;u_java=false&amp;u_nplug=4&amp;u_nmime=5&amp;frm=0&amp;url=http%3A%2F%2Fprocessors.wiki.ti.com%2Findex.php%2FAM335x_LCD_Controller_Driver%2527s_Guide&amp;tiba=AM335x%20LCD%20Controller%20Driver%27s%20Guide%20-%20Texas%20Instruments%20Wiki&amp;async=1&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" charset="utf-8" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/utag.87.js.download" id="utag_ti.main_87"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-AM335x_LCD_Controller_Driver_s_Guide skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p><br>
+</p></div></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">AM335x LCD Controller Driver's Guide</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Texas Instruments Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#mw-head">navigation</a>, 					<a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="hf-nsheader"><script language="Javascript">
+var tiContentGroup;
+var tiwikicat = (typeof(mw.config.values.wgCategories[0]) === "undefined"? "":mw.config.values.wgCategories[0]);
+tiContentGroup = "/DSP/wiki/Ext/" +tiwikicat;
+var tiPageName;
+tiPageName = 'wiki/AM335x_LCD_Controller_Driver's_Guide';
+</script></div><div class="hf-header"></div><div style="width:800px; text-align:justify;"> 
+<div style="display:block; clear: both; margin: 10px 0px; padding: 0px; background-color: #ee1d23; text-align:right;"><a href="http://processors.wiki.ti.com/index.php/File:TIBanner.png" class="image"><img alt="TIBanner.png" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/TIBanner.png" width="667" height="87"></a></div>
+<div style="display:block; margin: 5px 0px; padding: 2px 5px; font-size:1.5em; font-weight:bold; text-align:left;">AM335x LCD Controller Driver's Guide</div>
+<div style="display:block; margin: 5px 0px; padding: 2px; color: #666666; font-size:1.0em; font-weight:bold; text-align:right;">Linux PSP</div>  
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#Introduction"><span class="tocnumber">1</span> <span class="toctext"><b>Introduction</b></span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#LCDC_on_AM335x_SoC"><span class="tocnumber">2</span> <span class="toctext"><b>LCDC on AM335x SoC</b></span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#Driver_Configuration"><span class="tocnumber">3</span> <span class="toctext"><b>Driver Configuration</b></span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#Building_as_Loadable_Kernel_Module"><span class="tocnumber">3.1</span> <span class="toctext"><b>Building as Loadable Kernel Module</b></span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#Usage_and_Verification"><span class="tocnumber">4</span> <span class="toctext"><b>Usage and Verification</b></span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introduction"><b>Introduction</b></span></h1>
+<p>LCD controller(LCDC) on AM335x is an updated version of LCDC that is found on OMAP-L138 SoC. It has following updates in comparison with OMAP-L138
+</p>
+<ol><li>Interrupt configuration and status registers are different. </li>
+<li>Increased resolution of 2048*2048. </li>
+<li>24 bits per pixel active TFT raster configuration.</li></ol>
+<p>So da8xx-fb LCD driver can be used by having enhancements under LCD_VERSION2 code. This update in LCDC version can be detected by reading PID register.<br>
+</p>
+<h1><span class="mw-headline" id="LCDC_on_AM335x_SoC"><b>LCDC on AM335x SoC</b></span></h1>
+<ol><li>LCDC has 2 interface clocks, L3 peripheral and L4LS peripheral. </li>
+<li>LCDC functional clock can be mux selected among DISPLAY PLL CLKOUTM2, CORE PLLCLKOUTM5 or PER PLLCLKOUTM2. Supports MAX pixel clock of ~126MHz, configure DISPLAY PLL for 600MHz. </li>
+<li>LCD_DATA[0-15] pins are in mode0 and LCD_DATA[16-23] are in mode1. </li>
+<li>LCD is enabled on General Purpose EVM operating in profile 0/1/2 and on IP-Phone. </li>
+<li>Backlight is through eCAP0_in_PWM0_out pin, controls brightness via eCAP0 module. LCD EVM also has alternative backlight control via TLC59108 power control chip. This is via do not implement(DNI) R36 resistor on non-alpha boards, only populated in-case of non-availability of eCAP0_in_PWM0_out pin.</li></ol>
+<h1><span class="mw-headline" id="Driver_Configuration"><b>Driver Configuration</b></span></h1>
+<p>Make sure you have enabled LCD FB and FB console as below. Default am335x_defconfig keeps them enabled. 
+</p>
+<pre> Device Drivers  ---&gt; 
+         Graphics support  ---&gt; 
+            &lt;*&gt; Support for frame buffer devices  ---&gt;
+                 &lt;*&gt;   DA8xx/OMAP-L1xx Framebuffer support
+                 (4)     Consistent DMA memory size (MB)
+</pre>
+<h2><span class="mw-headline" id="Building_as_Loadable_Kernel_Module"><b>Building as Loadable Kernel Module</b></span></h2>
+<p>To build the above components as modules, press 'M' key on below config option.
+</p>
+<ul><li>&lt;M&gt;   DA8xx/OMAP-L1xx Framebuffer support</li></ul>
+<p>Enable below config options to enable Framebuffer console support and bootup logo.
+</p>
+<pre>            Console display driver support  ---&gt;
+                    &lt;*&gt; Framebuffer Console support
+            [*] Bootup logo  ---&gt;
+                [*]   Standard black and white Linux logo
+                [*]   Standard 16-color Linux logo
+                [*]   Standard 224-color Linux logo
+
+</pre>
+<ul><li>Enabling TLC59108 back light driver</li></ul>
+<pre>Device Drivers  ---&gt;
+         Graphics support  ---&gt;
+             [*] Backlight &amp; LCD device support  ---&gt;
+                 &lt;*&gt;   Lowlevel Backlight controls
+                 &lt;*&gt;   TLC59108 LCD Backlight Driver</pre>
+<div style="padding: 5px; background: none repeat scroll 0% 0% rgb(238, 238, 238); color: rgb(21, 27, 84);">
+<b>NOTE</b><br>  Please note it is not required to enable TLC59108 driver on beta boards.</div>
+<h1><span class="mw-headline" id="Usage_and_Verification"><b>Usage and Verification</b></span></h1>
+<ul><li>With above specified kernel configurations, Linux bootup penguin logo will appear on LCD panel. </li>
+<li>Use fbset utility to display timing parameters:</li></ul>
+<pre>/ # fbset
+mode "800x480-40"
+# D: 21.429 MHz, H: 21.956 kHz, V: 40.139 Hz
+geometry 800 480 800 960 32
+timings 46666 64 64 32 32 48 3
+accel false
+rgba 8/16,8/8,8/0,0/0
+endmode
+/ #
+</pre>
+<ul><li>In 24bpp configuration, testing can be done by dumping bmp image (header stripped 800*480.bmp) on LCD</li></ul>
+<pre>$cat 800*480.bmp &gt; /dev/fb0
+</pre>
+<ul><li>Framebuffer console blankes out after blanking interval. Framebuffer console blanking and unblanking can be set via below sysfs interfaces.</li></ul>
+<pre>to unblank:
+$echo "0" &gt; /sys/class/graphics/fb0/blank
+to blank:
+$echo "4" &gt; /sys/class/graphics/fb0/blank
+</pre>
+<ul><li>Default blankinterval is 10 minutes, blank event is triggered on every 10 minutes period(this will happen even if you set screen unblank as above). Blanking can be disabled altogether by appending consoleblank=0 to kernel bootargs.</li></ul></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.036 seconds
+Real time usage: 0.050 seconds
+Preprocessor visited node count: 70/1000000
+Preprocessor generated node count: 190/1000000
+Post‐expand include size: 496/2097152 bytes
+Template argument size: 45/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   11.318      1 - -total
+ 50.31%    5.694      1 - Template:SpLicenseCC-SA
+ 47.72%    5.401      1 - Template:SpArticleStart
+-->
+
+<!-- Saved in parser cache with key davincid_wikidb:pcache:idhash:13504-0!*!*!!en!5!* and timestamp 20171221032712 and revision id 113820
+ -->
+<div class="hf-footer"></div><div class="hf-nsfooter"><table style="text-align:center; background:white; width:100%; text-align:left; height: 65px border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; border-width: 1px; border-style: solid;">
+<tbody><tr>
+<td width="305px"><a href="http://processors.wiki.ti.com/index.php/File:E2e.jpg" class="image"><img alt="E2e.jpg" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/E2e.jpg" width="305" height="63"></a>
+</td>
+<td><i>For technical support please post your questions at <a rel="nofollow" class="external free" href="http://e2e.ti.com/">http://e2e.ti.com</a>. Please post only comments about the article <b>AM335x LCD Controller Driver's Guide</b> here.</i>
+</td></tr></tbody></table>
+<table style="border-style:solid; border-width:1px; text-align:center; width:100%;">
+
+<tbody><tr style="font-size:150%;">
+<td rowspan="2"> <a href="http://processors.wiki.ti.com/index.php/File:Hyperlink_blue.png" class="image"><img alt="Hyperlink blue.png" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/Hyperlink_blue.png" width="96" height="96"></a>
+</td>
+<td><b>Links</b>
+</td></tr>
+<tr>
+<td>
+<table style="text-align: left;">
+<tbody><tr>
+<td style="padding-right: 10px; vertical-align: top;">
+<p><a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/amplifier_and_linear.page">Amplifiers &amp; Linear</a><br>
+<a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/audio/audio_overview.page">Audio</a><br>
+<a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/rfif.page">Broadband RF/IF &amp; Digital Radio</a><br>
+<a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/clocksandtimers/clocks_and_timers.page">Clocks &amp; Timers</a><br>
+<a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/dataconverters/data_converter.page">Data Converters</a>
+</p>
+</td>
+<td style="padding-right: 10px; vertical-align: top;">
+<p><a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/mems/mems.page">DLP &amp; MEMS</a><br>
+<a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/high_reliability.page">High-Reliability</a><br>
+<a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/interface/interface.page">Interface</a><br>
+<a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/logic/home_overview.page">Logic</a><br>
+<a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/powermanagement/power_portal.page">Power Management</a>
+</p>
+</td>
+<td style="padding-right: 10px; vertical-align: top;">
+<p><a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/dsp/embedded_processor.page">Processors</a>
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/dsp/arm.page">ARM Processors</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/dsp/home.page">Digital Signal Processors (DSP)</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/microcontroller/home.page">Microcontrollers (MCU)</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/omap-applications-processors/the-omap-experience.page">OMAP Applications Processors</a></li></ul>
+</td>
+<td style="padding-right: 10px; vertical-align: top;">
+<p><a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/switches_and_multiplexers.page">Switches &amp; Multiplexers</a><br>
+<a rel="nofollow" class="external text" href="http://www.ti.com/lsds/ti/analog/temperature_sensor.page">Temperature Sensors &amp; Control ICs</a><br>
+<a rel="nofollow" class="external text" href="http://focus.ti.com/wireless/docs/wirelessoverview.tsp?familyId=2003&amp;sectionId=646&amp;tabId=2735">Wireless Connectivity</a>
+</p>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<p><!-- HitBox Sub accounts Code START -->
+<script language="JavaScript" src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/metrics-min.js.download" type="text/javascript"></script>
+<!-- HitBox Sub accounts Code END -->
+</p></div></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://processors.wiki.ti.com/index.php?title=AM335x_LCD_Controller_Driver%27s_Guide&amp;oldid=113820">http://processors.wiki.ti.com/index.php?title=AM335x_LCD_Controller_Driver%27s_Guide&amp;oldid=113820</a>"					</div>
+													<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://processors.wiki.ti.com/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://processors.wiki.ti.com/index.php/Category:AM335x" title="Category:AM335x">AM335x</a></li><li><a href="http://processors.wiki.ti.com/index.php/Category:PSP" title="Category:PSP">PSP</a></li><li><a href="http://processors.wiki.ti.com/index.php/Category:Linux" title="Category:Linux">Linux</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="http://processors.wiki.ti.com/index.php?title=Special:UserLogin&amp;returnto=AM335x+LCD+Controller+Driver%27s+Guide" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li><li id="pt-createaccount"><a href="http://processors.wiki.ti.com/index.php/Special:RequestAccount" title="You are encouraged to create an account and log in; however, it is not mandatory">Request account</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide" title="View the content page [alt-shift-c]" accesskey="c">Page</a></span></li>
+															<li id="ca-talk"><span><a href="http://processors.wiki.ti.com/index.php/Talk:AM335x_LCD_Controller_Driver%27s_Guide" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0"><span>Variants</span><a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide">Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://processors.wiki.ti.com/index.php?title=AM335x_LCD_Controller_Driver%27s_Guide&amp;action=edit" title="This page is protected.
+You can view its source [alt-shift-e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://processors.wiki.ti.com/index.php?title=AM335x_LCD_Controller_Driver%27s_Guide&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label" style="">
+						<h3 id="p-cactions-label" tabindex="0"><span>More</span><a href="http://processors.wiki.ti.com/index.php/AM335x_LCD_Controller_Driver%27s_Guide#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://processors.wiki.ti.com/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Texas Instruments Wiki [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton">								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://processors.wiki.ti.com/index.php/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal first" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage"><a href="http://processors.wiki.ti.com/index.php/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main Page</a></li>
+													<li id="n-All-pages"><a href="http://processors.wiki.ti.com/index.php/Special:AllPages">All pages</a></li>
+													<li id="n-All-categories"><a href="http://processors.wiki.ti.com/index.php/Special:Categories">All categories</a></li>
+													<li id="n-recentchanges"><a href="http://processors.wiki.ti.com/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+													<li id="n-randompage"><a href="http://processors.wiki.ti.com/index.php/Special:Random" title="Load a random page [alt-shift-x]" accesskey="x">Random page</a></li>
+													<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://processors.wiki.ti.com/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=AM335x+LCD+Controller+Driver%27s+Guide">Create a book</a></li>
+													<li id="coll-download-as-rl"><a href="http://processors.wiki.ti.com/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=AM335x+LCD+Controller+Driver%27s+Guide&amp;oldid=113820&amp;writer=rl">Download as PDF</a></li>
+													<li id="t-print"><a href="http://processors.wiki.ti.com/index.php?title=AM335x_LCD_Controller_Driver%27s_Guide&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Toolbox</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://processors.wiki.ti.com/index.php/Special:WhatLinksHere/AM335x_LCD_Controller_Driver%27s_Guide" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://processors.wiki.ti.com/index.php/Special:RecentChangesLinked/AM335x_LCD_Controller_Driver%27s_Guide" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+													<li id="t-specialpages"><a href="http://processors.wiki.ti.com/index.php/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://processors.wiki.ti.com/index.php?title=AM335x_LCD_Controller_Driver%27s_Guide&amp;oldid=113820" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://processors.wiki.ti.com/index.php?title=AM335x_LCD_Controller_Driver%27s_Guide&amp;action=info" title="More information about this page">Page information</a></li>
+											</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 July 2012, at 11:05.</li>
+											<li id="footer-info-viewcount">This page has been accessed 14,788 times.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://processors.wiki.ti.com/index.php/Project:Privacy_policy" title="Project:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://processors.wiki.ti.com/index.php/Project:About" title="Project:About">About Texas Instruments Wiki</a></li>
+											<li id="footer-places-disclaimer"><a href="http://processors.wiki.ti.com/index.php/Project:General_disclaimer" title="Project:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-termsofservice"><a href="http://processors.wiki.ti.com/index.php/Project:Terms_of_Service" title="Project:Terms of Service">Terms of Use</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/cc-by-sa.png" alt="Creative Commons Attribution-ShareAlike" width="88" height="31"></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"http://processors.wiki.ti.com/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script><script src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/load(5).php"></script><div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/ga.js.download" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3008403-2");
+pageTracker._trackPageview();
+} catch(err) {}
+</script><script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":436});
+}</script>
+	
+
+<iframe src="./AM335x LCD Controller Driver&#39;s Guide - Texas Instruments Wiki_files/pixel.html" style="display: none;"></iframe></body></html>
