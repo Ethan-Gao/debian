@@ -1,5 +1,6 @@
 #!/bin/sh
 
+ROOTFS_DIR=
 # check root
 if [ `whoami` != "root" ]
 then
@@ -9,7 +10,7 @@ fi
 
 # set necessary environment
 sudo apt-get install qemu-user-static
-sudo cp /usr/bin/qemu-arm-static AM335x/usr/bin/
-sudo cp /etc/resolv.conf AM335x/etc
+sudo cp /usr/bin/qemu-arm-static $ROOTFS_DIR/usr/bin/
+sudo cp /etc/resolv.conf $ROOTFS_DIR/etc
 echo "###kernel of host shouldn't be too old###"
-sudo chroot AM335x
+sudo chroot $ROOTFS_DIR

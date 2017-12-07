@@ -2,6 +2,8 @@
 
 # ref : http://blog.csdn.net/dean_gdp/article/details/51713139
 
+ROOTFS_DIR=
+
 # check root
 if [ `whoami` != "root" ]
 then
@@ -14,7 +16,7 @@ mkdir loop
 dd if=/dev/zero of=ramdisk bs=1k count=102400
 mke2fs -F -v -m 0 ramdisk
 sudo mount -o loop ramdisk ./loop/
-sudo cp -r rootfs/* ./loop/
+sudo cp -r $ROOTFS_DIR/* ./loop/
 sync && sleep 1
 sudo umount ./loop/
 
